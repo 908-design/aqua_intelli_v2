@@ -4,7 +4,7 @@
 fastapi==0.115.0
 uvicorn[standard]==0.30.1
 gunicorn==22.0.0
-pydantic==2.7.1
+pydantic>=2.0.0
 pydantic-settings==2.3.0
 python-multipart==0.0.9
 httpx==0.27.0
@@ -38,12 +38,12 @@ langgraph==0.0.69
 langsmith==0.1.77
 
 # RAG
-faiss-cpu>=1.8.0
+faiss-cpu
 sentence-transformers==3.0.1
 chromadb==0.5.3
 
 # MCP
-mcp==1.0.0
+mcp
 
 # Data / utils
 requests==2.32.3
