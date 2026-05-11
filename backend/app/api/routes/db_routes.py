@@ -16,7 +16,7 @@ async def db_health():
         "sql": {"status": "connected", "type": "SQLite (dev) / PostgreSQL (prod)"},
         "nosql": {
             "status": "connected",
-            "type": "MongoDB" if not isinstance(nosql, type(nosql)) else "Mock",
+            "type": "Mock" if type(nosql).__name__ == "MockMongoDB" else "MongoDB",
         },
         "graph": {
             "status": "connected",
@@ -29,7 +29,8 @@ async def db_health():
 async def graph_nodes():
     graph = get_graph_db()
     with graph.session() as session:
-        nodes = session.run("MATCH (n) RETURN n")
+        result = session.run("MATCH (n) RETURN n")
+        nodes = [dict(record["n"]) for record in result]
     return {"nodes": nodes, "count": len(nodes)}
 
 
@@ -37,5 +38,15 @@ async def graph_nodes():
 async def graph_relationships():
     graph = get_graph_db()
     with graph.session() as session:
-        rels = session.run("MATCH ()-[r:RECHARGES]->() RETURN r")
+        result = session.run("MATCH ()-[r]->() RETURN r")
+        rels = [
+            {
+                "id": record["r"].id,
+                "type": record["r"].type,
+                "start": record["r"].start_node.id,
+                "end": record["r"].end_node.id,
+                "properties": dict(record["r"])
+            }
+            for record in result
+        ]
     return {"relationships": rels, "count": len(rels)}

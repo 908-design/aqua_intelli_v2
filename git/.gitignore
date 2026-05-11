@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+env/
+
+# Environment / Secrets
+.env
+configs/gee_credentials.json
+
+# Databases
+*.db
+*.sqlite3
+
+# OS / IDE
+.vs/
+.vscode/
+.idea/
+.DS_Store
+
+# Data (often too large for Git)
+data/

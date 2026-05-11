@@ -1,0 +1,1934 @@
+{
+  "population": [
+    {
+      "indicator": {
+        "id": "SP.POP.TOTL",
+        "value": "Population, total"
+      },
+      "country": {
+        "id": "IN",
+        "value": "India"
+      },
+      "countryiso3code": "IND",
+      "date": "2024",
+      "value": 1450935791,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0
+    },
+    {
+      "indicator": {
+        "id": "SP.POP.TOTL",
+        "value": "Population, total"
+      },
+      "country": {
+        "id": "IN",
+        "value": "India"
+      },
+      "countryiso3code": "IND",
+      "date": "2023",
+      "value": 1438069596,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0
+    },
+    {
+      "indicator": {
+        "id": "SP.POP.TOTL",
+        "value": "Population, total"
+      },
+      "country": {
+        "id": "IN",
+        "value": "India"
+      },
+      "countryiso3code": "IND",
+      "date": "2022",
+      "value": 1425423212,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0
+    },
+    {
+      "indicator": {
+        "id": "SP.POP.TOTL",
+        "value": "Population, total"
+      },
+      "country": {
+        "id": "IN",
+        "value": "India"
+      },
+      "countryiso3code": "IND",
+      "date": "2021",
+      "value": 1414203896,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0
+    },
+    {
+      "indicator": {
+        "id": "SP.POP.TOTL",
+        "value": "Population, total"
+      },
+      "country": {
+        "id": "IN",
+        "value": "India"
+      },
+      "countryiso3code": "IND",
+      "date": "2020",
+      "value": 1402617695,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0
+    },
+    {
+      "indicator": {
+        "id": "SP.POP.TOTL",
+        "value": "Population, total"
+      },
+      "country": {
+        "id": "IN",
+        "value": "India"
+      },
+      "countryiso3code": "IND",
+      "date": "2019",
+      "value": 1389030312,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0
+    },
+    {
+      "indicator": {
+        "id": "SP.POP.TOTL",
+        "value": "Population, total"
+      },
+      "country": {
+        "id": "IN",
+        "value": "India"
+      },
+      "countryiso3code": "IND",
+      "date": "2018",
+      "value": 1374659064,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0
+    },
+    {
+      "indicator": {
+        "id": "SP.POP.TOTL",
+        "value": "Population, total"
+      },
+      "country": {
+        "id": "IN",
+        "value": "India"
+      },
+      "countryiso3code": "IND",
+      "date": "2017",
+      "value": 1359657400,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0
+    },
+    {
+      "indicator": {
+        "id": "SP.POP.TOTL",
+        "value": "Population, total"
+      },
+      "country": {
+        "id": "IN",
+        "value": "India"
+      },
+      "countryiso3code": "IND",
+      "date": "2016",
+      "value": 1343944296,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0
+    },
+    {
+      "indicator": {
+        "id": "SP.POP.TOTL",
+        "value": "Population, total"
+      },
+      "country": {
+        "id": "IN",
+        "value": "India"
+      },
+      "countryiso3code": "IND",
+      "date": "2015",
+      "value": 1328024498,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0
+    },
+    {
+      "indicator": {
+        "id": "SP.POP.TOTL",
+        "value": "Population, total"
+      },
+      "country": {
+        "id": "IN",
+        "value": "India"
+      },
+      "countryiso3code": "IND",
+      "date": "2014",
+      "value": 1312277191,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0
+    },
+    {
+      "indicator": {
+        "id": "SP.POP.TOTL",
+        "value": "Population, total"
+      },
+      "country": {
+        "id": "IN",
+        "value": "India"
+      },
+      "countryiso3code": "IND",
+      "date": "2013",
+      "value": 1295829511,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0
+    },
+    {
+      "indicator": {
+        "id": "SP.POP.TOTL",
+        "value": "Population, total"
+      },
+      "country": {
+        "id": "IN",
+        "value": "India"
+      },
+      "countryiso3code": "IND",
+      "date": "2012",
+      "value": 1278674502,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0
+    },
+    {
+      "indicator": {
+        "id": "SP.POP.TOTL",
+        "value": "Population, total"
+      },
+      "country": {
+        "id": "IN",
+        "value": "India"
+      },
+      "countryiso3code": "IND",
+      "date": "2011",
+      "value": 1261224954,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0
+    },
+    {
+      "indicator": {
+        "id": "SP.POP.TOTL",
+        "value": "Population, total"
+      },
+      "country": {
+        "id": "IN",
+        "value": "India"
+      },
+      "countryiso3code": "IND",
+      "date": "2010",
+      "value": 1243481564,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0
+    },
+    {
+      "indicator": {
+        "id": "SP.POP.TOTL",
+        "value": "Population, total"
+      },
+      "country": {
+        "id": "IN",
+        "value": "India"
+      },
+      "countryiso3code": "IND",
+      "date": "2009",
+      "value": 1225524753,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0
+    },
+    {
+      "indicator": {
+        "id": "SP.POP.TOTL",
+        "value": "Population, total"
+      },
+      "country": {
+        "id": "IN",
+        "value": "India"
+      },
+      "countryiso3code": "IND",
+      "date": "2008",
+      "value": 1207930964,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0
+    },
+    {
+      "indicator": {
+        "id": "SP.POP.TOTL",
+        "value": "Population, total"
+      },
+      "country": {
+        "id": "IN",
+        "value": "India"
+      },
+      "countryiso3code": "IND",
+      "date": "2007",
+      "value": 1190676021,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0
+    },
+    {
+      "indicator": {
+        "id": "SP.POP.TOTL",
+        "value": "Population, total"
+      },
+      "country": {
+        "id": "IN",
+        "value": "India"
+      },
+      "countryiso3code": "IND",
+      "date": "2006",
+      "value": 1172878890,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0
+    },
+    {
+      "indicator": {
+        "id": "SP.POP.TOTL",
+        "value": "Population, total"
+      },
+      "country": {
+        "id": "IN",
+        "value": "India"
+      },
+      "countryiso3code": "IND",
+      "date": "2005",
+      "value": 1154676322,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0
+    }
+  ],
+  "gdp_per_capita": [
+    {
+      "indicator": {
+        "id": "NY.GDP.PCAP.CD",
+        "value": "GDP per capita (current US$)"
+      },
+      "country": {
+        "id": "IN",
+        "value": "India"
+      },
+      "countryiso3code": "IND",
+      "date": "2024",
+      "value": 2694.73780859961,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "NY.GDP.PCAP.CD",
+        "value": "GDP per capita (current US$)"
+      },
+      "country": {
+        "id": "IN",
+        "value": "India"
+      },
+      "countryiso3code": "IND",
+      "date": "2023",
+      "value": 2530.12031278204,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "NY.GDP.PCAP.CD",
+        "value": "GDP per capita (current US$)"
+      },
+      "country": {
+        "id": "IN",
+        "value": "India"
+      },
+      "countryiso3code": "IND",
+      "date": "2022",
+      "value": 2347.44829434623,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "NY.GDP.PCAP.CD",
+        "value": "GDP per capita (current US$)"
+      },
+      "country": {
+        "id": "IN",
+        "value": "India"
+      },
+      "countryiso3code": "IND",
+      "date": "2021",
+      "value": 2239.61384367482,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "NY.GDP.PCAP.CD",
+        "value": "GDP per capita (current US$)"
+      },
+      "country": {
+        "id": "IN",
+        "value": "India"
+      },
+      "countryiso3code": "IND",
+      "date": "2020",
+      "value": 1907.04251637669,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "NY.GDP.PCAP.CD",
+        "value": "GDP per capita (current US$)"
+      },
+      "country": {
+        "id": "IN",
+        "value": "India"
+      },
+      "countryiso3code": "IND",
+      "date": "2019",
+      "value": 2041.42863698585,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "NY.GDP.PCAP.CD",
+        "value": "GDP per capita (current US$)"
+      },
+      "country": {
+        "id": "IN",
+        "value": "India"
+      },
+      "countryiso3code": "IND",
+      "date": "2018",
+      "value": 1966.25455171679,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "NY.GDP.PCAP.CD",
+        "value": "GDP per capita (current US$)"
+      },
+      "country": {
+        "id": "IN",
+        "value": "India"
+      },
+      "countryiso3code": "IND",
+      "date": "2017",
+      "value": 1950.10468280866,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "NY.GDP.PCAP.CD",
+        "value": "GDP per capita (current US$)"
+      },
+      "country": {
+        "id": "IN",
+        "value": "India"
+      },
+      "countryiso3code": "IND",
+      "date": "2016",
+      "value": 1707.50892912243,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "NY.GDP.PCAP.CD",
+        "value": "GDP per capita (current US$)"
+      },
+      "country": {
+        "id": "IN",
+        "value": "India"
+      },
+      "countryiso3code": "IND",
+      "date": "2015",
+      "value": 1583.99815907985,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "NY.GDP.PCAP.CD",
+        "value": "GDP per capita (current US$)"
+      },
+      "country": {
+        "id": "IN",
+        "value": "India"
+      },
+      "countryiso3code": "IND",
+      "date": "2014",
+      "value": 1553.88396075118,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "NY.GDP.PCAP.CD",
+        "value": "GDP per capita (current US$)"
+      },
+      "country": {
+        "id": "IN",
+        "value": "India"
+      },
+      "countryiso3code": "IND",
+      "date": "2013",
+      "value": 1432.84397512195,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "NY.GDP.PCAP.CD",
+        "value": "GDP per capita (current US$)"
+      },
+      "country": {
+        "id": "IN",
+        "value": "India"
+      },
+      "countryiso3code": "IND",
+      "date": "2012",
+      "value": 1429.32199520032,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "NY.GDP.PCAP.CD",
+        "value": "GDP per capita (current US$)"
+      },
+      "country": {
+        "id": "IN",
+        "value": "India"
+      },
+      "countryiso3code": "IND",
+      "date": "2011",
+      "value": 1445.46127486037,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "NY.GDP.PCAP.CD",
+        "value": "GDP per capita (current US$)"
+      },
+      "country": {
+        "id": "IN",
+        "value": "India"
+      },
+      "countryiso3code": "IND",
+      "date": "2010",
+      "value": 1347.51939071367,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "NY.GDP.PCAP.CD",
+        "value": "GDP per capita (current US$)"
+      },
+      "country": {
+        "id": "IN",
+        "value": "India"
+      },
+      "countryiso3code": "IND",
+      "date": "2009",
+      "value": 1094.94974598436,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "NY.GDP.PCAP.CD",
+        "value": "GDP per capita (current US$)"
+      },
+      "country": {
+        "id": "IN",
+        "value": "India"
+      },
+      "countryiso3code": "IND",
+      "date": "2008",
+      "value": 992.519584923828,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "NY.GDP.PCAP.CD",
+        "value": "GDP per capita (current US$)"
+      },
+      "country": {
+        "id": "IN",
+        "value": "India"
+      },
+      "countryiso3code": "IND",
+      "date": "2007",
+      "value": 1021.88707706826,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "NY.GDP.PCAP.CD",
+        "value": "GDP per capita (current US$)"
+      },
+      "country": {
+        "id": "IN",
+        "value": "India"
+      },
+      "countryiso3code": "IND",
+      "date": "2006",
+      "value": 801.668353659022,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "NY.GDP.PCAP.CD",
+        "value": "GDP per capita (current US$)"
+      },
+      "country": {
+        "id": "IN",
+        "value": "India"
+      },
+      "countryiso3code": "IND",
+      "date": "2005",
+      "value": 710.488080408949,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    }
+  ],
+  "agri_land_pct": [
+    {
+      "indicator": {
+        "id": "AG.LND.AGRI.ZS",
+        "value": "Agricultural land (% of land area)"
+      },
+      "country": {
+        "id": "IN",
+        "value": "India"
+      },
+      "countryiso3code": "IND",
+      "date": "2023",
+      "value": 60.0604064994165,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "AG.LND.AGRI.ZS",
+        "value": "Agricultural land (% of land area)"
+      },
+      "country": {
+        "id": "IN",
+        "value": "India"
+      },
+      "countryiso3code": "IND",
+      "date": "2022",
+      "value": 60.0555856504293,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "AG.LND.AGRI.ZS",
+        "value": "Agricultural land (% of land area)"
+      },
+      "country": {
+        "id": "IN",
+        "value": "India"
+      },
+      "countryiso3code": "IND",
+      "date": "2021",
+      "value": 60.0507647678083,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "AG.LND.AGRI.ZS",
+        "value": "Agricultural land (% of land area)"
+      },
+      "country": {
+        "id": "IN",
+        "value": "India"
+      },
+      "countryiso3code": "IND",
+      "date": "2020",
+      "value": 60.0459439188212,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "AG.LND.AGRI.ZS",
+        "value": "Agricultural land (% of land area)"
+      },
+      "country": {
+        "id": "IN",
+        "value": "India"
+      },
+      "countryiso3code": "IND",
+      "date": "2019",
+      "value": 60.2198312250478,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "AG.LND.AGRI.ZS",
+        "value": "Agricultural land (% of land area)"
+      },
+      "country": {
+        "id": "IN",
+        "value": "India"
+      },
+      "countryiso3code": "IND",
+      "date": "2018",
+      "value": 60.2437112999842,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "AG.LND.AGRI.ZS",
+        "value": "Agricultural land (% of land area)"
+      },
+      "country": {
+        "id": "IN",
+        "value": "India"
+      },
+      "countryiso3code": "IND",
+      "date": "2017",
+      "value": 60.2840719900175,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "AG.LND.AGRI.ZS",
+        "value": "Agricultural land (% of land area)"
+      },
+      "country": {
+        "id": "IN",
+        "value": "India"
+      },
+      "countryiso3code": "IND",
+      "date": "2016",
+      "value": 60.3990999566123,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "AG.LND.AGRI.ZS",
+        "value": "Agricultural land (% of land area)"
+      },
+      "country": {
+        "id": "IN",
+        "value": "India"
+      },
+      "countryiso3code": "IND",
+      "date": "2015",
+      "value": 60.4317248477225,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "AG.LND.AGRI.ZS",
+        "value": "Agricultural land (% of land area)"
+      },
+      "country": {
+        "id": "IN",
+        "value": "India"
+      },
+      "countryiso3code": "IND",
+      "date": "2014",
+      "value": 60.4495508191538,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "AG.LND.AGRI.ZS",
+        "value": "Agricultural land (% of land area)"
+      },
+      "country": {
+        "id": "IN",
+        "value": "India"
+      },
+      "countryiso3code": "IND",
+      "date": "2013",
+      "value": 60.4394606466455,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "AG.LND.AGRI.ZS",
+        "value": "Agricultural land (% of land area)"
+      },
+      "country": {
+        "id": "IN",
+        "value": "India"
+      },
+      "countryiso3code": "IND",
+      "date": "2012",
+      "value": 60.4206256579633,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "AG.LND.AGRI.ZS",
+        "value": "Agricultural land (% of land area)"
+      },
+      "country": {
+        "id": "IN",
+        "value": "India"
+      },
+      "countryiso3code": "IND",
+      "date": "2011",
+      "value": 60.4300431523044,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "AG.LND.AGRI.ZS",
+        "value": "Agricultural land (% of land area)"
+      },
+      "country": {
+        "id": "IN",
+        "value": "India"
+      },
+      "countryiso3code": "IND",
+      "date": "2010",
+      "value": 60.3974182611942,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "AG.LND.AGRI.ZS",
+        "value": "Agricultural land (% of land area)"
+      },
+      "country": {
+        "id": "IN",
+        "value": "India"
+      },
+      "countryiso3code": "IND",
+      "date": "2009",
+      "value": 60.5639061075814,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "AG.LND.AGRI.ZS",
+        "value": "Agricultural land (% of land area)"
+      },
+      "country": {
+        "id": "IN",
+        "value": "India"
+      },
+      "countryiso3code": "IND",
+      "date": "2008",
+      "value": 60.4593046525785,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "AG.LND.AGRI.ZS",
+        "value": "Agricultural land (% of land area)"
+      },
+      "country": {
+        "id": "IN",
+        "value": "India"
+      },
+      "countryiso3code": "IND",
+      "date": "2007",
+      "value": 60.4132261981239,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "AG.LND.AGRI.ZS",
+        "value": "Agricultural land (% of land area)"
+      },
+      "country": {
+        "id": "IN",
+        "value": "India"
+      },
+      "countryiso3code": "IND",
+      "date": "2006",
+      "value": 60.5094191760365,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "AG.LND.AGRI.ZS",
+        "value": "Agricultural land (% of land area)"
+      },
+      "country": {
+        "id": "IN",
+        "value": "India"
+      },
+      "countryiso3code": "IND",
+      "date": "2005",
+      "value": 60.5834137744308,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "AG.LND.AGRI.ZS",
+        "value": "Agricultural land (% of land area)"
+      },
+      "country": {
+        "id": "IN",
+        "value": "India"
+      },
+      "countryiso3code": "IND",
+      "date": "2004",
+      "value": 60.6671622062499,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    }
+  ],
+  "renewable_water": [
+    {
+      "indicator": {
+        "id": "ER.H2O.INTR.PC",
+        "value": "Renewable internal freshwater resources per capita (cubic meters)"
+      },
+      "country": {
+        "id": "IN",
+        "value": "India"
+      },
+      "countryiso3code": "IND",
+      "date": "2022",
+      "value": 1014.43556399726,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0
+    },
+    {
+      "indicator": {
+        "id": "ER.H2O.INTR.PC",
+        "value": "Renewable internal freshwater resources per capita (cubic meters)"
+      },
+      "country": {
+        "id": "IN",
+        "value": "India"
+      },
+      "countryiso3code": "IND",
+      "date": "2021",
+      "value": 1022.48339443127,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0
+    },
+    {
+      "indicator": {
+        "id": "ER.H2O.INTR.PC",
+        "value": "Renewable internal freshwater resources per capita (cubic meters)"
+      },
+      "country": {
+        "id": "IN",
+        "value": "India"
+      },
+      "countryiso3code": "IND",
+      "date": "2020",
+      "value": 1030.92952923284,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0
+    },
+    {
+      "indicator": {
+        "id": "ER.H2O.INTR.PC",
+        "value": "Renewable internal freshwater resources per capita (cubic meters)"
+      },
+      "country": {
+        "id": "IN",
+        "value": "India"
+      },
+      "countryiso3code": "IND",
+      "date": "2019",
+      "value": 1041.0139991243,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0
+    },
+    {
+      "indicator": {
+        "id": "ER.H2O.INTR.PC",
+        "value": "Renewable internal freshwater resources per capita (cubic meters)"
+      },
+      "country": {
+        "id": "IN",
+        "value": "India"
+      },
+      "countryiso3code": "IND",
+      "date": "2018",
+      "value": 1051.89718517725,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0
+    },
+    {
+      "indicator": {
+        "id": "ER.H2O.INTR.PC",
+        "value": "Renewable internal freshwater resources per capita (cubic meters)"
+      },
+      "country": {
+        "id": "IN",
+        "value": "India"
+      },
+      "countryiso3code": "IND",
+      "date": "2017",
+      "value": 1063.50320308631,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0
+    },
+    {
+      "indicator": {
+        "id": "ER.H2O.INTR.PC",
+        "value": "Renewable internal freshwater resources per capita (cubic meters)"
+      },
+      "country": {
+        "id": "IN",
+        "value": "India"
+      },
+      "countryiso3code": "IND",
+      "date": "2016",
+      "value": 1075.93745090756,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0
+    },
+    {
+      "indicator": {
+        "id": "ER.H2O.INTR.PC",
+        "value": "Renewable internal freshwater resources per capita (cubic meters)"
+      },
+      "country": {
+        "id": "IN",
+        "value": "India"
+      },
+      "countryiso3code": "IND",
+      "date": "2015",
+      "value": 1088.83533562647,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0
+    },
+    {
+      "indicator": {
+        "id": "ER.H2O.INTR.PC",
+        "value": "Renewable internal freshwater resources per capita (cubic meters)"
+      },
+      "country": {
+        "id": "IN",
+        "value": "India"
+      },
+      "countryiso3code": "IND",
+      "date": "2014",
+      "value": 1101.90134364684,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0
+    },
+    {
+      "indicator": {
+        "id": "ER.H2O.INTR.PC",
+        "value": "Renewable internal freshwater resources per capita (cubic meters)"
+      },
+      "country": {
+        "id": "IN",
+        "value": "India"
+      },
+      "countryiso3code": "IND",
+      "date": "2013",
+      "value": 1115.8875359183,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0
+    },
+    {
+      "indicator": {
+        "id": "ER.H2O.INTR.PC",
+        "value": "Renewable internal freshwater resources per capita (cubic meters)"
+      },
+      "country": {
+        "id": "IN",
+        "value": "India"
+      },
+      "countryiso3code": "IND",
+      "date": "2012",
+      "value": 1130.85855527602,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0
+    },
+    {
+      "indicator": {
+        "id": "ER.H2O.INTR.PC",
+        "value": "Renewable internal freshwater resources per capita (cubic meters)"
+      },
+      "country": {
+        "id": "IN",
+        "value": "India"
+      },
+      "countryiso3code": "IND",
+      "date": "2011",
+      "value": 1146.50443238851,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0
+    },
+    {
+      "indicator": {
+        "id": "ER.H2O.INTR.PC",
+        "value": "Renewable internal freshwater resources per capita (cubic meters)"
+      },
+      "country": {
+        "id": "IN",
+        "value": "India"
+      },
+      "countryiso3code": "IND",
+      "date": "2010",
+      "value": 1162.86404387737,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0
+    },
+    {
+      "indicator": {
+        "id": "ER.H2O.INTR.PC",
+        "value": "Renewable internal freshwater resources per capita (cubic meters)"
+      },
+      "country": {
+        "id": "IN",
+        "value": "India"
+      },
+      "countryiso3code": "IND",
+      "date": "2009",
+      "value": 1179.90272857426,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0
+    },
+    {
+      "indicator": {
+        "id": "ER.H2O.INTR.PC",
+        "value": "Renewable internal freshwater resources per capita (cubic meters)"
+      },
+      "country": {
+        "id": "IN",
+        "value": "India"
+      },
+      "countryiso3code": "IND",
+      "date": "2008",
+      "value": 1197.08827995571,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0
+    },
+    {
+      "indicator": {
+        "id": "ER.H2O.INTR.PC",
+        "value": "Renewable internal freshwater resources per capita (cubic meters)"
+      },
+      "country": {
+        "id": "IN",
+        "value": "India"
+      },
+      "countryiso3code": "IND",
+      "date": "2007",
+      "value": 1214.43614761433,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0
+    },
+    {
+      "indicator": {
+        "id": "ER.H2O.INTR.PC",
+        "value": "Renewable internal freshwater resources per capita (cubic meters)"
+      },
+      "country": {
+        "id": "IN",
+        "value": "India"
+      },
+      "countryiso3code": "IND",
+      "date": "2006",
+      "value": 1232.86386371913,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0
+    },
+    {
+      "indicator": {
+        "id": "ER.H2O.INTR.PC",
+        "value": "Renewable internal freshwater resources per capita (cubic meters)"
+      },
+      "country": {
+        "id": "IN",
+        "value": "India"
+      },
+      "countryiso3code": "IND",
+      "date": "2005",
+      "value": 1252.29899708639,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0
+    },
+    {
+      "indicator": {
+        "id": "ER.H2O.INTR.PC",
+        "value": "Renewable internal freshwater resources per capita (cubic meters)"
+      },
+      "country": {
+        "id": "IN",
+        "value": "India"
+      },
+      "countryiso3code": "IND",
+      "date": "2004",
+      "value": 1272.89683369316,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0
+    },
+    {
+      "indicator": {
+        "id": "ER.H2O.INTR.PC",
+        "value": "Renewable internal freshwater resources per capita (cubic meters)"
+      },
+      "country": {
+        "id": "IN",
+        "value": "India"
+      },
+      "countryiso3code": "IND",
+      "date": "2003",
+      "value": 1294.76728861885,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0
+    }
+  ],
+  "water_withdrawal": [
+    {
+      "indicator": {
+        "id": "ER.H2O.FWTL.ZS",
+        "value": "Annual freshwater withdrawals, total (% of internal resources)"
+      },
+      "country": {
+        "id": "IN",
+        "value": "India"
+      },
+      "countryiso3code": "IND",
+      "date": "2022",
+      "value": 44.7786998616874,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0
+    },
+    {
+      "indicator": {
+        "id": "ER.H2O.FWTL.ZS",
+        "value": "Annual freshwater withdrawals, total (% of internal resources)"
+      },
+      "country": {
+        "id": "IN",
+        "value": "India"
+      },
+      "countryiso3code": "IND",
+      "date": "2021",
+      "value": 44.7786998616874,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0
+    },
+    {
+      "indicator": {
+        "id": "ER.H2O.FWTL.ZS",
+        "value": "Annual freshwater withdrawals, total (% of internal resources)"
+      },
+      "country": {
+        "id": "IN",
+        "value": "India"
+      },
+      "countryiso3code": "IND",
+      "date": "2020",
+      "value": 44.7786998616874,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0
+    },
+    {
+      "indicator": {
+        "id": "ER.H2O.FWTL.ZS",
+        "value": "Annual freshwater withdrawals, total (% of internal resources)"
+      },
+      "country": {
+        "id": "IN",
+        "value": "India"
+      },
+      "countryiso3code": "IND",
+      "date": "2019",
+      "value": 44.7786998616874,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0
+    },
+    {
+      "indicator": {
+        "id": "ER.H2O.FWTL.ZS",
+        "value": "Annual freshwater withdrawals, total (% of internal resources)"
+      },
+      "country": {
+        "id": "IN",
+        "value": "India"
+      },
+      "countryiso3code": "IND",
+      "date": "2018",
+      "value": 44.7786998616874,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0
+    },
+    {
+      "indicator": {
+        "id": "ER.H2O.FWTL.ZS",
+        "value": "Annual freshwater withdrawals, total (% of internal resources)"
+      },
+      "country": {
+        "id": "IN",
+        "value": "India"
+      },
+      "countryiso3code": "IND",
+      "date": "2017",
+      "value": 44.7786998616874,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0
+    },
+    {
+      "indicator": {
+        "id": "ER.H2O.FWTL.ZS",
+        "value": "Annual freshwater withdrawals, total (% of internal resources)"
+      },
+      "country": {
+        "id": "IN",
+        "value": "India"
+      },
+      "countryiso3code": "IND",
+      "date": "2016",
+      "value": 44.7786998616874,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0
+    },
+    {
+      "indicator": {
+        "id": "ER.H2O.FWTL.ZS",
+        "value": "Annual freshwater withdrawals, total (% of internal resources)"
+      },
+      "country": {
+        "id": "IN",
+        "value": "India"
+      },
+      "countryiso3code": "IND",
+      "date": "2015",
+      "value": 44.7786998616874,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0
+    },
+    {
+      "indicator": {
+        "id": "ER.H2O.FWTL.ZS",
+        "value": "Annual freshwater withdrawals, total (% of internal resources)"
+      },
+      "country": {
+        "id": "IN",
+        "value": "India"
+      },
+      "countryiso3code": "IND",
+      "date": "2014",
+      "value": 44.7786998616874,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0
+    },
+    {
+      "indicator": {
+        "id": "ER.H2O.FWTL.ZS",
+        "value": "Annual freshwater withdrawals, total (% of internal resources)"
+      },
+      "country": {
+        "id": "IN",
+        "value": "India"
+      },
+      "countryiso3code": "IND",
+      "date": "2013",
+      "value": 44.7786998616874,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0
+    },
+    {
+      "indicator": {
+        "id": "ER.H2O.FWTL.ZS",
+        "value": "Annual freshwater withdrawals, total (% of internal resources)"
+      },
+      "country": {
+        "id": "IN",
+        "value": "India"
+      },
+      "countryiso3code": "IND",
+      "date": "2012",
+      "value": 44.7786998616874,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0
+    },
+    {
+      "indicator": {
+        "id": "ER.H2O.FWTL.ZS",
+        "value": "Annual freshwater withdrawals, total (% of internal resources)"
+      },
+      "country": {
+        "id": "IN",
+        "value": "India"
+      },
+      "countryiso3code": "IND",
+      "date": "2011",
+      "value": 44.7786998616874,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0
+    },
+    {
+      "indicator": {
+        "id": "ER.H2O.FWTL.ZS",
+        "value": "Annual freshwater withdrawals, total (% of internal resources)"
+      },
+      "country": {
+        "id": "IN",
+        "value": "India"
+      },
+      "countryiso3code": "IND",
+      "date": "2010",
+      "value": 44.7786998616874,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0
+    },
+    {
+      "indicator": {
+        "id": "ER.H2O.FWTL.ZS",
+        "value": "Annual freshwater withdrawals, total (% of internal resources)"
+      },
+      "country": {
+        "id": "IN",
+        "value": "India"
+      },
+      "countryiso3code": "IND",
+      "date": "2009",
+      "value": 44.5221265560166,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0
+    },
+    {
+      "indicator": {
+        "id": "ER.H2O.FWTL.ZS",
+        "value": "Annual freshwater withdrawals, total (% of internal resources)"
+      },
+      "country": {
+        "id": "IN",
+        "value": "India"
+      },
+      "countryiso3code": "IND",
+      "date": "2008",
+      "value": 44.2655532503458,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0
+    },
+    {
+      "indicator": {
+        "id": "ER.H2O.FWTL.ZS",
+        "value": "Annual freshwater withdrawals, total (% of internal resources)"
+      },
+      "country": {
+        "id": "IN",
+        "value": "India"
+      },
+      "countryiso3code": "IND",
+      "date": "2007",
+      "value": 44.008979944675,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0
+    },
+    {
+      "indicator": {
+        "id": "ER.H2O.FWTL.ZS",
+        "value": "Annual freshwater withdrawals, total (% of internal resources)"
+      },
+      "country": {
+        "id": "IN",
+        "value": "India"
+      },
+      "countryiso3code": "IND",
+      "date": "2006",
+      "value": 43.7524066390041,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0
+    },
+    {
+      "indicator": {
+        "id": "ER.H2O.FWTL.ZS",
+        "value": "Annual freshwater withdrawals, total (% of internal resources)"
+      },
+      "country": {
+        "id": "IN",
+        "value": "India"
+      },
+      "countryiso3code": "IND",
+      "date": "2005",
+      "value": 43.4958333333333,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0
+    },
+    {
+      "indicator": {
+        "id": "ER.H2O.FWTL.ZS",
+        "value": "Annual freshwater withdrawals, total (% of internal resources)"
+      },
+      "country": {
+        "id": "IN",
+        "value": "India"
+      },
+      "countryiso3code": "IND",
+      "date": "2004",
+      "value": 43.2392600276625,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0
+    },
+    {
+      "indicator": {
+        "id": "ER.H2O.FWTL.ZS",
+        "value": "Annual freshwater withdrawals, total (% of internal resources)"
+      },
+      "country": {
+        "id": "IN",
+        "value": "India"
+      },
+      "countryiso3code": "IND",
+      "date": "2003",
+      "value": 45.3374460580913,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0
+    }
+  ],
+  "rural_population": [
+    {
+      "indicator": {
+        "id": "SP.RUR.TOTL.ZS",
+        "value": "Rural population (% of total population)"
+      },
+      "country": {
+        "id": "IN",
+        "value": "India"
+      },
+      "countryiso3code": "IND",
+      "date": "2024",
+      "value": 64.6211027631611,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0
+    },
+    {
+      "indicator": {
+        "id": "SP.RUR.TOTL.ZS",
+        "value": "Rural population (% of total population)"
+      },
+      "country": {
+        "id": "IN",
+        "value": "India"
+      },
+      "countryiso3code": "IND",
+      "date": "2023",
+      "value": 64.9323081575814,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0
+    },
+    {
+      "indicator": {
+        "id": "SP.RUR.TOTL.ZS",
+        "value": "Rural population (% of total population)"
+      },
+      "country": {
+        "id": "IN",
+        "value": "India"
+      },
+      "countryiso3code": "IND",
+      "date": "2022",
+      "value": 65.2444326005794,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0
+    },
+    {
+      "indicator": {
+        "id": "SP.RUR.TOTL.ZS",
+        "value": "Rural population (% of total population)"
+      },
+      "country": {
+        "id": "IN",
+        "value": "India"
+      },
+      "countryiso3code": "IND",
+      "date": "2021",
+      "value": 65.5574482818696,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0
+    },
+    {
+      "indicator": {
+        "id": "SP.RUR.TOTL.ZS",
+        "value": "Rural population (% of total population)"
+      },
+      "country": {
+        "id": "IN",
+        "value": "India"
+      },
+      "countryiso3code": "IND",
+      "date": "2020",
+      "value": 65.8713273911667,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0
+    },
+    {
+      "indicator": {
+        "id": "SP.RUR.TOTL.ZS",
+        "value": "Rural population (% of total population)"
+      },
+      "country": {
+        "id": "IN",
+        "value": "India"
+      },
+      "countryiso3code": "IND",
+      "date": "2019",
+      "value": 66.1860421181853,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0
+    },
+    {
+      "indicator": {
+        "id": "SP.RUR.TOTL.ZS",
+        "value": "Rural population (% of total population)"
+      },
+      "country": {
+        "id": "IN",
+        "value": "India"
+      },
+      "countryiso3code": "IND",
+      "date": "2018",
+      "value": 66.5015646526402,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0
+    },
+    {
+      "indicator": {
+        "id": "SP.RUR.TOTL.ZS",
+        "value": "Rural population (% of total population)"
+      },
+      "country": {
+        "id": "IN",
+        "value": "India"
+      },
+      "countryiso3code": "IND",
+      "date": "2017",
+      "value": 66.8178671842461,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0
+    },
+    {
+      "indicator": {
+        "id": "SP.RUR.TOTL.ZS",
+        "value": "Rural population (% of total population)"
+      },
+      "country": {
+        "id": "IN",
+        "value": "India"
+      },
+      "countryiso3code": "IND",
+      "date": "2016",
+      "value": 67.1349219027177,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0
+    },
+    {
+      "indicator": {
+        "id": "SP.RUR.TOTL.ZS",
+        "value": "Rural population (% of total population)"
+      },
+      "country": {
+        "id": "IN",
+        "value": "India"
+      },
+      "countryiso3code": "IND",
+      "date": "2015",
+      "value": 67.4527009977701,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0
+    },
+    {
+      "indicator": {
+        "id": "SP.RUR.TOTL.ZS",
+        "value": "Rural population (% of total population)"
+      },
+      "country": {
+        "id": "IN",
+        "value": "India"
+      },
+      "countryiso3code": "IND",
+      "date": "2014",
+      "value": 67.7711766591179,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0
+    },
+    {
+      "indicator": {
+        "id": "SP.RUR.TOTL.ZS",
+        "value": "Rural population (% of total population)"
+      },
+      "country": {
+        "id": "IN",
+        "value": "India"
+      },
+      "countryiso3code": "IND",
+      "date": "2013",
+      "value": 68.0903210764763,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0
+    },
+    {
+      "indicator": {
+        "id": "SP.RUR.TOTL.ZS",
+        "value": "Rural population (% of total population)"
+      },
+      "country": {
+        "id": "IN",
+        "value": "India"
+      },
+      "countryiso3code": "IND",
+      "date": "2012",
+      "value": 68.4101064395601,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0
+    },
+    {
+      "indicator": {
+        "id": "SP.RUR.TOTL.ZS",
+        "value": "Rural population (% of total population)"
+      },
+      "country": {
+        "id": "IN",
+        "value": "India"
+      },
+      "countryiso3code": "IND",
+      "date": "2011",
+      "value": 68.7253497146691,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0
+    },
+    {
+      "indicator": {
+        "id": "SP.RUR.TOTL.ZS",
+        "value": "Rural population (% of total population)"
+      },
+      "country": {
+        "id": "IN",
+        "value": "India"
+      },
+      "countryiso3code": "IND",
+      "date": "2010",
+      "value": 69.0957809189906,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0
+    },
+    {
+      "indicator": {
+        "id": "SP.RUR.TOTL.ZS",
+        "value": "Rural population (% of total population)"
+      },
+      "country": {
+        "id": "IN",
+        "value": "India"
+      },
+      "countryiso3code": "IND",
+      "date": "2009",
+      "value": 69.4814685976737,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0
+    },
+    {
+      "indicator": {
+        "id": "SP.RUR.TOTL.ZS",
+        "value": "Rural population (% of total population)"
+      },
+      "country": {
+        "id": "IN",
+        "value": "India"
+      },
+      "countryiso3code": "IND",
+      "date": "2008",
+      "value": 69.8561514078185,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0
+    },
+    {
+      "indicator": {
+        "id": "SP.RUR.TOTL.ZS",
+        "value": "Rural population (% of total population)"
+      },
+      "country": {
+        "id": "IN",
+        "value": "India"
+      },
+      "countryiso3code": "IND",
+      "date": "2007",
+      "value": 70.2189573151316,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0
+    },
+    {
+      "indicator": {
+        "id": "SP.RUR.TOTL.ZS",
+        "value": "Rural population (% of total population)"
+      },
+      "country": {
+        "id": "IN",
+        "value": "India"
+      },
+      "countryiso3code": "IND",
+      "date": "2006",
+      "value": 70.5690142853196,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0
+    },
+    {
+      "indicator": {
+        "id": "SP.RUR.TOTL.ZS",
+        "value": "Rural population (% of total population)"
+      },
+      "country": {
+        "id": "IN",
+        "value": "India"
+      },
+      "countryiso3code": "IND",
+      "date": "2005",
+      "value": 70.9054502840893,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 0
+    }
+  ]
+}

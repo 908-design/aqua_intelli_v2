@@ -1,0 +1,182 @@
+{
+  "source": "OpenStreetMap + Survey of India",
+  "rivers": [
+    {
+      "name": "Ganga",
+      "lat": 25.43,
+      "lon": 81.85,
+      "length_km": 2525,
+      "basin_km2": 907000
+    },
+    {
+      "name": "Yamuna",
+      "lat": 28.63,
+      "lon": 77.23,
+      "length_km": 1376,
+      "basin_km2": 366223
+    },
+    {
+      "name": "Godavari",
+      "lat": 17.0,
+      "lon": 81.78,
+      "length_km": 1465,
+      "basin_km2": 314000
+    },
+    {
+      "name": "Krishna",
+      "lat": 16.51,
+      "lon": 80.62,
+      "length_km": 1400,
+      "basin_km2": 258948
+    },
+    {
+      "name": "Narmada",
+      "lat": 21.83,
+      "lon": 73.75,
+      "length_km": 1312,
+      "basin_km2": 98796
+    },
+    {
+      "name": "Brahmaputra",
+      "lat": 26.09,
+      "lon": 91.72,
+      "length_km": 1800,
+      "basin_km2": 651334
+    },
+    {
+      "name": "Cauvery",
+      "lat": 12.43,
+      "lon": 76.57,
+      "length_km": 800,
+      "basin_km2": 81155
+    },
+    {
+      "name": "Mahanadi",
+      "lat": 20.37,
+      "lon": 85.83,
+      "length_km": 900,
+      "basin_km2": 141600
+    },
+    {
+      "name": "Tapi",
+      "lat": 21.17,
+      "lon": 72.83,
+      "length_km": 724,
+      "basin_km2": 65145
+    },
+    {
+      "name": "Mahi",
+      "lat": 22.31,
+      "lon": 73.09,
+      "length_km": 583,
+      "basin_km2": 34842
+    },
+    {
+      "name": "Sabarmati",
+      "lat": 23.02,
+      "lon": 72.57,
+      "length_km": 371,
+      "basin_km2": 21672
+    },
+    {
+      "name": "Musi",
+      "lat": 17.38,
+      "lon": 78.48,
+      "length_km": 160,
+      "basin_km2": 11200
+    },
+    {
+      "name": "Tungabhadra",
+      "lat": 15.27,
+      "lon": 76.34,
+      "length_km": 531,
+      "basin_km2": 72036
+    },
+    {
+      "name": "Chambal",
+      "lat": 26.48,
+      "lon": 79.19,
+      "length_km": 960,
+      "basin_km2": 143219
+    },
+    {
+      "name": "Ken",
+      "lat": 25.26,
+      "lon": 80.35,
+      "length_km": 427,
+      "basin_km2": 28058
+    }
+  ],
+  "lakes": [
+    {
+      "name": "Chilika Lake",
+      "lat": 19.72,
+      "lon": 85.32,
+      "area_km2": 1165,
+      "type": "lagoon"
+    },
+    {
+      "name": "Vembanad Lake",
+      "lat": 9.59,
+      "lon": 76.39,
+      "area_km2": 2033,
+      "type": "brackish"
+    },
+    {
+      "name": "Hussain Sagar",
+      "lat": 17.42,
+      "lon": 78.47,
+      "area_km2": 5.7,
+      "type": "freshwater"
+    },
+    {
+      "name": "Osmansagar",
+      "lat": 17.38,
+      "lon": 78.3,
+      "area_km2": 46,
+      "type": "reservoir"
+    },
+    {
+      "name": "Himayatsagar",
+      "lat": 17.33,
+      "lon": 78.35,
+      "area_km2": 35,
+      "type": "reservoir"
+    },
+    {
+      "name": "Dal Lake",
+      "lat": 34.11,
+      "lon": 74.85,
+      "area_km2": 18,
+      "type": "freshwater"
+    },
+    {
+      "name": "Sambhar Lake",
+      "lat": 26.9,
+      "lon": 75.08,
+      "area_km2": 230,
+      "type": "salt"
+    },
+    {
+      "name": "Pulicat Lake",
+      "lat": 13.58,
+      "lon": 80.17,
+      "area_km2": 759,
+      "type": "brackish"
+    },
+    {
+      "name": "Loktak Lake",
+      "lat": 24.54,
+      "lon": 93.77,
+      "area_km2": 280,
+      "type": "wetland"
+    },
+    {
+      "name": "Wular Lake",
+      "lat": 34.36,
+      "lon": 74.54,
+      "area_km2": 189,
+      "type": "freshwater"
+    }
+  ]
+}

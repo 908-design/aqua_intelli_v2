@@ -45,9 +45,9 @@ async def rag_query(req: RAGQuery):
 @router.get("/rag/health", summary="RAG health check")
 async def rag_health():
     return {
-        "vectorstore_ready": rag_pipeline.vectorstore is not None,
-        "llm_ready": rag_pipeline.qa_chain is not None,
-        "mode": rag_pipeline.mode,
+        "vectorstore_ready": False,
+        "llm_ready": not rag_pipeline.is_mock and bool(rag_pipeline.api_key),
+        "mode": "mock" if rag_pipeline.is_mock else "ai-real",
     }
 
 

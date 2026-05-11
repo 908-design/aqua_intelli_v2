@@ -1,0 +1,171 @@
+{
+  "nodes": [
+    {
+      "id": "P1",
+      "name": "MVPS Ward 12",
+      "type": "pump",
+      "lat": 17.72,
+      "lon": 83.28,
+      "capacity_pct": 98,
+      "status": "CRITICAL",
+      "x": 100,
+      "y": 50
+    },
+    {
+      "id": "P2",
+      "name": "Gajuwaka Main",
+      "type": "pump",
+      "lat": 17.68,
+      "lon": 83.2,
+      "capacity_pct": 45,
+      "status": "NORMAL",
+      "x": 50,
+      "y": 150
+    },
+    {
+      "id": "P3",
+      "name": "Dwaraka Nagar",
+      "type": "junction",
+      "lat": 17.73,
+      "lon": 83.3,
+      "capacity_pct": 68,
+      "status": "WARNING",
+      "x": 200,
+      "y": 80
+    },
+    {
+      "id": "P4",
+      "name": "Seethammadhara",
+      "type": "outlet",
+      "lat": 17.75,
+      "lon": 83.32,
+      "capacity_pct": 52,
+      "status": "NORMAL",
+      "x": 250,
+      "y": 30
+    },
+    {
+      "id": "P5",
+      "name": "Purna Market",
+      "type": "junction",
+      "lat": 17.7,
+      "lon": 83.29,
+      "capacity_pct": 94,
+      "status": "CRITICAL",
+      "x": 180,
+      "y": 120
+    },
+    {
+      "id": "S1",
+      "name": "Old City Nala",
+      "type": "sewer",
+      "lat": 17.69,
+      "lon": 83.27,
+      "capacity_pct": 72,
+      "status": "WARNING",
+      "x": 150,
+      "y": 100
+    },
+    {
+      "id": "S2",
+      "name": "Airport Drain",
+      "type": "storm",
+      "lat": 17.72,
+      "lon": 83.22,
+      "capacity_pct": 38,
+      "status": "NORMAL",
+      "x": 80,
+      "y": 60
+    },
+    {
+      "id": "J1",
+      "name": "Main Outfall",
+      "type": "outfall",
+      "lat": 17.71,
+      "lon": 83.31,
+      "capacity_pct": 55,
+      "status": "NORMAL",
+      "x": 220,
+      "y": 90
+    },
+    {
+      "id": "J2",
+      "name": "Rushikonda Junc",
+      "type": "junction",
+      "lat": 17.78,
+      "lon": 83.38,
+      "capacity_pct": 61,
+      "status": "WARNING",
+      "x": 300,
+      "y": 20
+    }
+  ],
+  "edges": [
+    {
+      "source": "S1",
+      "target": "J1",
+      "flow_cusecs": 450,
+      "diameter_mm": 900,
+      "length_m": 1200,
+      "status": "WARNING"
+    },
+    {
+      "source": "P1",
+      "target": "J1",
+      "flow_cusecs": 320,
+      "diameter_mm": 600,
+      "length_m": 800,
+      "status": "CRITICAL"
+    },
+    {
+      "source": "P2",
+      "target": "J2",
+      "flow_cusecs": 180,
+      "diameter_mm": 750,
+      "length_m": 1500,
+      "status": "NORMAL"
+    },
+    {
+      "source": "P5",
+      "target": "J1",
+      "flow_cusecs": 520,
+      "diameter_mm": 800,
+      "length_m": 600,
+      "status": "CRITICAL"
+    },
+    {
+      "source": "S2",
+      "target": "P3",
+      "flow_cusecs": 210,
+      "diameter_mm": 700,
+      "length_m": 2000,
+      "status": "NORMAL"
+    },
+    {
+      "source": "P3",
+      "target": "J1",
+      "flow_cusecs": 380,
+      "diameter_mm": 900,
+      "length_m": 900,
+      "status": "WARNING"
+    },
+    {
+      "source": "J2",
+      "target": "P4",
+      "flow_cusecs": 290,
+      "diameter_mm": 1000,
+      "length_m": 1800,
+      "status": "NORMAL"
+    },
+    {
+      "source": "P5",
+      "target": "S1",
+      "flow_cusecs": 150,
+      "diameter_mm": 450,
+      "length_m": 400,
+      "status": "CRITICAL"
+    }
+  ],
+  "total_km": 142,
+  "overloaded": 23
+}

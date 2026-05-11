@@ -1,0 +1,483 @@
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+#wrap{background:#07111f;width:100%;height:900px;position:relative;overflow:hidden;font-family:sans-serif}
+canvas{display:block;width:100%;height:100%}
+#hud{position:absolute;top:0;left:0;right:0;bottom:0;pointer-events:none}
+#top-bar{position:absolute;top:14px;left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:18px;background:rgba(5,20,45,0.82);border:1px solid #0e3a6e;border-radius:6px;padding:6px 18px;pointer-events:auto}
+.hud-label{font-size:11px;color:#4a80b8;letter-spacing:1px}
+.hud-val{font-size:12px;color:#7ec8ff;font-weight:500;margin-top:1px}
+.hud-sep{width:1px;height:28px;background:#0e3a6e}
+#legend{position:absolute;bottom:14px;left:14px;background:rgba(5,20,45,0.88);border:1px solid #0e3a6e;border-radius:6px;padding:10px 14px;pointer-events:auto}
+.leg-row{display:flex;align-items:center;gap:8px;margin-bottom:5px;font-size:10px;color:#6a9cc8}
+.leg-line{height:3px;border-radius:2px;flex-shrink:0}
+.leg-dot{width:9px;height:9px;border-radius:50%;flex-shrink:0}
+.leg-sq{width:9px;height:9px;border-radius:2px;flex-shrink:0}
+#coords{position:absolute;bottom:14px;right:14px;background:rgba(5,20,45,0.82);border:1px solid #0e3a6e;border-radius:6px;padding:8px 12px;font-size:10px;color:#4a80b8;text-align:right}
+#scan-line{position:absolute;left:0;right:0;height:2px;background:rgba(100,200,255,0.08);pointer-events:none;top:0}
+#controls{position:absolute;top:14px;right:14px;display:flex;flex-direction:column;gap:5px;pointer-events:auto}
+.ctrl-btn{width:28px;height:28px;background:rgba(5,20,45,0.88);border:1px solid #0e3a6e;border-radius:4px;color:#4a80b8;font-size:15px;cursor:pointer;display:flex;align-items:center;justify-content:center;line-height:1}
+.ctrl-btn:hover{background:#0e3a6e;color:#7ec8ff}
+#tooltip{position:absolute;display:none;background:rgba(5,20,45,0.95);border:1px solid #1a5090;border-radius:5px;padding:7px 11px;font-size:11px;color:#7ec8ff;pointer-events:none;min-width:140px}
+#tooltip .tt-title{font-size:12px;color:#b5d4f4;font-weight:500;margin-bottom:3px}
+#tooltip .tt-row{color:#4a80b8;margin-top:2px}
+#tooltip .tt-val{color:#7ec8ff}
+</style>
+
+<div id="wrap">
+<canvas id="c"></canvas>
+<div id="hud">
+  <div id="top-bar">
+    <div><div class="hud-label">ALTITUDE</div><div class="hud-val">1,840 m</div></div>
+    <div class="hud-sep"></div>
+    <div><div class="hud-label">LOCATION</div><div class="hud-val">Visakhapatnam, AP</div></div>
+    <div class="hud-sep"></div>
+    <div><div class="hud-label">DRAINAGE BLUEPRINT</div><div class="hud-val">MACRO VIEW</div></div>
+    <div class="hud-sep"></div>
+    <div><div class="hud-label">PIPE LENGTH</div><div class="hud-val">142 km</div></div>
+  </div>
+  <div id="controls">
+    <button class="ctrl-btn" onclick="zoom(1.2)">+</button>
+    <button class="ctrl-btn" onclick="zoom(0.83)">-</button>
+    <button class="ctrl-btn" onclick="resetView()">⊙</button>
+  </div>
+  <div id="legend">
+    <div class="leg-row"><div class="leg-line" style="width:24px;background:#1e90ff;height:4px"></div> Main trunk</div>
+    <div class="leg-row"><div class="leg-line" style="width:24px;background:#00d4ff;height:3px"></div> Secondary</div>
+    <div class="leg-row"><div class="leg-line" style="width:24px;background:#00ff9d;height:2px"></div> Tertiary</div>
+    <div class="leg-row"><div class="leg-line" style="width:24px;background:#ff9800;height:3px;border-top:0;border-bottom:0"></div> Outfall</div>
+    <div class="leg-row"><div class="leg-dot" style="background:#d040fb;border:1.5px solid #e080ff"></div> Pump station</div>
+    <div class="leg-row"><div class="leg-sq" style="background:#ff5722;border:1.5px solid #ff8a65"></div> Treatment plant</div>
+  </div>
+  <div id="coords">17.6868° N &nbsp;|&nbsp; 83.2185° E<br><span style="color:#2a5070;margin-top:2px;display:block">GVMC Drainage Grid</span></div>
+  <div id="scan-line"></div>
+  <div id="tooltip"></div>
+</div>
+</div>
+
+<script>
+const canvas = document.getElementById('c');
+const ctx = canvas.getContext('2d');
+const wrap = document.getElementById('wrap');
+
+let W, H, scale = 1, ox = 0, oy = 0, af = 0;
+
+function resize() {
+  W = wrap.clientWidth; H = wrap.clientHeight;
+  canvas.width = W; canvas.height = H;
+  render();
+}
+
+let drag = false, dragStart = null;
+canvas.addEventListener('mousedown', e => { drag = true; dragStart = {x: e.clientX - ox, y: e.clientY - oy}; });
+canvas.addEventListener('mousemove', e => {
+  if (drag) { ox = e.clientX - dragStart.x; oy = e.clientY - dragStart.y; render(); }
+  else handleTooltip(e);
+});
+canvas.addEventListener('mouseup', () => drag = false);
+canvas.addEventListener('wheel', e => { e.preventDefault(); zoom(e.deltaY < 0 ? 1.1 : 0.9); }, {passive:false});
+
+function zoom(f) { scale = Math.max(0.4, Math.min(5, scale * f)); render(); }
+function resetView() { scale = 1; ox = 0; oy = 0; render(); }
+
+function tx(x) { return x * W * scale + ox; }
+function ty(y) { return y * H * scale + oy; }
+function ts(s) { return s * Math.min(W, H) * scale; }
+
+// --- TERRAIN GEOMETRY (normalized 0..1) ---
+
+// Coastline: eastern edge, Bay of Bengal
+const coast = [
+  [0.93,0.00],[0.91,0.05],[0.88,0.10],[0.86,0.14],[0.83,0.18],[0.80,0.22],
+  [0.77,0.26],[0.74,0.30],[0.71,0.34],[0.69,0.38],[0.68,0.42],[0.67,0.47],
+  [0.67,0.52],[0.68,0.57],[0.69,0.62],[0.71,0.67],[0.73,0.72],[0.75,0.77],
+  [0.78,0.82],[0.80,0.87],[0.82,0.92],[0.84,0.96],[0.86,1.00]
+];
+
+// Hill polygons (Eastern Ghats, northwest)
+const hills = [
+  [[0.00,0.00],[0.10,0.00],[0.20,0.04],[0.30,0.08],[0.28,0.16],[0.22,0.22],[0.16,0.26],[0.10,0.24],[0.04,0.18],[0.00,0.12]],
+  [[0.12,0.10],[0.22,0.06],[0.34,0.10],[0.32,0.20],[0.26,0.26],[0.18,0.28],[0.12,0.24]],
+  [[0.24,0.16],[0.34,0.14],[0.38,0.22],[0.34,0.30],[0.28,0.32],[0.22,0.28]],
+];
+
+// Narava / Meghadri Gedda reservoir
+const reservoir = {cx:0.26, cy:0.42, rx:0.04, ry:0.02};
+
+// Urban blocks (simplified city fabric)
+const blocks = [
+  {x:0.32,y:0.32,w:0.08,h:0.06,label:'Simhachalam'},
+  {x:0.38,y:0.38,w:0.10,h:0.08,label:'Maddilapalem'},
+  {x:0.48,y:0.36,w:0.10,h:0.08,label:'MVP Colony'},
+  {x:0.58,y:0.36,w:0.08,h:0.08,label:'Waltair'},
+  {x:0.62,y:0.44,w:0.06,h:0.07,label:'CBM Compound'},
+  {x:0.64,y:0.34,w:0.06,h:0.06,label:'Jeevan Bhima Ngr'},
+  {x:0.40,y:0.52,w:0.12,h:0.08,label:'Old Town'},
+  {x:0.30,y:0.58,w:0.14,h:0.10,label:'Gajuwaka'},
+  {x:0.42,y:0.64,w:0.10,h:0.08,label:'Kommadi'},
+  {x:0.68,y:0.24,w:0.06,h:0.07,label:'Rushikonda'},
+  {x:0.74,y:0.14,w:0.07,h:0.07,label:'Bheemunipatnam'},
+  {x:0.64,y:0.50,w:0.05,h:0.05,label:'Port area'},
+  {x:0.52,y:0.58,w:0.08,h:0.06,label:'Pedagantyada'},
+];
+
+// Road network (main arteries)
+const roads = [
+  [[0.36,0.38],[0.42,0.40],[0.50,0.40],[0.58,0.40],[0.65,0.40],[0.68,0.38]],
+  [[0.30,0.60],[0.38,0.56],[0.46,0.54],[0.54,0.52],[0.60,0.50],[0.65,0.48]],
+  [[0.36,0.38],[0.34,0.46],[0.32,0.58],[0.32,0.68]],
+  [[0.50,0.40],[0.52,0.50],[0.52,0.58],[0.52,0.66]],
+  [[0.65,0.40],[0.66,0.50],[0.67,0.58],[0.68,0.66]],
+  [[0.68,0.38],[0.70,0.30],[0.72,0.22],[0.74,0.16]],
+  [[0.36,0.38],[0.32,0.32],[0.28,0.26],[0.24,0.20]],
+];
+
+// DRAINAGE NETWORK
+const drainMain = [
+  [[0.30,0.72],[0.34,0.64],[0.38,0.58],[0.42,0.52],[0.48,0.48],[0.54,0.44],[0.60,0.42],[0.65,0.40],[0.68,0.38]],
+  [[0.28,0.62],[0.34,0.60],[0.40,0.58],[0.46,0.54],[0.52,0.50],[0.58,0.46],[0.63,0.43],[0.67,0.40]],
+  [[0.26,0.42],[0.32,0.42],[0.38,0.42],[0.46,0.42],[0.54,0.42],[0.60,0.41],[0.64,0.40],[0.68,0.38]],
+  [[0.50,0.28],[0.52,0.34],[0.54,0.40],[0.57,0.44],[0.60,0.46],[0.63,0.44],[0.66,0.42],[0.68,0.40]],
+  [[0.68,0.38],[0.68,0.44],[0.69,0.52],[0.70,0.60],[0.71,0.68],[0.72,0.75]],
+  [[0.68,0.38],[0.70,0.36],[0.72,0.34],[0.74,0.32]],
+];
+const drainSec = [
+  [[0.24,0.56],[0.28,0.58],[0.32,0.60]],
+  [[0.32,0.50],[0.36,0.52],[0.40,0.54]],
+  [[0.36,0.44],[0.40,0.46],[0.44,0.48],[0.48,0.50]],
+  [[0.32,0.38],[0.36,0.40],[0.40,0.42]],
+  [[0.28,0.46],[0.32,0.46],[0.36,0.46]],
+  [[0.50,0.30],[0.50,0.34],[0.50,0.38],[0.50,0.42]],
+  [[0.60,0.26],[0.61,0.30],[0.61,0.34],[0.61,0.38]],
+  [[0.68,0.22],[0.70,0.24],[0.72,0.26],[0.72,0.30],[0.70,0.34]],
+  [[0.54,0.56],[0.58,0.54],[0.62,0.52],[0.65,0.50]],
+  [[0.44,0.62],[0.48,0.60],[0.52,0.58],[0.54,0.56]],
+  [[0.58,0.60],[0.62,0.56],[0.64,0.54],[0.66,0.52]],
+  [[0.36,0.68],[0.40,0.66],[0.44,0.64],[0.48,0.62]],
+  [[0.76,0.16],[0.77,0.20],[0.76,0.26],[0.74,0.30]],
+  [[0.38,0.34],[0.40,0.36],[0.42,0.38],[0.44,0.40]],
+  [[0.44,0.34],[0.46,0.36],[0.48,0.38]],
+  [[0.30,0.34],[0.32,0.36],[0.34,0.38],[0.36,0.40]],
+];
+const drainTert = [
+  [[0.24,0.44],[0.26,0.48],[0.26,0.52]],
+  [[0.34,0.48],[0.34,0.52],[0.34,0.56]],
+  [[0.38,0.50],[0.38,0.54],[0.38,0.58]],
+  [[0.44,0.54],[0.44,0.58],[0.44,0.62]],
+  [[0.48,0.44],[0.48,0.48],[0.48,0.52]],
+  [[0.52,0.44],[0.52,0.48],[0.52,0.52]],
+  [[0.56,0.44],[0.56,0.48],[0.56,0.52]],
+  [[0.60,0.40],[0.60,0.44],[0.60,0.48]],
+  [[0.40,0.38],[0.42,0.40],[0.44,0.42],[0.46,0.42]],
+  [[0.32,0.30],[0.34,0.32],[0.36,0.34],[0.36,0.38]],
+  [[0.62,0.56],[0.64,0.54],[0.65,0.52]],
+  [[0.68,0.58],[0.68,0.62],[0.68,0.66]],
+  [[0.70,0.18],[0.72,0.20],[0.74,0.22]],
+  [[0.54,0.28],[0.54,0.32],[0.54,0.36],[0.54,0.40]],
+  [[0.42,0.28],[0.44,0.30],[0.46,0.32],[0.48,0.34]],
+  [[0.58,0.54],[0.58,0.58],[0.58,0.62]],
+  [[0.46,0.66],[0.46,0.70],[0.46,0.74]],
+  [[0.36,0.64],[0.36,0.68],[0.36,0.72]],
+];
+const outfalls = [
+  [[0.68,0.38],[0.71,0.37],[0.74,0.37]],
+  [[0.72,0.75],[0.75,0.76],[0.77,0.78]],
+  [[0.71,0.68],[0.74,0.69],[0.76,0.72]],
+  [[0.65,0.50],[0.68,0.50],[0.70,0.51]],
+  [[0.74,0.32],[0.77,0.32],[0.79,0.34]],
+];
+
+const pumpStations = [
+  {x:0.40,y:0.58,name:'Gajuwaka PS',cap:'1.8 MLD',status:'operational'},
+  {x:0.50,y:0.42,name:'Maddilapalem PS',cap:'2.2 MLD',status:'operational'},
+  {x:0.68,y:0.38,name:'Harbor PS',cap:'3.5 MLD',status:'operational'},
+  {x:0.65,y:0.50,name:'Waltair PS',cap:'1.5 MLD',status:'maintenance'},
+  {x:0.48,y:0.66,name:'Old Town PS',cap:'1.0 MLD',status:'operational'},
+  {x:0.30,y:0.56,name:'Simhachalam PS',cap:'0.8 MLD',status:'planned'},
+  {x:0.70,y:0.24,name:'Rushikonda PS',cap:'1.2 MLD',status:'operational'},
+];
+const stps = [
+  {x:0.32,y:0.72,name:'Gajuwaka STP',cap:'40 MLD',status:'operational'},
+  {x:0.54,y:0.80,name:'Bheemunipatnam STP',cap:'20 MLD',status:'planned'},
+  {x:0.64,y:0.46,name:'Harbor STP',cap:'60 MLD',status:'operational'},
+  {x:0.44,y:0.36,name:'MVP STP',cap:'30 MLD',status:'construction'},
+];
+
+// ---- FLOW ANIMATION ----
+let flowT = 0;
+
+function drawPoly(pts, fill, stroke, sw) {
+  ctx.beginPath();
+  pts.forEach(([x,y],i)=>i===0?ctx.moveTo(tx(x),ty(y)):ctx.lineTo(tx(x),ty(y)));
+  ctx.closePath();
+  if(fill){ctx.fillStyle=fill;ctx.fill();}
+  if(stroke){ctx.strokeStyle=stroke;ctx.lineWidth=sw||1;ctx.stroke();}
+}
+
+function drawPolyLine(pts, color, lw, dash) {
+  ctx.beginPath();
+  ctx.strokeStyle = color; ctx.lineWidth = lw; ctx.lineCap='round'; ctx.lineJoin='round';
+  ctx.setLineDash(dash||[]);
+  pts.forEach(([x,y],i)=>i===0?ctx.moveTo(tx(x),ty(y)):ctx.lineTo(tx(x),ty(y)));
+  ctx.stroke(); ctx.setLineDash([]);
+}
+
+function drawFlowDot(pts, color, lw) {
+  const t = flowT % 1;
+  let total = 0;
+  for (let i = 1; i < pts.length; i++) {
+    const dx = (pts[i][0]-pts[i-1][0])*W, dy = (pts[i][1]-pts[i-1][1])*H;
+    total += Math.sqrt(dx*dx+dy*dy);
+  }
+  const pos = t * total;
+  let acc = 0;
+  for (let i = 1; i < pts.length; i++) {
+    const dx = (pts[i][0]-pts[i-1][0])*W, dy = (pts[i][1]-pts[i-1][1])*H;
+    const seg = Math.sqrt(dx*dx+dy*dy);
+    if (acc + seg >= pos) {
+      const f = (pos - acc) / seg;
+      const px = tx(pts[i-1][0] + f*(pts[i][0]-pts[i-1][0]));
+      const py = ty(pts[i-1][1] + f*(pts[i][1]-pts[i-1][1]));
+      ctx.beginPath(); ctx.arc(px, py, lw*1.8, 0, Math.PI*2);
+      ctx.fillStyle = color; ctx.fill(); break;
+    }
+    acc += seg;
+  }
+}
+
+function render() {
+  ctx.clearRect(0, 0, W, H);
+
+  // Sky/sea gradient effect using flat fill + overlay
+  ctx.fillStyle = '#07111f';
+  ctx.fillRect(0, 0, W, H);
+
+  // --- SEA (Bay of Bengal) ---
+  ctx.beginPath();
+  coast.forEach(([x,y],i)=>i===0?ctx.moveTo(tx(x),ty(y)):ctx.lineTo(tx(x),ty(y)));
+  ctx.lineTo(tx(1.0),ty(1.0)); ctx.lineTo(tx(1.0),ty(0.0)); ctx.closePath();
+  ctx.fillStyle = '#071c35';
+  ctx.fill();
+  // subtle wave lines
+  for (let i = 0; i < 8; i++) {
+    const yp = 0.05 + i * 0.12;
+    ctx.beginPath();
+    ctx.strokeStyle = 'rgba(30,100,200,0.12)';
+    ctx.lineWidth = 0.5;
+    ctx.setLineDash([8,12]);
+    for (let xi = 0.68; xi <= 1.0; xi += 0.02) {
+      const xp = xi + Math.sin(xi * 30 + yp * 10) * 0.003;
+      xi === 0.68 ? ctx.moveTo(tx(xp), ty(yp)) : ctx.lineTo(tx(xp), ty(yp));
+    }
+    ctx.stroke(); ctx.setLineDash([]);
+  }
+
+  // --- COASTLINE ---
+  ctx.beginPath();
+  coast.forEach(([x,y],i)=>i===0?ctx.moveTo(tx(x),ty(y)):ctx.lineTo(tx(x),ty(y)));
+  ctx.strokeStyle = '#1a5090';
+  ctx.lineWidth = 1.5;
+  ctx.setLineDash([]);
+  ctx.stroke();
+
+  // --- LAND BASE ---
+  // Main land filled implicitly (dark bg is land)
+
+  // --- HILLS ---
+  hills.forEach((h,idx) => {
+    const shade = idx === 0 ? '#0d1f12' : idx === 1 ? '#0c1e10' : '#0b1c0f';
+    drawPoly(h, shade, '#1a3d1c', 0.5);
+    // contour lines
+    const sc = 0.85;
+    const inner = h.map(([x,y]) => {
+      const cx = h.reduce((s,p)=>s+p[0],0)/h.length;
+      const cy = h.reduce((s,p)=>s+p[1],0)/h.length;
+      return [cx+(x-cx)*sc, cy+(y-cy)*sc];
+    });
+    drawPoly(inner, null, '#1e4422', 0.3);
+  });
+
+  // --- RESERVOIR ---
+  ctx.beginPath();
+  ctx.ellipse(tx(reservoir.cx), ty(reservoir.cy), ts(reservoir.rx), ts(reservoir.ry), 0, 0, Math.PI*2);
+  ctx.fillStyle = '#0a2e50'; ctx.fill();
+  ctx.strokeStyle = '#1a5080'; ctx.lineWidth=0.8; ctx.stroke();
+
+  // --- URBAN FABRIC ---
+  blocks.forEach(b => {
+    // block fill
+    ctx.fillStyle = '#0f1e2e';
+    ctx.fillRect(tx(b.x), ty(b.y), ts(b.w), ts(b.h));
+    // inner grid pattern
+    ctx.strokeStyle = '#162840';
+    ctx.lineWidth = 0.4;
+    const numLines = Math.max(2, Math.floor(ts(b.w) / 12));
+    for (let i = 1; i < numLines; i++) {
+      const fx = tx(b.x) + (ts(b.w) * i / numLines);
+      ctx.beginPath(); ctx.moveTo(fx, ty(b.y)); ctx.lineTo(fx, ty(b.y)+ts(b.h)); ctx.stroke();
+    }
+    const numRows = Math.max(2, Math.floor(ts(b.h) / 10));
+    for (let i = 1; i < numRows; i++) {
+      const fy = ty(b.y) + (ts(b.h) * i / numRows);
+      ctx.beginPath(); ctx.moveTo(tx(b.x), fy); ctx.lineTo(tx(b.x)+ts(b.w), fy); ctx.stroke();
+    }
+    // block border
+    ctx.strokeStyle = '#1e3a5a';
+    ctx.lineWidth = 0.6;
+    ctx.strokeRect(tx(b.x), ty(b.y), ts(b.w), ts(b.h));
+  });
+
+  // --- ROAD NETWORK ---
+  roads.forEach(r => drawPolyLine(r, '#1a3350', ts(0.004)));
+
+  // blueprint grid overlay
+  ctx.strokeStyle = 'rgba(0,100,200,0.06)';
+  ctx.lineWidth = 0.4;
+  ctx.setLineDash([]);
+  const gridStep = 0.05;
+  for (let gx = 0; gx <= 1; gx += gridStep) {
+    ctx.beginPath(); ctx.moveTo(tx(gx), ty(0)); ctx.lineTo(tx(gx), ty(1)); ctx.stroke();
+  }
+  for (let gy = 0; gy <= 1; gy += gridStep) {
+    ctx.beginPath(); ctx.moveTo(tx(0), ty(gy)); ctx.lineTo(tx(1), ty(gy)); ctx.stroke();
+  }
+
+  // --- DRAINAGE: TERTIARY ---
+  drainTert.forEach(p => {
+    drawPolyLine(p, '#00c47840', ts(0.003));
+    drawPolyLine(p, '#00ff9d', ts(0.002));
+  });
+
+  // --- DRAINAGE: SECONDARY ---
+  drainSec.forEach(p => {
+    drawPolyLine(p, '#00d4ff30', ts(0.005));
+    drawPolyLine(p, '#00d4ff', ts(0.003));
+  });
+
+  // --- DRAINAGE: MAIN TRUNK ---
+  drainMain.forEach((p,i) => {
+    drawPolyLine(p, '#1e90ff50', ts(0.010));
+    drawPolyLine(p, '#1e90ff', ts(0.005));
+    drawPolyLine(p, '#60b8ff', ts(0.002));
+    drawFlowDot(p, '#a0d8ff', ts(0.003) + 1.5);
+  });
+
+  // --- OUTFALLS ---
+  outfalls.forEach(p => {
+    drawPolyLine(p, '#ff980060', ts(0.008));
+    drawPolyLine(p, '#ff9800', ts(0.004), [ts(0.008), ts(0.004)]);
+  });
+
+  // --- PORT AREA ---
+  ctx.strokeStyle = '#1a4060';
+  ctx.lineWidth = ts(0.003);
+  ctx.setLineDash([ts(0.005), ts(0.003)]);
+  ctx.strokeRect(tx(0.65), ty(0.34), ts(0.07), ts(0.14));
+  ctx.setLineDash([]);
+  ctx.fillStyle = '#0e2840';
+  ctx.fillRect(tx(0.66), ty(0.35), ts(0.05), ts(0.12));
+  // pier lines
+  for (let i = 0; i < 4; i++) {
+    ctx.beginPath();
+    ctx.strokeStyle = '#1a4060'; ctx.lineWidth = ts(0.002); ctx.setLineDash([]);
+    ctx.moveTo(tx(0.70), ty(0.35 + i*0.028));
+    ctx.lineTo(tx(0.73), ty(0.35 + i*0.028));
+    ctx.stroke();
+  }
+
+  // --- PUMP STATIONS ---
+  pumpStations.forEach(f => {
+    const x = tx(f.x), y = ty(f.y), r = ts(0.012);
+    ctx.beginPath(); ctx.arc(x, y, r+ts(0.006), 0, Math.PI*2);
+    ctx.fillStyle = 'rgba(160,40,200,0.18)'; ctx.fill();
+    ctx.beginPath(); ctx.arc(x, y, r, 0, Math.PI*2);
+    ctx.fillStyle = '#100820'; ctx.fill();
+    ctx.strokeStyle = f.status==='operational'?'#d040fb':f.status==='maintenance'?'#ff9800':'#378add';
+    ctx.lineWidth = 1.2; ctx.stroke();
+    ctx.beginPath(); ctx.arc(x, y, ts(0.004), 0, Math.PI*2);
+    ctx.fillStyle = '#e080ff'; ctx.fill();
+  });
+
+  // --- STP BOXES ---
+  stps.forEach(f => {
+    const x = tx(f.x), y = ty(f.y), s = ts(0.016);
+    ctx.fillStyle = 'rgba(200,50,20,0.15)';
+    ctx.fillRect(x-s*1.5, y-s*1.5, s*3, s*3);
+    ctx.fillStyle = '#180c06';
+    ctx.fillRect(x-s, y-s, s*2, s*2);
+    ctx.strokeStyle = f.status==='operational'?'#ff5722':f.status==='planned'?'#378add':'#e040fb';
+    ctx.lineWidth = 1.2;
+    ctx.strokeRect(x-s, y-s, s*2, s*2);
+    ctx.fillStyle = '#ff8a65';
+    ctx.fillRect(x-ts(0.004), y-ts(0.004), ts(0.008), ts(0.008));
+  });
+
+  // --- ZONE LABELS ---
+  const labels = [
+    [0.22,0.14,'Eastern Ghats',8,'#1e4422'],
+    [0.74,0.54,'Bay of Bengal',9,'#1a3a60'],
+    [0.70,0.26,'Rushikonda',10,'#4a9cd4'],
+    [0.52,0.32,'MVP Colony',10,'#4a9cd4'],
+    [0.34,0.44,'Maddilapalem',10,'#4a9cd4'],
+    [0.34,0.66,'Gajuwaka',10,'#4a9cd4'],
+    [0.42,0.56,'Old Town',10,'#4a9cd4'],
+    [0.30,0.30,'Simhachalam',10,'#4a9cd4'],
+    [0.76,0.12,'Bheemunipatnam',9,'#4a9cd4'],
+    [0.66,0.42,'Port / Harbor',9,'#5090c0'],
+    [0.26,0.40,'Reservoir',8,'#3a7090'],
+  ];
+  labels.forEach(([lx,ly,label,fs,color]) => {
+    const s = Math.max(9, fs * scale);
+    ctx.font = `${s}px sans-serif`;
+    ctx.fillStyle = color;
+    ctx.textAlign = 'center';
+    ctx.fillText(label, tx(lx), ty(ly));
+  });
+
+  // crosshair target indicator center
+  const cx2 = W/2, cy2 = H/2;
+  ctx.strokeStyle = 'rgba(100,180,255,0.12)';
+  ctx.lineWidth = 0.5;
+  ctx.beginPath(); ctx.moveTo(cx2-20,cy2); ctx.lineTo(cx2+20,cy2); ctx.stroke();
+  ctx.beginPath(); ctx.moveTo(cx2,cy2-20); ctx.lineTo(cx2,cy2+20); ctx.stroke();
+}
+
+// TOOLTIP
+const tooltip = document.getElementById('tooltip');
+function handleTooltip(e) {
+  const rect = canvas.getBoundingClientRect();
+  const mx = e.clientX - rect.left, my = e.clientY - rect.top;
+  let found = null;
+  [...pumpStations, ...stps].forEach(f => {
+    const fx = tx(f.x), fy = ty(f.y);
+    if (Math.hypot(mx-fx, my-fy) < ts(0.018)) found = f;
+  });
+  if (found) {
+    tooltip.style.display = 'block';
+    tooltip.style.left = (e.clientX - rect.left + 14) + 'px';
+    tooltip.style.top = (e.clientY - rect.top - 20) + 'px';
+    const scolor = found.status==='operational'?'#4caf50':found.status==='maintenance'?'#ff9800':found.status==='planned'?'#378add':'#e040fb';
+    tooltip.innerHTML = `<div class="tt-title">${found.name}</div>
+      <div class="tt-row">Capacity: <span class="tt-val">${found.cap}</span></div>
+      <div class="tt-row">Status: <span style="color:${scolor}">${found.status}</span></div>`;
+  } else {
+    tooltip.style.display = 'none';
+  }
+}
+
+// SCAN LINE ANIMATION
+const scanLine = document.getElementById('scan-line');
+let scanY = 0;
+function animateAll() {
+  af++;
+  flowT = (af / 120) % 1;
+  scanY = (scanY + 0.4) % (wrap.clientHeight || 900);
+  scanLine.style.top = scanY + 'px';
+  render();
+  requestAnimationFrame(animateAll);
+}
+
+window.addEventListener('resize', resize);
+resize();
+animateAll();
+</script>

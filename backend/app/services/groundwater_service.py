@@ -65,6 +65,11 @@ async def get_groundwater_status(lat: float, lon: float, district: str, state: s
     forecast = forecaster.predict(features)
 
     # 4. Integrate Real-World CGWB Data
+    from .cgwb_api_client import cgwb_api
+    
+    # Try live fetch for the district first
+    live_data = cgwb_api.fetch_regional_groundwater_level(state, district)
+    
     cgwb_info = next((d for d in CGWB_DATA if d["district"].lower() == district.lower()), None)
 
     severity = "normal"
@@ -95,6 +100,7 @@ async def get_groundwater_status(lat: float, lon: float, district: str, state: s
             "avg_temp_c": rainfall.get("avg_temp_c", 0),
         },
         "cgwb_historical": cgwb_info,
+        "cgwb_live": live_data,
         "ai_forecast": forecast,
         "alert": {"severity": severity, "description": description},
         "timestamp": datetime.utcnow().isoformat()

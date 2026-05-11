@@ -1,6 +1,7 @@
-# AquaIntelli Backend - Requirements
+# AquaIntelli Enterprise v3 — Backend Requirements
+# pip install -r requirements.txt
 
-# FastAPI stack
+# ── FastAPI stack ──────────────────────────────────────────────────────────
 fastapi==0.115.0
 uvicorn[standard]==0.30.1
 gunicorn==22.0.0
@@ -9,27 +10,45 @@ pydantic-settings==2.3.0
 python-multipart==0.0.9
 httpx==0.27.0
 
-# Database - SQL (SQLAlchemy + SQLite/PostgreSQL)
+# ── Database - SQL (SQLAlchemy + SQLite/PostgreSQL) ────────────────────────
 sqlalchemy==2.0.30
 aiosqlite==0.20.0
 alembic==1.13.1
+asyncpg==0.29.0           # PostgreSQL async driver (production)
+psycopg2-binary==2.9.9    # PostgreSQL sync driver (Alembic migrations)
 
-# Database - NoSQL (MongoDB)
+# ── Database - NoSQL (MongoDB) ─────────────────────────────────────────────
 motor==3.4.0
 pymongo==4.7.2
 mongomock==4.1.2
 
-# Database - Neo4j Graph
+# ── Database - Neo4j Graph ─────────────────────────────────────────────────
 neo4j==5.20.0
 
-# AI / ML
+# ── Cache (Redis) — v3 Enterprise ─────────────────────────────────────────
+redis==5.0.4              # async Redis client
+
+# ── Time-Series (InfluxDB) — v3 Enterprise ────────────────────────────────
+influxdb-client==1.43.0   # InfluxDB 2.x client
+
+# ── Vector Store (Weaviate) — v3 Enterprise ───────────────────────────────
+weaviate-client==4.5.4    # Weaviate v4 Python client
+
+# ── Authentication — v3 Enterprise ────────────────────────────────────────
+PyJWT==2.8.0              # JWT token generation/verification
+passlib[bcrypt]==1.7.4    # Password hashing
+python-jose[cryptography]==3.3.0
+
+# ── AI / ML ────────────────────────────────────────────────────────────────
 numpy
 scikit-learn
 pandas
 scipy
 xgboost
+torch>=2.0.0              # PyTorch for meta-learning (MAML)
+# learn2learn==0.2.0      # MAML library (optional, install separately)
 
-# GenAI - LangChain ecosystem
+# ── GenAI - LangChain ecosystem ───────────────────────────────────────────
 langchain==0.2.3
 langchain-community==0.2.4
 langchain-openai==0.1.9
@@ -37,24 +56,40 @@ langchain-core==0.2.5
 langgraph==0.0.69
 langsmith==0.1.77
 
-# RAG
+# ── RAG ───────────────────────────────────────────────────────────────────
 faiss-cpu
 sentence-transformers==3.0.1
 chromadb==0.5.3
 
-# MCP
+# ── MCP ───────────────────────────────────────────────────────────────────
 mcp
 
-# Data / utils
+# ── Monitoring — v3 Enterprise ────────────────────────────────────────────
+prometheus-client==0.20.0 # Prometheus metrics
+structlog==24.2.0          # Structured logging
+opentelemetry-api==1.24.0  # OpenTelemetry tracing
+opentelemetry-sdk==1.24.0
+opentelemetry-exporter-jaeger==1.21.0
+
+# ── ESG Report Generation — v3 Enterprise ────────────────────────────────
+weasyprint==62.3          # HTML → PDF report generation
+jinja2==3.1.4             # HTML templating for reports
+
+# ── Security — v3 Enterprise ──────────────────────────────────────────────
+cryptography==42.0.5      # Key encryption
+itsdangerous==2.2.0       # Secure token signing
+
+# ── Data / utils ──────────────────────────────────────────────────────────
 requests==2.32.3
 aiofiles==23.2.1
-python-jose[cryptography]==3.3.0
-passlib[bcrypt]==1.7.4
 python-dotenv==1.0.1
 websockets==12.0
+httptools>=0.5.0
 
-# Monitoring
-structlog==24.2.0
-
-# Tunneler
+# ── Tunneler (dev only) ───────────────────────────────────────────────────
 pyngrok==7.2.1
+
+# ── Visualization ─────────────────────────────────────────────────────────
+matplotlib==3.9.0
+seaborn==0.13.2
+

@@ -1,0 +1,1297 @@
+{
+  "project_name": "AquaIntelli V2",
+  "city": {
+    "name": "Visakhapatnam (Vizag)",
+    "state": "Andhra Pradesh",
+    "coordinates": {
+      "lat": 17.6939,
+      "lon": 83.2922
+    },
+    "area_km2": 682,
+    "avg_elevation_m": 45,
+    "min_elevation_m": -3,
+    "max_elevation_m": 513,
+    "population": 2035000,
+    "drainage_blocks": 14,
+    "primary_drains_km": 110,
+    "tertiary_drains_km": 750,
+    "sewer_lines_km": 316,
+    "water_supply_sources": 11,
+    "reservoirs_count": 225,
+    "stps": [
+      {
+        "name": "Mudsarlova",
+        "capacity_mld": 13
+      },
+      {
+        "name": "Old City",
+        "capacity_mld": 38
+      },
+      {
+        "name": "Appughar",
+        "capacity_mld": 25
+      },
+      {
+        "name": "Narava",
+        "capacity_mld": 54,
+        "status": "under_construction"
+      }
+    ],
+    "flood_prone_areas": [
+      "Gnana Puram",
+      "Purna Market",
+      "Gollalapalem",
+      "Gudilova",
+      "Ravalammapalem",
+      "Velemapeta",
+      "Kota Veedhi",
+      "Airport Area",
+      "Gajuwaka"
+    ]
+  },
+  "modules": {
+    "M01_Groundwater_Intelligence": {
+      "module_id": "M01",
+      "name": "Groundwater Intelligence",
+      "location": "Visakhapatnam Urban + Rural",
+      "data_sources": [
+        "CGWB",
+        "GRACE-FO",
+        "SGWD",
+        "Sentinel-1"
+      ],
+      "grace_anomaly": -2.66,
+      "current_depth_bgl": 73.3,
+      "soil_moisture_volumetric": 28.6,
+      "rainfall_180d_mm": 120,
+      "forecast_30d_m": 70.9,
+      "forecast_90d_m": 68.3,
+      "depletion_rate_m_per_day": -0.059,
+      "risk_level": "WARNING",
+      "risk_sub_status": "RECOVERING",
+      "aquifer_profile": {
+        "type": "Hard Rock - Weathered/Fractured Basalt & Khondalite",
+        "layers": [
+          {
+            "name": "Topsoil",
+            "depth_range": "0-8m",
+            "type": "Alluvium/Regolith"
+          },
+          {
+            "name": "Clay",
+            "depth_range": "8-20m",
+            "type": "Silty Clay with Sand"
+          },
+          {
+            "name": "Weathered",
+            "depth_range": "20-40m",
+            "type": "Weathered Deccan Basalt"
+          },
+          {
+            "name": "Fractured",
+            "depth_range": "40-65m",
+            "type": "Fractured Basalt"
+          },
+          {
+            "name": "Aquifer",
+            "depth_range": "65-100m",
+            "type": "Saturated Zone"
+          },
+          {
+            "name": "Hard Rock",
+            "depth_range": "100m+",
+            "type": "Fresh Basalt - Impervious"
+          }
+        ],
+        "water_table_depth": 73.3,
+        "aquifer_thickness": 35,
+        "transmissivity": 15.2,
+        "storativity": 0.008,
+        "specific_yield": 0.025
+      },
+      "zone_health": {
+        "Zone A": {
+          "status": "GOOD",
+          "depth_m": 52.1,
+          "trend": "stable"
+        },
+        "Zone B": {
+          "status": "STRESS",
+          "depth_m": 68.4,
+          "trend": "declining"
+        },
+        "Zone C": {
+          "status": "GOOD",
+          "depth_m": 45.7,
+          "trend": "rising"
+        },
+        "Zone D": {
+          "status": "CRITICAL",
+          "depth_m": 89.2,
+          "trend": "rapid_decline"
+        }
+      },
+      "forecast_90d_series": [
+        {
+          "day": 0,
+          "depth_m": 73.43942679845789
+        },
+        {
+          "day": 5,
+          "depth_m": 72.62816916426151
+        },
+        {
+          "day": 10,
+          "depth_m": 72.67054025929004
+        },
+        {
+          "day": 15,
+          "depth_m": 72.39065203359118
+        },
+        {
+          "day": 20,
+          "depth_m": 72.648052584573
+        },
+        {
+          "day": 25,
+          "depth_m": 72.30032187474843
+        },
+        {
+          "day": 30,
+          "depth_m": 72.19496879575254
+        },
+        {
+          "day": 35,
+          "depth_m": 71.0388645971509
+        },
+        {
+          "day": 40,
+          "depth_m": 70.999103607676
+        },
+        {
+          "day": 45,
+          "depth_m": 70.21713322185602
+        },
+        {
+          "day": 50,
+          "depth_m": 70.01146758594095
+        },
+        {
+          "day": 55,
+          "depth_m": 69.90997217352685
+        },
+        {
+          "day": 60,
+          "depth_m": 69.05949522109148
+        },
+        {
+          "day": 65,
+          "depth_m": 68.88513330030541
+        },
+        {
+          "day": 70,
+          "depth_m": 69.02019796265014
+        },
+        {
+          "day": 75,
+          "depth_m": 68.63226419820427
+        },
+        {
+          "day": 80,
+          "depth_m": 68.05644180457043
+        },
+        {
+          "day": 85,
+          "depth_m": 68.20080621135261
+        },
+        {
+          "day": 90,
+          "depth_m": 68.21560580721815
+        }
+      ],
+      "recharge_rate_m_per_day": 0.04,
+      "monitoring_wells_cgwb": 30,
+      "monitoring_wells_sgwd": 28,
+      "exploratory_wells": 93
+    },
+    "M02_Reservoir_Intelligence": {
+      "reservoirs": [
+        {
+          "id": "R01",
+          "name": "Raiwada Reservoir",
+          "lat": 17.65,
+          "lon": 83.15,
+          "total_capacity_tmc": 12.5,
+          "current_fill_pct": 67.2,
+          "current_volume_tmc": 8.4,
+          "frl_ft": 885,
+          "current_level_ft": 810.4,
+          "inflow_cusecs": 12430,
+          "outflow_cusecs": 8200,
+          "live_storage_tmc": 7.8,
+          "dead_storage_tmc": 0.6,
+          "min_pool_ft": 750,
+          "status": "OPERATIONAL"
+        },
+        {
+          "id": "R02",
+          "name": "Yeleru Reservoir",
+          "lat": 17.58,
+          "lon": 82.95,
+          "total_capacity_tmc": 18.2,
+          "current_fill_pct": 54.3,
+          "current_volume_tmc": 9.9,
+          "frl_ft": 920,
+          "current_level_ft": 785.6,
+          "inflow_cusecs": 8900,
+          "outflow_cusecs": 11200,
+          "live_storage_tmc": 8.5,
+          "dead_storage_tmc": 1.4,
+          "min_pool_ft": 720,
+          "status": "WARNING"
+        },
+        {
+          "id": "R03",
+          "name": "Mudasarlova Tank",
+          "lat": 17.72,
+          "lon": 83.32,
+          "total_capacity_tmc": 2.1,
+          "current_fill_pct": 82.1,
+          "current_volume_tmc": 1.7,
+          "frl_ft": 145,
+          "current_level_ft": 132.8,
+          "inflow_cusecs": 450,
+          "outflow_cusecs": 320,
+          "live_storage_tmc": 1.5,
+          "dead_storage_tmc": 0.2,
+          "min_pool_ft": 95,
+          "status": "RECHARGE"
+        }
+      ]
+    },
+    "M03_Irrigation_AI": {
+      "module_id": "M03",
+      "name": "Irrigation AI + NDVI Fusion",
+      "location": "Visakhapatnam District Farmlands",
+      "satellite": "Sentinel-2B",
+      "resolution": "10m GSD",
+      "field_health_map": {
+        "grid_size": "8x8",
+        "total_zones": 64,
+        "healthy_zones": 38,
+        "stressed_zones": 18,
+        "critical_zones": 8
+      },
+      "ndvi_index": {
+        "district_avg": 0.64,
+        "max": 0.82,
+        "min": 0.21,
+        "healthy_threshold": 0.6,
+        "stressed_threshold": 0.3
+      },
+      "ai_water_schedule": [
+        {
+          "zone": "A-C",
+          "action": "TODAY 06:00",
+          "priority": "normal"
+        },
+        {
+          "zone": "D-F",
+          "action": "TMR 06:00",
+          "priority": "normal"
+        },
+        {
+          "zone": "G",
+          "action": "URGENT NOW",
+          "priority": "critical"
+        },
+        {
+          "zone": "H",
+          "action": "IN 3 DAYS",
+          "priority": "low"
+        }
+      ],
+      "water_saved_pct": 34,
+      "vs_manual_irrigation": "34% reduction",
+      "crop_coverage": {
+        "Rice": 38,
+        "Cotton": 28,
+        "Chilli": 22,
+        "Other": 12
+      },
+      "alerts": [
+        {
+          "zone": "G-7",
+          "severity": "CRITICAL",
+          "message": "Drought stress detected. Immediate irrigation required.",
+          "soil_moisture": 12.3,
+          "recommended_crop": "Switch to Millets or Pulses"
+        }
+      ],
+      "soil_state_analysis": {
+        "texture": "Silty Clay with Sand",
+        "ph": 7.2,
+        "organic_matter_pct": 1.8,
+        "nitrogen_kg_ha": 185,
+        "phosphorus_kg_ha": 22,
+        "potassium_kg_ha": 245,
+        "water_holding_capacity_mm": 180,
+        "infiltration_rate_mm_hr": 12.5
+      },
+      "crop_recommendations": [
+        {
+          "crop": "Rice",
+          "water_need": "HIGH",
+          "suitability": 0.45,
+          "reason": "Groundwater depth >70m, high energy cost"
+        },
+        {
+          "crop": "Cotton",
+          "water_need": "MEDIUM",
+          "suitability": 0.72,
+          "reason": "Drought tolerant, matches soil type"
+        },
+        {
+          "crop": "Chilli",
+          "water_need": "MEDIUM",
+          "suitability": 0.68,
+          "reason": "Good market price, moderate water"
+        },
+        {
+          "crop": "Millets",
+          "water_need": "LOW",
+          "suitability": 0.91,
+          "reason": "Best for current groundwater stress"
+        },
+        {
+          "crop": "Pulses",
+          "water_need": "LOW",
+          "suitability": 0.88,
+          "reason": "Nitrogen fixing, improves soil"
+        }
+      ]
+    },
+    "M04_Borewell_Prediction": {
+      "module_id": "M04",
+      "name": "Borewell Prediction Engine",
+      "borewell_id": "BW-AP-2847",
+      "status": "ACTIVE",
+      "location": {
+        "lat": 17.7102,
+        "lon": 83.178,
+        "village": "Venkatapathirajupet",
+        "mandal": "Anakapalle"
+      },
+      "drilling_profile": {
+        "total_depth_drilled_m": 120,
+        "casing_depth_m": 18,
+        "screen_depth_start_m": 65,
+        "screen_depth_end_m": 95,
+        "aquifer_hits": [
+          {
+            "depth": 73,
+            "type": "Fractured Basalt",
+            "yield_lps": 4.2,
+            "transmissivity": 12.5
+          },
+          {
+            "depth": 88,
+            "type": "Weathered Granite",
+            "yield_lps": 2.1,
+            "transmissivity": 8.3
+          }
+        ]
+      },
+      "yield": {
+        "current_lps": 4.2,
+        "design_lps": 6.0,
+        "efficiency_pct": 70.0,
+        "7_day_trend": [
+          3.1,
+          3.3,
+          3.8,
+          4.0,
+          4.1,
+          4.2,
+          4.2
+        ]
+      },
+      "static_level": {
+        "current_m_bgl": 73.3,
+        "summer_m_bgl": 81.2,
+        "monsoon_m_bgl": 68.5
+      },
+      "pump_telemetry": {
+        "motor_status": "RUNNING",
+        "rpm": 2840,
+        "power_draw_kw": 7.4,
+        "efficiency_pct": 82.3,
+        "pump_depth_m_bgl": 85,
+        "dynamic_level_m_bgl": 78.2,
+        "run_hours_today": 6.5,
+        "run_hours_month": 142
+      },
+      "failure_risk_ai": {
+        "probability_pct": 12,
+        "level": "LOW",
+        "next_maintenance_days": 45,
+        "recommended_service": "Shaft Inspection",
+        "predicted_failure_mode": "Motor bearing wear (thermal signature detected)"
+      },
+      "3d_geological_model": {
+        "surface_elevation_m": 42,
+        "layers": [
+          {
+            "name": "Topsoil",
+            "top": 0,
+            "bottom": 8,
+            "color": "#8B7355"
+          },
+          {
+            "name": "Clay",
+            "top": 8,
+            "bottom": 20,
+            "color": "#A0522D"
+          },
+          {
+            "name": "Weathered",
+            "top": 20,
+            "bottom": 40,
+            "color": "#CD853F"
+          },
+          {
+            "name": "Fractured Basalt",
+            "top": 40,
+            "bottom": 65,
+            "color": "#696969"
+          },
+          {
+            "name": "Aquifer Zone",
+            "top": 65,
+            "bottom": 100,
+            "color": "#4682B4",
+            "saturated": true
+          },
+          {
+            "name": "Hard Rock",
+            "top": 100,
+            "bottom": 120,
+            "color": "#2F4F4F"
+          }
+        ],
+        "borewell_casing": {
+          "od_mm": 150,
+          "id_mm": 132,
+          "material": "MS"
+        },
+        "screen_slots": {
+          "size_mm": 1.5,
+          "open_area_pct": 15
+        }
+      },
+      "water_quality": {
+        "tds_ppm": 485,
+        "ph": 7.4,
+        "ec_ms_m": 0.82,
+        "fluoride_ppm": 0.8,
+        "iron_ppm": 0.3,
+        "nitrate_ppm": 12.5,
+        "potability": "SAFE"
+      }
+    },
+    "M05_Drainage_Network": {
+      "module_id": "M05",
+      "name": "Drainage Network Monitor",
+      "city": "Visakhapatnam",
+      "total_network_km": 142,
+      "overloaded_segments": 23,
+      "system_status": {
+        "capacity_utilization_pct": 68,
+        "pump_stations_active": 7,
+        "stp_plants_online": 4,
+        "flood_zones_at_risk": 3
+      },
+      "pipe_breakdown": {
+        "main_trunk": {
+          "length_km": 23,
+          "diameter_mm": "900+",
+          "material": "RCC"
+        },
+        "secondary": {
+          "length_km": 68,
+          "diameter_mm": "450-900",
+          "material": "RCC/HDPE"
+        },
+        "tertiary": {
+          "length_km": 51,
+          "diameter_mm": "<450",
+          "material": "Brick/Stone"
+        }
+      },
+      "network_nodes": [
+        {
+          "id": "P1",
+          "name": "MVPS Ward 12",
+          "type": "pump",
+          "capacity_pct": 98,
+          "status": "CRITICAL",
+          "lat": 17.72,
+          "lon": 83.28
+        },
+        {
+          "id": "P2",
+          "name": "Gajuwaka Main",
+          "type": "pump",
+          "capacity_pct": 45,
+          "status": "NORMAL",
+          "lat": 17.68,
+          "lon": 83.2
+        },
+        {
+          "id": "P3",
+          "name": "Dwaraka Nagar",
+          "type": "junction",
+          "capacity_pct": 68,
+          "status": "WARNING",
+          "lat": 17.73,
+          "lon": 83.3
+        },
+        {
+          "id": "P4",
+          "name": "Seethammadhara",
+          "type": "outlet",
+          "capacity_pct": 52,
+          "status": "NORMAL",
+          "lat": 17.75,
+          "lon": 83.32
+        },
+        {
+          "id": "P5",
+          "name": "Purna Market",
+          "type": "junction",
+          "capacity_pct": 94,
+          "status": "CRITICAL",
+          "lat": 17.7,
+          "lon": 83.29
+        },
+        {
+          "id": "S1",
+          "name": "Old City Nala",
+          "type": "sewer",
+          "capacity_pct": 72,
+          "status": "WARNING",
+          "lat": 17.69,
+          "lon": 83.27
+        },
+        {
+          "id": "S2",
+          "name": "Airport Drain",
+          "type": "storm",
+          "capacity_pct": 38,
+          "status": "NORMAL",
+          "lat": 17.72,
+          "lon": 83.22
+        },
+        {
+          "id": "J1",
+          "name": "Main Outfall",
+          "type": "outfall",
+          "capacity_pct": 55,
+          "status": "NORMAL",
+          "lat": 17.71,
+          "lon": 83.31
+        },
+        {
+          "id": "J2",
+          "name": "Rushikonda Junction",
+          "type": "junction",
+          "capacity_pct": 61,
+          "status": "WARNING",
+          "lat": 17.78,
+          "lon": 83.38
+        }
+      ],
+      "overload_alerts": [
+        {
+          "node": "P1",
+          "location": "MVPS Ward 12",
+          "issue": "Pump at 98% capacity - overflow risk"
+        },
+        {
+          "node": "P5",
+          "location": "Purna Market",
+          "issue": "Drain blockage detected - 94% capacity"
+        },
+        {
+          "node": "J1",
+          "location": "Dwaraka Nagar",
+          "issue": "Backflow detected during peak rainfall"
+        }
+      ],
+      "3d_simulation": {
+        "terrain_elevation": {
+          "min": -3,
+          "max": 513,
+          "avg": 45
+        },
+        "drainage_slope_pct": 0.8,
+        "flow_velocity_ms": 1.2,
+        "manning_coefficient": 0.015,
+        "simulation_resolution_m": 10
+      }
+    },
+    "M06_Flood_Emergency": {
+      "module_id": "M06",
+      "name": "Flood Emergency Alert",
+      "status": "ACTIVE ALERT",
+      "threat_level": "HIGH",
+      "current_conditions": {
+        "rainfall_24h_mm": 247,
+        "river_level_above_normal_m": 4.8,
+        "flood_zones_active": 12,
+        "water_level_gauge_m": 6.1,
+        "above_danger_level": true
+      },
+      "river_gauge": {
+        "river": "Godavari",
+        "location": "Rajahmundry (simulated for Vizag context)",
+        "current_level_m": 6.1,
+        "danger_flood_level_m": 5.5,
+        "warning_level_m": 4.2,
+        "trend": "rising",
+        "peak_forecast_m": 5.8,
+        "peak_eta": "18:00 TODAY",
+        "recession_hours": 72
+      },
+      "active_flood_zones": [
+        {
+          "name": "Rajahmundry East",
+          "status": "INUNDATED",
+          "severity": 5
+        },
+        {
+          "name": "Konaseema Delta",
+          "status": "RISING",
+          "severity": 4
+        },
+        {
+          "name": "Eluru Lowlands",
+          "status": "WARNING",
+          "severity": 3
+        },
+        {
+          "name": "Gnana Puram (Vizag)",
+          "status": "INUNDATED",
+          "severity": 5
+        },
+        {
+          "name": "Purna Market (Vizag)",
+          "status": "RISING",
+          "severity": 4
+        },
+        {
+          "name": "Airport Area (Vizag)",
+          "status": "WARNING",
+          "severity": 3
+        }
+      ],
+      "evacuation_status": {
+        "villages_active": 3,
+        "displaced": 12400,
+        "relief_camps": 8,
+        "ndrf_teams": 4,
+        "sdrf_teams": 6
+      },
+      "preventive_measures": [
+        "Deploy sandbags at Purna Market junction",
+        "Open all flood gates at Mudasarlova tank",
+        "Alert Gajuwaka industrial zone for chemical storage safety",
+        "Evacuate low-lying areas near Airport Road",
+        "Activate all 7 pump stations at 100% capacity",
+        "Notify GVMC Emergency Control Room"
+      ],
+      "nearby_water_bodies": [
+        {
+          "name": "Bay of Bengal",
+          "distance_km": 2,
+          "tide_level_m": 1.8,
+          "storm_surge_risk": "HIGH"
+        },
+        {
+          "name": "Mudasarlova Tank",
+          "distance_km": 8,
+          "current_level_pct": 82,
+          "overflow_risk": "MEDIUM"
+        },
+        {
+          "name": "Gosthani River",
+          "distance_km": 15,
+          "flow_cusecs": 45000,
+          "flood_risk": "HIGH"
+        },
+        {
+          "name": "Yeleru Canal",
+          "distance_km": 22,
+          "flow_cusecs": 12000,
+          "flood_risk": "LOW"
+        }
+      ],
+      "sms_alerts_sent": 2847,
+      "officials_notified": [
+        "District Collector",
+        "GVMC Commissioner",
+        "RDO",
+        "MRO",
+        "Police Control"
+      ]
+    },
+    "M07_Aquifer_Scan": {
+      "module_id": "M07",
+      "name": "Aquifer Scan + Subsurface Tomography",
+      "scan_mode": "SATELLITE-FUSED AQUIFER SCAN",
+      "resolution": "10m GSD",
+      "satellite_altitude_km": 408,
+      "inclination_deg": 98.7,
+      "passes": 1779,
+      "tracking": "ACTIVE",
+      "geological_cross_section": {
+        "location": "AP Deccan Basalt",
+        "borewells": [
+          "BW-1",
+          "BW-2",
+          "BW-3"
+        ],
+        "layers": [
+          {
+            "name": "Alluvium/Regolith",
+            "depth": "0-20m",
+            "lithology": "Silty Clay with Sand"
+          },
+          {
+            "name": "Weathered Deccan Basalt",
+            "depth": "20-45m",
+            "lithology": "Weathered Basalt"
+          },
+          {
+            "name": "Fractured Basalt",
+            "depth": "45-65m",
+            "lithology": "Fractured Rock"
+          },
+          {
+            "name": "Aquifer Zone (Saturated)",
+            "depth": "65-100m",
+            "lithology": "Saturated Fractures",
+            "is_aquifer": true
+          },
+          {
+            "name": "Fresh Basalt",
+            "depth": "100m+",
+            "lithology": "Impervious"
+          }
+        ]
+      },
+      "aquifer_volume": {
+        "estimated_m3": 2400000,
+        "depletion_status": "42% REMAINING",
+        "recharge_rate_m_per_day": 0.04,
+        "safe_yield_m3_per_day": 8500
+      },
+      "saturation_map": {
+        "3d_volume_profile": [
+          {
+            "zone": "Z01",
+            "saturation_pct": 45
+          },
+          {
+            "zone": "Z02",
+            "saturation_pct": 62
+          },
+          {
+            "zone": "Z03",
+            "saturation_pct": 78
+          },
+          {
+            "zone": "Z04",
+            "saturation_pct": 34
+          },
+          {
+            "zone": "Z05",
+            "saturation_pct": 89
+          },
+          {
+            "zone": "Z06",
+            "saturation_pct": 55
+          },
+          {
+            "zone": "Z07",
+            "saturation_pct": 71
+          },
+          {
+            "zone": "Z08",
+            "saturation_pct": 28
+          }
+        ]
+      },
+      "zone_health": {
+        "Zone A": {
+          "status": "GOOD",
+          "saturation_pct": 78,
+          "depth_m": 52
+        },
+        "Zone B": {
+          "status": "STRESS",
+          "saturation_pct": 45,
+          "depth_m": 68
+        },
+        "Zone C": {
+          "status": "GOOD",
+          "saturation_pct": 82,
+          "depth_m": 48
+        },
+        "Zone D": {
+          "status": "CRITICAL",
+          "saturation_pct": 28,
+          "depth_m": 89
+        }
+      },
+      "nearby_water_resources": [
+        {
+          "name": "Mudasarlova Tank",
+          "type": "surface",
+          "distance_km": 8,
+          "recharge_potential": "HIGH"
+        },
+        {
+          "name": "Gosthani River",
+          "type": "river",
+          "distance_km": 15,
+          "recharge_potential": "MEDIUM"
+        },
+        {
+          "name": "Raiwada Reservoir",
+          "type": "reservoir",
+          "distance_km": 35,
+          "recharge_potential": "HIGH"
+        },
+        {
+          "name": "Yeleru Canal",
+          "type": "canal",
+          "distance_km": 22,
+          "recharge_potential": "MEDIUM"
+        },
+        {
+          "name": "Coastal Aquifer",
+          "type": "aquifer",
+          "distance_km": 2,
+          "recharge_potential": "LOW",
+          "salinity_risk": "HIGH"
+        }
+      ]
+    },
+    "M08_Crisis_Forecast": {
+      "module_id": "M08",
+      "name": "Crisis Forecast + AI Threat Engine",
+      "active_crises": 3,
+      "crisis_index": {
+        "value": 7.2,
+        "scale": "1-10",
+        "severity": "HIGH"
+      },
+      "peak_eta": "14H",
+      "ai_confidence": 88,
+      "threat_priority_queue": [
+        {
+          "priority": "P1 - CRITICAL",
+          "title": "Krishna Basin — Aquifer Collapse Risk",
+          "eta": "14H",
+          "grace_anomaly_m": -4.8,
+          "depletion_rate": "-0.12 M/DAY",
+          "villages_at_risk": 12,
+          "confidence_pct": 88,
+          "details": "Rapid depletion detected. Multiple borewells failing simultaneously."
+        },
+        {
+          "priority": "P2 - HIGH",
+          "title": "Godavari Delta — Saltwater Intrusion",
+          "eta": "3D",
+          "salinity_ppm": 340,
+          "baseline_ppm": 200,
+          "coastal_aquifer_breach": "LIKELY",
+          "confidence_pct": 72,
+          "details": "Cyclone-induced seawater ingress detected in monitoring wells."
+        },
+        {
+          "priority": "P3 - MODERATE",
+          "title": "Tungabhadra — Reservoir Below Dead Storage",
+          "eta": "7D",
+          "current_capacity_pct": 18,
+          "critical_threshold_pct": 15,
+          "confidence_pct": 55,
+          "details": "Extended dry spell. Irrigation supply at risk."
+        }
+      ],
+      "90_day_crisis_probability": {
+        "timeline": [
+          {
+            "day": 0,
+            "probability": 0.15
+          },
+          {
+            "day": 15,
+            "probability": 0.35
+          },
+          {
+            "day": 30,
+            "probability": 0.55
+          },
+          {
+            "day": 45,
+            "probability": 0.72
+          },
+          {
+            "day": 60,
+            "probability": 0.68
+          },
+          {
+            "day": 75,
+            "probability": 0.45
+          },
+          {
+            "day": 90,
+            "probability": 0.38
+          }
+        ],
+        "peak_day": 45,
+        "peak_probability": 0.72
+      },
+      "natural_calamities": [
+        {
+          "type": "Cyclone",
+          "name": "Cyclone Asani (simulated)",
+          "distance_km": 180,
+          "approach_speed_kmph": 15,
+          "landfall_eta": "48H",
+          "category": "Category 2"
+        },
+        {
+          "type": "Heavy Rainfall",
+          "intensity": "Extreme",
+          "duration_hrs": 72,
+          "accumulation_mm": 450,
+          "flood_risk": "VERY HIGH"
+        },
+        {
+          "type": "Heat Wave",
+          "max_temp_c": 46,
+          "duration_days": 5,
+          "health_risk": "HIGH",
+          "agriculture_risk": "CRITICAL"
+        }
+      ],
+      "response_status": {
+        "cgwb": "ALERTED",
+        "ndrf": "STANDBY",
+        "imd": "TRACKING",
+        "gov": "NOTIFIED"
+      }
+    },
+    "M09_City_Drainage_System": {
+      "module_id": "M09",
+      "name": "City Drainage System — Visakhapatnam",
+      "subtitle": "Pre-Drainage Simulation + Water Treatment Integration",
+      "city_profile": {
+        "drainage_blocks": 14,
+        "primary_drains_km": 110,
+        "secondary_drains_km": 280,
+        "tertiary_drains_km": 750,
+        "total_storm_drainage_km": 1140,
+        "sewer_lines_km": 316,
+        "culverts_count": 142,
+        "manholes_count": 2840,
+        "pumping_stations": 7,
+        "stps": [
+          {
+            "name": "Mudsarlova",
+            "capacity_mld": 13,
+            "lat": 17.72,
+            "lon": 83.32
+          },
+          {
+            "name": "Old City",
+            "capacity_mld": 38,
+            "lat": 17.69,
+            "lon": 83.28
+          },
+          {
+            "name": "Appughar",
+            "capacity_mld": 25,
+            "lat": 17.74,
+            "lon": 83.3
+          },
+          {
+            "name": "Narava",
+            "capacity_mld": 54,
+            "lat": 17.75,
+            "lon": 83.25,
+            "status": "under_construction"
+          }
+        ],
+        "water_treatment_plants": [
+          {
+            "name": "WTP-1",
+            "capacity_mld": 45,
+            "lat": 17.7,
+            "lon": 83.29
+          },
+          {
+            "name": "WTP-2",
+            "capacity_mld": 60,
+            "lat": 17.73,
+            "lon": 83.31
+          },
+          {
+            "name": "WTP-3",
+            "capacity_mld": 35,
+            "lat": 17.68,
+            "lon": 83.2
+          }
+        ]
+      },
+      "road_network_culverts": [
+        {
+          "road": "NH-16 (Chennai-Kolkata)",
+          "culverts": 24,
+          "avg_diameter_mm": 1200,
+          "condition": "GOOD"
+        },
+        {
+          "road": "Beach Road",
+          "culverts": 18,
+          "avg_diameter_mm": 800,
+          "condition": "FAIR"
+        },
+        {
+          "road": "Dwaraka Nagar Main",
+          "culverts": 12,
+          "avg_diameter_mm": 600,
+          "condition": "POOR"
+        },
+        {
+          "road": "Gajuwaka Industrial Road",
+          "culverts": 15,
+          "avg_diameter_mm": 900,
+          "condition": "FAIR"
+        },
+        {
+          "road": "Airport Road",
+          "culverts": 8,
+          "avg_diameter_mm": 1000,
+          "condition": "CRITICAL"
+        },
+        {
+          "road": "Rushikonda Beach Road",
+          "culverts": 10,
+          "avg_diameter_mm": 700,
+          "condition": "GOOD"
+        },
+        {
+          "road": "Seethammadhara Road",
+          "culverts": 14,
+          "avg_diameter_mm": 650,
+          "condition": "FAIR"
+        },
+        {
+          "road": "MVP Colony Road",
+          "culverts": 11,
+          "avg_diameter_mm": 750,
+          "condition": "GOOD"
+        }
+      ],
+      "pipeline_network": {
+        "water_supply": {
+          "total_length_km": 1000,
+          "diameter_range": "150-1200mm",
+          "materials": [
+            "Ductile Iron",
+            "HDPE",
+            "RCC"
+          ],
+          "avg_age_years": 18,
+          "leakage_pct": 23
+        },
+        "sewer": {
+          "total_length_km": 316,
+          "diameter_range": "225-900mm",
+          "materials": [
+            "RCC",
+            "Brick"
+          ],
+          "coverage_pct": 42,
+          "gap_km": 1935
+        },
+        "storm_water": {
+          "total_length_km": 1140,
+          "drain_types": [
+            "Open Nala",
+            "Box Culvert",
+            "Pipe"
+          ],
+          "pucca_pct": 60,
+          "kutcha_pct": 40
+        }
+      },
+      "runoff_simulation": {
+        "catchment_area_km2": 682,
+        "avg_rainfall_mm": 1200,
+        "runoff_coefficient": 0.65,
+        "peak_runoff_m3_s": 450,
+        "time_of_concentration_min": 45,
+        "design_storm_mm": 180,
+        "return_period_years": 25,
+        "sub_catchments": [
+          {
+            "name": "Old City",
+            "area_km2": 45,
+            "runoff_m3_s": 85,
+            "elevation_m": 15
+          },
+          {
+            "name": "Dwaraka Nagar",
+            "area_km2": 38,
+            "runoff_m3_s": 72,
+            "elevation_m": 22
+          },
+          {
+            "name": "Gajuwaka",
+            "area_km2": 52,
+            "runoff_m3_s": 68,
+            "elevation_m": 35
+          },
+          {
+            "name": "MVP Colony",
+            "area_km2": 28,
+            "runoff_m3_s": 45,
+            "elevation_m": 48
+          },
+          {
+            "name": "Rushikonda",
+            "area_km2": 35,
+            "runoff_m3_s": 55,
+            "elevation_m": 65
+          },
+          {
+            "name": "Bheemili",
+            "area_km2": 42,
+            "runoff_m3_s": 48,
+            "elevation_m": 12
+          },
+          {
+            "name": "Airport Zone",
+            "area_km2": 58,
+            "runoff_m3_s": 77,
+            "elevation_m": 8
+          }
+        ]
+      },
+      "treatment_routing": {
+        "drainage_to_stp": [
+          {
+            "from": "Old City Drains",
+            "to": "Old City STP",
+            "flow_mld": 32,
+            "treatment_level": "Secondary"
+          },
+          {
+            "from": "MVP Colony Drains",
+            "to": "Mudsarlova STP",
+            "flow_mld": 11,
+            "treatment_level": "Secondary"
+          },
+          {
+            "from": "Appughar Zone",
+            "to": "Appughar STP",
+            "flow_mld": 22,
+            "treatment_level": "Secondary"
+          },
+          {
+            "from": "Narava Area",
+            "to": "Narava STP",
+            "flow_mld": 28,
+            "treatment_level": "Tertiary",
+            "status": "planned"
+          }
+        ],
+        "stp_to_reuse": [
+          {
+            "stp": "Old City",
+            "treated_output_mld": 34,
+            "reuse_pct": 45,
+            "gardening_mld": 10,
+            "industrial_mld": 5
+          },
+          {
+            "stp": "Mudsarlova",
+            "treated_output_mld": 11,
+            "reuse_pct": 60,
+            "gardening_mld": 4,
+            "industrial_mld": 2
+          },
+          {
+            "stp": "Appughar",
+            "treated_output_mld": 22,
+            "reuse_pct": 50,
+            "gardening_mld": 7,
+            "industrial_mld": 4
+          }
+        ],
+        "groundwater_protection": {
+          "septic_tank_density_per_km2": 45,
+          "contamination_risk_zones": [
+            "Old City",
+            "Purna Market",
+            "Gnanapuram"
+          ],
+          "monitoring_wells": 12,
+          "nitrate_ppm_baseline": 8.5,
+          "nitrate_ppm_current": 18.2,
+          "intervention": "Sewer line extension + STP upgrade required"
+        }
+      },
+      "3d_simulation": {
+        "terrain_resolution_m": 5,
+        "drain_depth_below_road_m": 2.5,
+        "pipe_burial_depth_m": 3.5,
+        "manhole_depth_m": 4.2,
+        "invert_level_variation_m": 0.8,
+        "slope_simulation": {
+          "natural_terrain_pct": 1.2,
+          "designed_drain_pct": 0.8,
+          "minimum_self_cleansing_pct": 0.5
+        },
+        "flood_inundation_depth_m": {
+          "10yr_return": 0.6,
+          "25yr_return": 1.2,
+          "50yr_return": 2.1,
+          "100yr_return": 3.5
+        }
+      },
+      "efficiency_metrics": {
+        "current_drainage_efficiency_pct": 58,
+        "post_upgrade_target_pct": 85,
+        "flood_reduction_pct": 65,
+        "water_reuse_potential_mld": 85,
+        "groundwater_contamination_reduction_pct": 70,
+        "energy_savings_kwh_per_day": 2400
+      }
+    }
+  },
+  "generated_at": "2026-05-02T22:15:44.365682",
+  "data_classification": "MOCK_DATA_FOR_DEMONSTRATION",
+  "sources": [
+    "CGWB NAQUIM 2.0 Visakhapatnam Report",
+    "GVMC City Development Plan",
+    "World Bank Greater Visakhapatnam Study",
+    "APWRIMS Groundwater Data",
+    "NASA GRACE-FO / Sentinel-1 / NASA POWER"
+  ]
+}

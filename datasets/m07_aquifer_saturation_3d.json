@@ -1,0 +1,186 @@
+{
+  "total_zones": 20,
+  "avg_saturation": 56.4,
+  "zones": [
+    {
+      "zone_id": "Z01",
+      "saturation_pct": 40.9,
+      "depth_m": 59.6,
+      "volume_m3": 488945.0,
+      "x": 57.22774071165261,
+      "y": 46.74058392916748,
+      "status": "STRESS"
+    },
+    {
+      "zone_id": "Z02",
+      "saturation_pct": 90.9,
+      "depth_m": 37.8,
+      "volume_m3": 1094184.0,
+      "x": 6.5748105267366075,
+      "y": 39.81599807709085,
+      "status": "GOOD"
+    },
+    {
+      "zone_id": "Z03",
+      "saturation_pct": 73.0,
+      "depth_m": 58.7,
+      "volume_m3": 875523.0,
+      "x": 40.943352746471305,
+      "y": 57.49005084764265,
+      "status": "GOOD"
+    },
+    {
+      "zone_id": "Z04",
+      "saturation_pct": 33.4,
+      "depth_m": 49.0,
+      "volume_m3": 396504.0,
+      "x": 46.58331996210588,
+      "y": 51.73600118198601,
+      "status": "CRITICAL"
+    },
+    {
+      "zone_id": "Z05",
+      "saturation_pct": 33.6,
+      "depth_m": 79.7,
+      "volume_m3": 403694.0,
+      "x": 58.778599040182776,
+      "y": 76.77816373576567,
+      "status": "CRITICAL"
+    },
+    {
+      "zone_id": "Z06",
+      "saturation_pct": 33.6,
+      "depth_m": 60.2,
+      "volume_m3": 407425.0,
+      "x": 83.13908064675414,
+      "y": 51.81021329240163,
+      "status": "CRITICAL"
+    },
+    {
+      "zone_id": "Z07",
+      "saturation_pct": 45.4,
+      "depth_m": 39.7,
+      "volume_m3": 548864.0,
+      "x": 22.54702847154667,
+      "y": 94.74831368096474,
+      "status": "STRESS"
+    },
+    {
+      "zone_id": "Z08",
+      "saturation_pct": 59.8,
+      "depth_m": 47.0,
+      "volume_m3": 712982.0,
+      "x": 19.630191948307363,
+      "y": 95.63516270431981,
+      "status": "STRESS"
+    },
+    {
+      "zone_id": "Z09",
+      "saturation_pct": 43.4,
+      "depth_m": 67.5,
+      "volume_m3": 521803.0,
+      "x": 9.342840688357601,
+      "y": 64.0987427298992,
+      "status": "STRESS"
+    },
+    {
+      "zone_id": "Z10",
+      "saturation_pct": 64.7,
+      "depth_m": 64.8,
+      "volume_m3": 772526.0,
+      "x": 62.44791874336657,
+      "y": 90.20008936907269,
+      "status": "GOOD"
+    },
+    {
+      "zone_id": "Z11",
+      "saturation_pct": 47.6,
+      "depth_m": 85.4,
+      "volume_m3": 566858.0,
+      "x": 86.37811916200332,
+      "y": 8.122285489336988,
+      "status": "STRESS"
+    },
+    {
+      "zone_id": "Z12",
+      "saturation_pct": 88.6,
+      "depth_m": 76.3,
+      "volume_m3": 1060278.0,
+      "x": 21.080837970196452,
+      "y": 57.213720244606414,
+      "status": "GOOD"
+    },
+    {
+      "zone_id": "Z13",
+      "saturation_pct": 66.4,
+      "depth_m": 31.8,
+      "volume_m3": 800849.0,
+      "x": 54.55774835472676,
+      "y": 64.19072893012327,
+      "status": "GOOD"
+    },
+    {
+      "zone_id": "Z14",
+      "saturation_pct": 45.2,
+      "depth_m": 44.7,
+      "volume_m3": 545957.0,
+      "x": 40.609252674455846,
+      "y": 45.354413295517126,
+      "status": "STRESS"
+    },
+    {
+      "zone_id": "Z15",
+      "saturation_pct": 71.1,
+      "depth_m": 39.5,
+      "volume_m3": 852802.0,
+      "x": 46.4442157775335,
+      "y": 34.019256835177735,
+      "status": "GOOD"
+    },
+    {
+      "zone_id": "Z16",
+      "saturation_pct": 34.6,
+      "depth_m": 81.7,
+      "volume_m3": 413703.0,
+      "x": 98.80233694670898,
+      "y": 34.53705607009986,
+      "status": "CRITICAL"
+    },
+    {
+      "zone_id": "Z17",
+      "saturation_pct": 51.7,
+      "depth_m": 75.6,
+      "volume_m3": 620718.0,
+      "x": 10.618393360909728,
+      "y": 24.17378609364671,
+      "status": "STRESS"
+    },
+    {
+      "zone_id": "Z18",
+      "saturation_pct": 33.2,
+      "depth_m": 57.0,
+      "volume_m3": 394916.0,
+      "x": 5.060529180029027,
+      "y": 94.53848927032189,
+      "status": "CRITICAL"
+    },
+    {
+      "zone_id": "Z19",
+      "saturation_pct": 82.9,
+      "depth_m": 55.1,
+      "volume_m3": 999415.0,
+      "x": 90.23108270741973,
+      "y": 81.34778464394495,
+      "status": "GOOD"
+    },
+    {
+      "zone_id": "Z20",
+      "saturation_pct": 87.6,
+      "depth_m": 73.3,
+      "volume_m3": 1047635.0,
+      "x": 15.934241189260433,
+      "y": 99.59694110954167,
+      "status": "GOOD"
+    }
+  ]
+}

@@ -34,7 +34,7 @@ class RAGPipeline:
             self.is_mock = False
             logger.info("OpenAI RAG Pipeline initialized.")
 
-    async def query(self, question: str) -> Dict:
+    async def query(self, question: str, context: Optional[dict] = None) -> Dict:
         """Query the intelligence platform."""
         # Simple keyword-based document retrieval (the 'R' in RAG)
         q_words = question.lower().split()

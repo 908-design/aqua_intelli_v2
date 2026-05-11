@@ -51,6 +51,15 @@ class ReservoirService:
                     self.water_bodies["lakes"] = data.get("lakes", [])
         except Exception as e:
             print(f"Error loading reservoir data: {e}")
+            
+        # Hardcoded fallback if everything failed
+        if not self.reservoirs:
+            self.reservoirs = [
+                {"name": "Yeleru Reservoir", "state": "Andhra Pradesh", "lat": 17.291, "lon": 82.091, "river": "Yeleru", "capacity_mcm": 680},
+                {"name": "Tatipudi Reservoir", "state": "Andhra Pradesh", "lat": 18.175, "lon": 83.194, "river": "Gosthani", "capacity_mcm": 85},
+                {"name": "Meghadrigedda Reservoir", "state": "Andhra Pradesh", "lat": 17.765, "lon": 83.195, "river": "Meghadrigedda", "capacity_mcm": 30},
+                {"name": "Prakasam Barrage", "state": "Andhra Pradesh", "lat": 16.507, "lon": 80.605, "river": "Krishna", "capacity_mcm": 86}
+            ]
 
     def get_nearby_reservoirs(self, lat: float, lon: float, radius_km: float = 100) -> List[Dict]:
         """Find reservoirs within a radius using simple Haversine approximation."""

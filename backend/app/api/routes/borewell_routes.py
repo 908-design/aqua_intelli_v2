@@ -4,8 +4,15 @@ AquaIntelli - API Routes: Borewell Prediction
 from fastapi import APIRouter
 from pydantic import BaseModel, Field
 from ...services.borewell_service import borewell_predictor
+import json
+import time
 
 router = APIRouter(prefix="/borewell", tags=["Borewell"])
+
+
+def _debug_log(hypothesis_id: str, location: str, message: str, data: dict):
+    from ...utils.logger import _debug_log as logger
+    logger(hypothesis_id, location, message, data)
 
 
 class BorewellRequest(BaseModel):
@@ -27,6 +34,7 @@ class BorewellRequest(BaseModel):
 @router.post("/predict", summary="Predict borewell success",
              description="AI-powered borewell drilling success prediction using satellite data fusion.")
 async def predict_borewell(req: BorewellRequest):
+    _debug_log("H1", "backend/app/api/routes/borewell_routes.py:predict_borewell", "POST /predict called", {"lat": req.lat, "lon": req.lon, "soil_type": req.soil_type})
     return borewell_predictor.predict(
         lat=req.lat, lon=req.lon, soil_type=req.soil_type,
         depth_m=req.depth_m, aquifer_type=req.aquifer_type,

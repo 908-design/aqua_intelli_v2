@@ -1,0 +1,186 @@
+{
+  "source": "CWC India + India-WRIS 2024",
+  "url": "https://indiawris.gov.in/wris/#/waterBodies",
+  "reservoirs": [
+    {
+      "name": "Nagarjuna Sagar",
+      "state": "Andhra Pradesh",
+      "river": "Krishna",
+      "lat": 16.57,
+      "lon": 79.31,
+      "capacity_mcm": 11472,
+      "frl_m": 179.8,
+      "catchment_km2": 215000
+    },
+    {
+      "name": "Srisailam",
+      "state": "Andhra Pradesh",
+      "river": "Krishna",
+      "lat": 15.85,
+      "lon": 78.87,
+      "capacity_mcm": 8722,
+      "frl_m": 284.9,
+      "catchment_km2": 199000
+    },
+    {
+      "name": "Koyna",
+      "state": "Maharashtra",
+      "river": "Koyna",
+      "lat": 17.4,
+      "lon": 73.75,
+      "capacity_mcm": 2797,
+      "frl_m": 659.9,
+      "catchment_km2": 891
+    },
+    {
+      "name": "Mettur",
+      "state": "Tamil Nadu",
+      "river": "Cauvery",
+      "lat": 11.79,
+      "lon": 77.81,
+      "capacity_mcm": 2646,
+      "frl_m": 120.3,
+      "catchment_km2": 44600
+    },
+    {
+      "name": "KRS / Krishnaraja",
+      "state": "Karnataka",
+      "river": "Cauvery",
+      "lat": 12.42,
+      "lon": 76.56,
+      "capacity_mcm": 1340,
+      "frl_m": 124.7,
+      "catchment_km2": 11520
+    },
+    {
+      "name": "Sardar Sarovar",
+      "state": "Gujarat",
+      "river": "Narmada",
+      "lat": 21.83,
+      "lon": 73.75,
+      "capacity_mcm": 9460,
+      "frl_m": 138.7,
+      "catchment_km2": 88000
+    },
+    {
+      "name": "Tungabhadra",
+      "state": "Karnataka",
+      "river": "Tungabhadra",
+      "lat": 15.27,
+      "lon": 76.34,
+      "capacity_mcm": 3764,
+      "frl_m": 498.1,
+      "catchment_km2": 28177
+    },
+    {
+      "name": "Bhakra",
+      "state": "Himachal Pradesh",
+      "river": "Sutlej",
+      "lat": 31.42,
+      "lon": 76.44,
+      "capacity_mcm": 9621,
+      "frl_m": 512.0,
+      "catchment_km2": 56980
+    },
+    {
+      "name": "Hirakud",
+      "state": "Odisha",
+      "river": "Mahanadi",
+      "lat": 21.51,
+      "lon": 83.87,
+      "capacity_mcm": 4779,
+      "frl_m": 192.0,
+      "catchment_km2": 83400
+    },
+    {
+      "name": "Jayakwadi",
+      "state": "Maharashtra",
+      "river": "Godavari",
+      "lat": 19.51,
+      "lon": 75.38,
+      "capacity_mcm": 2909,
+      "frl_m": 465.0,
+      "catchment_km2": 21750
+    },
+    {
+      "name": "Rana Pratap Sagar",
+      "state": "Rajasthan",
+      "river": "Chambal",
+      "lat": 24.92,
+      "lon": 75.58,
+      "capacity_mcm": 2900,
+      "frl_m": 352.0,
+      "catchment_km2": 22600
+    },
+    {
+      "name": "Almatti",
+      "state": "Karnataka",
+      "river": "Krishna",
+      "lat": 16.33,
+      "lon": 75.89,
+      "capacity_mcm": 5097,
+      "frl_m": 519.6,
+      "catchment_km2": 43800
+    },
+    {
+      "name": "Ujjani",
+      "state": "Maharashtra",
+      "river": "Bhima",
+      "lat": 18.06,
+      "lon": 75.12,
+      "capacity_mcm": 3310,
+      "frl_m": 492.0,
+      "catchment_km2": 14856
+    },
+    {
+      "name": "Indira Sagar",
+      "state": "Madhya Pradesh",
+      "river": "Narmada",
+      "lat": 22.35,
+      "lon": 76.51,
+      "capacity_mcm": 12200,
+      "frl_m": 262.1,
+      "catchment_km2": 61642
+    },
+    {
+      "name": "Ukai",
+      "state": "Gujarat",
+      "river": "Tapi",
+      "lat": 21.26,
+      "lon": 73.58,
+      "capacity_mcm": 7414,
+      "frl_m": 105.2,
+      "catchment_km2": 62225
+    },
+    {
+      "name": "Srisangam/Papanasam",
+      "state": "Tamil Nadu",
+      "river": "Tamiraparani",
+      "lat": 8.77,
+      "lon": 77.45,
+      "capacity_mcm": 153,
+      "frl_m": 58.5,
+      "catchment_km2": 678
+    },
+    {
+      "name": "Sriram Sagar",
+      "state": "Telangana",
+      "river": "Godavari",
+      "lat": 19.07,
+      "lon": 78.34,
+      "capacity_mcm": 3172,
+      "frl_m": 324.5,
+      "catchment_km2": 91540
+    },
+    {
+      "name": "Bisalpur",
+      "state": "Rajasthan",
+      "river": "Banas",
+      "lat": 25.93,
+      "lon": 75.44,
+      "capacity_mcm": 1095,
+      "frl_m": 315.5,
+      "catchment_km2": 5020
+    }
+  ]
+}

@@ -89,9 +89,20 @@ class WaterAnalysisAgent:
         return {"groundwater_analysis": analysis, "steps": steps}
 
     def _augment_rag(self, state: AgentState) -> dict:
+        from .rag_pipeline import rag_pipeline
+        import asyncio
+        try:
+            # Sync wrapper for async rag query
+            rag_res = asyncio.run(rag_pipeline.query(state["question"]))
+            context = rag_res.get("answer", "No contextual data found.")
+            sources = rag_res.get("sources", [])
+        except Exception:
+            context = "AquaIntelli Internal Knowledge Base"
+            sources = ["Default Service"]
+            
         steps = state.get("steps", [])
-        steps.append(f"[{datetime.utcnow().strftime('%H:%M:%S')}] RAG context retrieved from knowledge base")
-        return {"rag_context": "CGWB report, GRACE data, Indian water policy documents", "steps": steps}
+        steps.append(f"[{datetime.utcnow().strftime('%H:%M:%S')}] RAG context retrieved from knowledge base: {len(sources)} sources.")
+        return {"rag_context": context, "steps": steps}
 
     def _synthesize(self, state: AgentState) -> dict:
         analysis = state.get("groundwater_analysis", {})

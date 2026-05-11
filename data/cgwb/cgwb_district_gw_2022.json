@@ -1,0 +1,264 @@
+{
+  "source": "CGWB Dynamic Ground Water Resources of India 2022",
+  "url": "https://cgwb.gov.in/Ground-Water/gw-data-dissemination.html",
+  "districts": [
+    {
+      "state": "Andhra Pradesh",
+      "district": "Krishna",
+      "annual_recharge_bcm": 2.1,
+      "net_draft_bcm": 1.8,
+      "status": "safe",
+      "borewell_success_pct": 68
+    },
+    {
+      "state": "Andhra Pradesh",
+      "district": "Guntur",
+      "annual_recharge_bcm": 1.9,
+      "net_draft_bcm": 1.6,
+      "status": "safe",
+      "borewell_success_pct": 65
+    },
+    {
+      "state": "Andhra Pradesh",
+      "district": "Kurnool",
+      "annual_recharge_bcm": 0.9,
+      "net_draft_bcm": 0.8,
+      "status": "safe",
+      "borewell_success_pct": 55
+    },
+    {
+      "state": "Telangana",
+      "district": "Hyderabad",
+      "annual_recharge_bcm": 0.4,
+      "net_draft_bcm": 0.6,
+      "status": "over-exploited",
+      "borewell_success_pct": 45
+    },
+    {
+      "state": "Telangana",
+      "district": "Rangareddy",
+      "annual_recharge_bcm": 0.8,
+      "net_draft_bcm": 0.9,
+      "status": "over-exploited",
+      "borewell_success_pct": 50
+    },
+    {
+      "state": "Telangana",
+      "district": "Medak",
+      "annual_recharge_bcm": 0.6,
+      "net_draft_bcm": 0.4,
+      "status": "safe",
+      "borewell_success_pct": 60
+    },
+    {
+      "state": "Rajasthan",
+      "district": "Jodhpur",
+      "annual_recharge_bcm": 0.2,
+      "net_draft_bcm": 0.5,
+      "status": "over-exploited",
+      "borewell_success_pct": 22
+    },
+    {
+      "state": "Rajasthan",
+      "district": "Barmer",
+      "annual_recharge_bcm": 0.1,
+      "net_draft_bcm": 0.4,
+      "status": "over-exploited",
+      "borewell_success_pct": 18
+    },
+    {
+      "state": "Rajasthan",
+      "district": "Jaisalmer",
+      "annual_recharge_bcm": 0.1,
+      "net_draft_bcm": 0.3,
+      "status": "over-exploited",
+      "borewell_success_pct": 15
+    },
+    {
+      "state": "Punjab",
+      "district": "Ludhiana",
+      "annual_recharge_bcm": 1.2,
+      "net_draft_bcm": 2.8,
+      "status": "over-exploited",
+      "borewell_success_pct": 70
+    },
+    {
+      "state": "Punjab",
+      "district": "Amritsar",
+      "annual_recharge_bcm": 1.0,
+      "net_draft_bcm": 2.3,
+      "status": "over-exploited",
+      "borewell_success_pct": 68
+    },
+    {
+      "state": "Punjab",
+      "district": "Patiala",
+      "annual_recharge_bcm": 0.9,
+      "net_draft_bcm": 2.0,
+      "status": "over-exploited",
+      "borewell_success_pct": 72
+    },
+    {
+      "state": "Gujarat",
+      "district": "Ahmedabad",
+      "annual_recharge_bcm": 1.5,
+      "net_draft_bcm": 1.1,
+      "status": "safe",
+      "borewell_success_pct": 60
+    },
+    {
+      "state": "Gujarat",
+      "district": "Surat",
+      "annual_recharge_bcm": 1.2,
+      "net_draft_bcm": 0.8,
+      "status": "safe",
+      "borewell_success_pct": 65
+    },
+    {
+      "state": "Gujarat",
+      "district": "Rajkot",
+      "annual_recharge_bcm": 0.5,
+      "net_draft_bcm": 0.7,
+      "status": "semi-critical",
+      "borewell_success_pct": 48
+    },
+    {
+      "state": "Karnataka",
+      "district": "Bengaluru Urban",
+      "annual_recharge_bcm": 0.3,
+      "net_draft_bcm": 0.6,
+      "status": "over-exploited",
+      "borewell_success_pct": 42
+    },
+    {
+      "state": "Karnataka",
+      "district": "Tumkur",
+      "annual_recharge_bcm": 0.8,
+      "net_draft_bcm": 0.5,
+      "status": "safe",
+      "borewell_success_pct": 62
+    },
+    {
+      "state": "Tamil Nadu",
+      "district": "Chennai",
+      "annual_recharge_bcm": 0.2,
+      "net_draft_bcm": 0.5,
+      "status": "over-exploited",
+      "borewell_success_pct": 38
+    },
+    {
+      "state": "Tamil Nadu",
+      "district": "Coimbatore",
+      "annual_recharge_bcm": 0.6,
+      "net_draft_bcm": 0.5,
+      "status": "safe",
+      "borewell_success_pct": 60
+    },
+    {
+      "state": "Maharashtra",
+      "district": "Pune",
+      "annual_recharge_bcm": 0.9,
+      "net_draft_bcm": 0.7,
+      "status": "safe",
+      "borewell_success_pct": 57
+    },
+    {
+      "state": "Maharashtra",
+      "district": "Aurangabad",
+      "annual_recharge_bcm": 0.4,
+      "net_draft_bcm": 0.6,
+      "status": "semi-critical",
+      "borewell_success_pct": 45
+    },
+    {
+      "state": "Haryana",
+      "district": "Karnal",
+      "annual_recharge_bcm": 0.8,
+      "net_draft_bcm": 1.9,
+      "status": "over-exploited",
+      "borewell_success_pct": 74
+    },
+    {
+      "state": "Uttar Pradesh",
+      "district": "Agra",
+      "annual_recharge_bcm": 1.1,
+      "net_draft_bcm": 0.9,
+      "status": "safe",
+      "borewell_success_pct": 68
+    },
+    {
+      "state": "Madhya Pradesh",
+      "district": "Indore",
+      "annual_recharge_bcm": 0.7,
+      "net_draft_bcm": 0.5,
+      "status": "safe",
+      "borewell_success_pct": 61
+    },
+    {
+      "state": "Kerala",
+      "district": "Ernakulam",
+      "annual_recharge_bcm": 1.8,
+      "net_draft_bcm": 0.6,
+      "status": "safe",
+      "borewell_success_pct": 78
+    }
+  ],
+  "aquifer_types": {
+    "fractured_granite": {
+      "avg_yield_lps": 1.5,
+      "depth_range_m": [
+        50,
+        300
+      ],
+      "success_rate": 0.62
+    },
+    "alluvial_gravel": {
+      "avg_yield_lps": 5.0,
+      "depth_range_m": [
+        10,
+        150
+      ],
+      "success_rate": 0.78
+    },
+    "basalt_vesicular": {
+      "avg_yield_lps": 1.0,
+      "depth_range_m": [
+        30,
+        200
+      ],
+      "success_rate": 0.45
+    },
+    "sandstone": {
+      "avg_yield_lps": 3.0,
+      "depth_range_m": [
+        20,
+        250
+      ],
+      "success_rate": 0.68
+    },
+    "limestone_karst": {
+      "avg_yield_lps": 4.0,
+      "depth_range_m": [
+        25,
+        220
+      ],
+      "success_rate": 0.72
+    },
+    "shale": {
+      "avg_yield_lps": 0.5,
+      "depth_range_m": [
+        50,
+        180
+      ],
+      "success_rate": 0.3
+    },
+    "laterite": {
+      "avg_yield_lps": 0.8,
+      "depth_range_m": [
+        15,
+        100
+      ],
+      "success_rate": 0.55
+    }
+  }
+}

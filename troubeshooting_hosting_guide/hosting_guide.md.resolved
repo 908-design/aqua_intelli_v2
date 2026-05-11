@@ -1,0 +1,28 @@
+# 🌊 AquaIntelli - Public Hosting Guide
+
+You can now host your local AquaIntelli instance publicly using the built-in `tunneler.py` tool. This is perfect for demonstrations or field testing.
+
+## Prerequisites
+1.  **ngrok account**: Sign up for free at [ngrok.com](https://ngrok.com).
+2.  **Authtoken**: Copy your authtoken from the [ngrok dashboard](https://dashboard.ngrok.com/get-started/your-authtoken).
+
+## Setup
+You can set your token in the `.env` file to skip entering it every time:
+```env
+NGROK_AUTH_TOKEN=your_token_here
+```
+
+## How to use
+1.  **Start the Backend**:
+    Make sure your AquaIntelli server is running (port 8001).
+2.  **Run the Tunneler**:
+    In a new terminal, run:
+    ```powershell
+    # Windows
+    backend\.venv\Scripts\python tunneler.py
+    ```
+3.  **Get the URL**:
+    The tool will provide a URL like `https://a1b2-c3d4.ngrok-free.app`. Anyone with this link can now access your dashboard.
+
+---
+*Note: The tunnel will stay active as long as the terminal window remains open.*

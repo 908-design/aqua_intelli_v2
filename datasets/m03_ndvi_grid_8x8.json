@@ -1,0 +1,534 @@
+{
+  "grid_size": "8x8",
+  "total_zones": 64,
+  "data": [
+    [
+      {
+        "row": 0,
+        "col": 0,
+        "ndvi": 0.48,
+        "status": "STRESSED",
+        "lat": 17.5,
+        "lon": 83.0
+      },
+      {
+        "row": 0,
+        "col": 1,
+        "ndvi": 0.429,
+        "status": "STRESSED",
+        "lat": 17.5,
+        "lon": 83.01
+      },
+      {
+        "row": 0,
+        "col": 2,
+        "ndvi": 0.478,
+        "status": "STRESSED",
+        "lat": 17.5,
+        "lon": 83.02
+      },
+      {
+        "row": 0,
+        "col": 3,
+        "ndvi": 0.557,
+        "status": "STRESSED",
+        "lat": 17.5,
+        "lon": 83.03
+      },
+      {
+        "row": 0,
+        "col": 4,
+        "ndvi": 0.706,
+        "status": "HEALTHY",
+        "lat": 17.5,
+        "lon": 83.04
+      },
+      {
+        "row": 0,
+        "col": 5,
+        "ndvi": 0.385,
+        "status": "STRESSED",
+        "lat": 17.5,
+        "lon": 83.05
+      },
+      {
+        "row": 0,
+        "col": 6,
+        "ndvi": 0.268,
+        "status": "CRITICAL",
+        "lat": 17.5,
+        "lon": 83.06
+      },
+      {
+        "row": 0,
+        "col": 7,
+        "ndvi": 0.581,
+        "status": "STRESSED",
+        "lat": 17.5,
+        "lon": 83.07
+      }
+    ],
+    [
+      {
+        "row": 1,
+        "col": 0,
+        "ndvi": 0.409,
+        "status": "STRESSED",
+        "lat": 17.51,
+        "lon": 83.0
+      },
+      {
+        "row": 1,
+        "col": 1,
+        "ndvi": 0.599,
+        "status": "STRESSED",
+        "lat": 17.51,
+        "lon": 83.01
+      },
+      {
+        "row": 1,
+        "col": 2,
+        "ndvi": 0.573,
+        "status": "STRESSED",
+        "lat": 17.51,
+        "lon": 83.02
+      },
+      {
+        "row": 1,
+        "col": 3,
+        "ndvi": 0.645,
+        "status": "HEALTHY",
+        "lat": 17.51,
+        "lon": 83.03
+      },
+      {
+        "row": 1,
+        "col": 4,
+        "ndvi": 0.63,
+        "status": "HEALTHY",
+        "lat": 17.51,
+        "lon": 83.04
+      },
+      {
+        "row": 1,
+        "col": 5,
+        "ndvi": 0.446,
+        "status": "STRESSED",
+        "lat": 17.51,
+        "lon": 83.05
+      },
+      {
+        "row": 1,
+        "col": 6,
+        "ndvi": 0.303,
+        "status": "STRESSED",
+        "lat": 17.51,
+        "lon": 83.06
+      },
+      {
+        "row": 1,
+        "col": 7,
+        "ndvi": 0.496,
+        "status": "STRESSED",
+        "lat": 17.51,
+        "lon": 83.07
+      }
+    ],
+    [
+      {
+        "row": 2,
+        "col": 0,
+        "ndvi": 0.626,
+        "status": "HEALTHY",
+        "lat": 17.52,
+        "lon": 83.0
+      },
+      {
+        "row": 2,
+        "col": 1,
+        "ndvi": 0.378,
+        "status": "STRESSED",
+        "lat": 17.52,
+        "lon": 83.01
+      },
+      {
+        "row": 2,
+        "col": 2,
+        "ndvi": 0.661,
+        "status": "HEALTHY",
+        "lat": 17.52,
+        "lon": 83.02
+      },
+      {
+        "row": 2,
+        "col": 3,
+        "ndvi": 0.542,
+        "status": "STRESSED",
+        "lat": 17.52,
+        "lon": 83.03
+      },
+      {
+        "row": 2,
+        "col": 4,
+        "ndvi": 0.642,
+        "status": "HEALTHY",
+        "lat": 17.52,
+        "lon": 83.04
+      },
+      {
+        "row": 2,
+        "col": 5,
+        "ndvi": 0.598,
+        "status": "STRESSED",
+        "lat": 17.52,
+        "lon": 83.05
+      },
+      {
+        "row": 2,
+        "col": 6,
+        "ndvi": 0.651,
+        "status": "HEALTHY",
+        "lat": 17.52,
+        "lon": 83.06
+      },
+      {
+        "row": 2,
+        "col": 7,
+        "ndvi": 0.303,
+        "status": "STRESSED",
+        "lat": 17.52,
+        "lon": 83.07
+      }
+    ],
+    [
+      {
+        "row": 3,
+        "col": 0,
+        "ndvi": 0.618,
+        "status": "HEALTHY",
+        "lat": 17.53,
+        "lon": 83.0
+      },
+      {
+        "row": 3,
+        "col": 1,
+        "ndvi": 0.51,
+        "status": "STRESSED",
+        "lat": 17.53,
+        "lon": 83.01
+      },
+      {
+        "row": 3,
+        "col": 2,
+        "ndvi": 0.469,
+        "status": "STRESSED",
+        "lat": 17.53,
+        "lon": 83.02
+      },
+      {
+        "row": 3,
+        "col": 3,
+        "ndvi": 0.388,
+        "status": "STRESSED",
+        "lat": 17.53,
+        "lon": 83.03
+      },
+      {
+        "row": 3,
+        "col": 4,
+        "ndvi": 0.455,
+        "status": "STRESSED",
+        "lat": 17.53,
+        "lon": 83.04
+      },
+      {
+        "row": 3,
+        "col": 5,
+        "ndvi": 0.361,
+        "status": "STRESSED",
+        "lat": 17.53,
+        "lon": 83.05
+      },
+      {
+        "row": 3,
+        "col": 6,
+        "ndvi": 0.715,
+        "status": "HEALTHY",
+        "lat": 17.53,
+        "lon": 83.06
+      },
+      {
+        "row": 3,
+        "col": 7,
+        "ndvi": 0.506,
+        "status": "STRESSED",
+        "lat": 17.53,
+        "lon": 83.07
+      }
+    ],
+    [
+      {
+        "row": 4,
+        "col": 0,
+        "ndvi": 0.709,
+        "status": "HEALTHY",
+        "lat": 17.54,
+        "lon": 83.0
+      },
+      {
+        "row": 4,
+        "col": 1,
+        "ndvi": 0.547,
+        "status": "STRESSED",
+        "lat": 17.54,
+        "lon": 83.01
+      },
+      {
+        "row": 4,
+        "col": 2,
+        "ndvi": 0.451,
+        "status": "STRESSED",
+        "lat": 17.54,
+        "lon": 83.02
+      },
+      {
+        "row": 4,
+        "col": 3,
+        "ndvi": 0.693,
+        "status": "HEALTHY",
+        "lat": 17.54,
+        "lon": 83.03
+      },
+      {
+        "row": 4,
+        "col": 4,
+        "ndvi": 0.451,
+        "status": "STRESSED",
+        "lat": 17.54,
+        "lon": 83.04
+      },
+      {
+        "row": 4,
+        "col": 5,
+        "ndvi": 0.496,
+        "status": "STRESSED",
+        "lat": 17.54,
+        "lon": 83.05
+      },
+      {
+        "row": 4,
+        "col": 6,
+        "ndvi": 0.649,
+        "status": "HEALTHY",
+        "lat": 17.54,
+        "lon": 83.06
+      },
+      {
+        "row": 4,
+        "col": 7,
+        "ndvi": 0.656,
+        "status": "HEALTHY",
+        "lat": 17.54,
+        "lon": 83.07
+      }
+    ],
+    [
+      {
+        "row": 5,
+        "col": 0,
+        "ndvi": 0.418,
+        "status": "STRESSED",
+        "lat": 17.55,
+        "lon": 83.0
+      },
+      {
+        "row": 5,
+        "col": 1,
+        "ndvi": 0.356,
+        "status": "STRESSED",
+        "lat": 17.55,
+        "lon": 83.01
+      },
+      {
+        "row": 5,
+        "col": 2,
+        "ndvi": 0.485,
+        "status": "STRESSED",
+        "lat": 17.55,
+        "lon": 83.02
+      },
+      {
+        "row": 5,
+        "col": 3,
+        "ndvi": 0.725,
+        "status": "HEALTHY",
+        "lat": 17.55,
+        "lon": 83.03
+      },
+      {
+        "row": 5,
+        "col": 4,
+        "ndvi": 0.662,
+        "status": "HEALTHY",
+        "lat": 17.55,
+        "lon": 83.04
+      },
+      {
+        "row": 5,
+        "col": 5,
+        "ndvi": 0.711,
+        "status": "HEALTHY",
+        "lat": 17.55,
+        "lon": 83.05
+      },
+      {
+        "row": 5,
+        "col": 6,
+        "ndvi": 0.469,
+        "status": "STRESSED",
+        "lat": 17.55,
+        "lon": 83.06
+      },
+      {
+        "row": 5,
+        "col": 7,
+        "ndvi": 0.694,
+        "status": "HEALTHY",
+        "lat": 17.55,
+        "lon": 83.07
+      }
+    ],
+    [
+      {
+        "row": 6,
+        "col": 0,
+        "ndvi": 0.474,
+        "status": "STRESSED",
+        "lat": 17.56,
+        "lon": 83.0
+      },
+      {
+        "row": 6,
+        "col": 1,
+        "ndvi": 0.498,
+        "status": "STRESSED",
+        "lat": 17.56,
+        "lon": 83.01
+      },
+      {
+        "row": 6,
+        "col": 2,
+        "ndvi": 0.7,
+        "status": "HEALTHY",
+        "lat": 17.56,
+        "lon": 83.02
+      },
+      {
+        "row": 6,
+        "col": 3,
+        "ndvi": 0.537,
+        "status": "STRESSED",
+        "lat": 17.56,
+        "lon": 83.03
+      },
+      {
+        "row": 6,
+        "col": 4,
+        "ndvi": 0.658,
+        "status": "HEALTHY",
+        "lat": 17.56,
+        "lon": 83.04
+      },
+      {
+        "row": 6,
+        "col": 5,
+        "ndvi": 0.615,
+        "status": "HEALTHY",
+        "lat": 17.56,
+        "lon": 83.05
+      },
+      {
+        "row": 6,
+        "col": 6,
+        "ndvi": 0.318,
+        "status": "STRESSED",
+        "lat": 17.56,
+        "lon": 83.06
+      },
+      {
+        "row": 6,
+        "col": 7,
+        "ndvi": 0.52,
+        "status": "STRESSED",
+        "lat": 17.56,
+        "lon": 83.07
+      }
+    ],
+    [
+      {
+        "row": 7,
+        "col": 0,
+        "ndvi": 0.595,
+        "status": "STRESSED",
+        "lat": 17.57,
+        "lon": 83.0
+      },
+      {
+        "row": 7,
+        "col": 1,
+        "ndvi": 0.496,
+        "status": "STRESSED",
+        "lat": 17.57,
+        "lon": 83.01
+      },
+      {
+        "row": 7,
+        "col": 2,
+        "ndvi": 0.414,
+        "status": "STRESSED",
+        "lat": 17.57,
+        "lon": 83.02
+      },
+      {
+        "row": 7,
+        "col": 3,
+        "ndvi": 0.318,
+        "status": "STRESSED",
+        "lat": 17.57,
+        "lon": 83.03
+      },
+      {
+        "row": 7,
+        "col": 4,
+        "ndvi": 0.568,
+        "status": "STRESSED",
+        "lat": 17.57,
+        "lon": 83.04
+      },
+      {
+        "row": 7,
+        "col": 5,
+        "ndvi": 0.408,
+        "status": "STRESSED",
+        "lat": 17.57,
+        "lon": 83.05
+      },
+      {
+        "row": 7,
+        "col": 6,
+        "ndvi": 0.52,
+        "status": "STRESSED",
+        "lat": 17.57,
+        "lon": 83.06
+      },
+      {
+        "row": 7,
+        "col": 7,
+        "ndvi": 0.425,
+        "status": "STRESSED",
+        "lat": 17.57,
+        "lon": 83.07
+      }
+    ]
+  ]
+}

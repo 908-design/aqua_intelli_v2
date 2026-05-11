@@ -1,0 +1,255 @@
+{
+  "simulation_duration_hrs": 24,
+  "frames": [
+    {
+      "hour": 0,
+      "timestamp": "2026-04-12T00:00:00",
+      "river_level_m": 4.24,
+      "rainfall_cumulative_mm": 0.5,
+      "zones_inundated": 0,
+      "displaced": 0,
+      "pump_stations_active": 3,
+      "alert_level": "YELLOW"
+    },
+    {
+      "hour": 1,
+      "timestamp": "2026-04-12T01:00:00",
+      "river_level_m": 4.4,
+      "rainfall_cumulative_mm": 14.7,
+      "zones_inundated": 0,
+      "displaced": 114,
+      "pump_stations_active": 3,
+      "alert_level": "YELLOW"
+    },
+    {
+      "hour": 2,
+      "timestamp": "2026-04-12T02:00:00",
+      "river_level_m": 4.61,
+      "rainfall_cumulative_mm": 20.5,
+      "zones_inundated": 0,
+      "displaced": 0,
+      "pump_stations_active": 3,
+      "alert_level": "ORANGE"
+    },
+    {
+      "hour": 3,
+      "timestamp": "2026-04-12T03:00:00",
+      "river_level_m": 4.59,
+      "rainfall_cumulative_mm": 33.4,
+      "zones_inundated": 0,
+      "displaced": 0,
+      "pump_stations_active": 3,
+      "alert_level": "ORANGE"
+    },
+    {
+      "hour": 4,
+      "timestamp": "2026-04-12T04:00:00",
+      "river_level_m": 4.82,
+      "rainfall_cumulative_mm": 44.4,
+      "zones_inundated": 1,
+      "displaced": 1081,
+      "pump_stations_active": 4,
+      "alert_level": "ORANGE"
+    },
+    {
+      "hour": 5,
+      "timestamp": "2026-04-12T05:00:00",
+      "river_level_m": 5.06,
+      "rainfall_cumulative_mm": 50.5,
+      "zones_inundated": 2,
+      "displaced": 2511,
+      "pump_stations_active": 5,
+      "alert_level": "ORANGE"
+    },
+    {
+      "hour": 6,
+      "timestamp": "2026-04-12T06:00:00",
+      "river_level_m": 5.15,
+      "rainfall_cumulative_mm": 62.9,
+      "zones_inundated": 2,
+      "displaced": 2264,
+      "pump_stations_active": 5,
+      "alert_level": "ORANGE"
+    },
+    {
+      "hour": 7,
+      "timestamp": "2026-04-12T07:00:00",
+      "river_level_m": 5.16,
+      "rainfall_cumulative_mm": 75.5,
+      "zones_inundated": 2,
+      "displaced": 2387,
+      "pump_stations_active": 5,
+      "alert_level": "ORANGE"
+    },
+    {
+      "hour": 8,
+      "timestamp": "2026-04-12T08:00:00",
+      "river_level_m": 5.35,
+      "rainfall_cumulative_mm": 87.0,
+      "zones_inundated": 3,
+      "displaced": 3416,
+      "pump_stations_active": 6,
+      "alert_level": "ORANGE"
+    },
+    {
+      "hour": 9,
+      "timestamp": "2026-04-12T09:00:00",
+      "river_level_m": 5.52,
+      "rainfall_cumulative_mm": 95.5,
+      "zones_inundated": 4,
+      "displaced": 4789,
+      "pump_stations_active": 7,
+      "alert_level": "RED"
+    },
+    {
+      "hour": 10,
+      "timestamp": "2026-04-12T10:00:00",
+      "river_level_m": 5.58,
+      "rainfall_cumulative_mm": 106.3,
+      "zones_inundated": 4,
+      "displaced": 4893,
+      "pump_stations_active": 7,
+      "alert_level": "RED"
+    },
+    {
+      "hour": 11,
+      "timestamp": "2026-04-12T11:00:00",
+      "river_level_m": 5.64,
+      "rainfall_cumulative_mm": 113.9,
+      "zones_inundated": 4,
+      "displaced": 4760,
+      "pump_stations_active": 7,
+      "alert_level": "RED"
+    },
+    {
+      "hour": 12,
+      "timestamp": "2026-04-12T12:00:00",
+      "river_level_m": 5.83,
+      "rainfall_cumulative_mm": 123.3,
+      "zones_inundated": 5,
+      "displaced": 5858,
+      "pump_stations_active": 7,
+      "alert_level": "RED"
+    },
+    {
+      "hour": 13,
+      "timestamp": "2026-04-12T13:00:00",
+      "river_level_m": 5.78,
+      "rainfall_cumulative_mm": 133.2,
+      "zones_inundated": 5,
+      "displaced": 6065,
+      "pump_stations_active": 7,
+      "alert_level": "RED"
+    },
+    {
+      "hour": 14,
+      "timestamp": "2026-04-12T14:00:00",
+      "river_level_m": 5.92,
+      "rainfall_cumulative_mm": 146.1,
+      "zones_inundated": 5,
+      "displaced": 5934,
+      "pump_stations_active": 7,
+      "alert_level": "RED"
+    },
+    {
+      "hour": 15,
+      "timestamp": "2026-04-12T15:00:00",
+      "river_level_m": 6.06,
+      "rainfall_cumulative_mm": 157.4,
+      "zones_inundated": 6,
+      "displaced": 7109,
+      "pump_stations_active": 7,
+      "alert_level": "RED"
+    },
+    {
+      "hour": 16,
+      "timestamp": "2026-04-12T16:00:00",
+      "river_level_m": 6.15,
+      "rainfall_cumulative_mm": 164.8,
+      "zones_inundated": 6,
+      "displaced": 7251,
+      "pump_stations_active": 7,
+      "alert_level": "RED"
+    },
+    {
+      "hour": 17,
+      "timestamp": "2026-04-12T17:00:00",
+      "river_level_m": 6.02,
+      "rainfall_cumulative_mm": 174.1,
+      "zones_inundated": 6,
+      "displaced": 7037,
+      "pump_stations_active": 7,
+      "alert_level": "RED"
+    },
+    {
+      "hour": 18,
+      "timestamp": "2026-04-12T18:00:00",
+      "river_level_m": 6.09,
+      "rainfall_cumulative_mm": 189.7,
+      "zones_inundated": 6,
+      "displaced": 7227,
+      "pump_stations_active": 7,
+      "alert_level": "RED"
+    },
+    {
+      "hour": 19,
+      "timestamp": "2026-04-12T19:00:00",
+      "river_level_m": 6.2,
+      "rainfall_cumulative_mm": 199.4,
+      "zones_inundated": 6,
+      "displaced": 7163,
+      "pump_stations_active": 7,
+      "alert_level": "RED"
+    },
+    {
+      "hour": 20,
+      "timestamp": "2026-04-12T20:00:00",
+      "river_level_m": 6.12,
+      "rainfall_cumulative_mm": 209.0,
+      "zones_inundated": 6,
+      "displaced": 7281,
+      "pump_stations_active": 7,
+      "alert_level": "RED"
+    },
+    {
+      "hour": 21,
+      "timestamp": "2026-04-12T21:00:00",
+      "river_level_m": 6.08,
+      "rainfall_cumulative_mm": 220.5,
+      "zones_inundated": 6,
+      "displaced": 7080,
+      "pump_stations_active": 7,
+      "alert_level": "RED"
+    },
+    {
+      "hour": 22,
+      "timestamp": "2026-04-12T22:00:00",
+      "river_level_m": 6.08,
+      "rainfall_cumulative_mm": 231.1,
+      "zones_inundated": 6,
+      "displaced": 7326,
+      "pump_stations_active": 7,
+      "alert_level": "RED"
+    },
+    {
+      "hour": 23,
+      "timestamp": "2026-04-12T23:00:00",
+      "river_level_m": 5.92,
+      "rainfall_cumulative_mm": 237.4,
+      "zones_inundated": 5,
+      "displaced": 5914,
+      "pump_stations_active": 7,
+      "alert_level": "RED"
+    },
+    {
+      "hour": 24,
+      "timestamp": "2026-04-13T00:00:00",
+      "river_level_m": 5.85,
+      "rainfall_cumulative_mm": 246.6,
+      "zones_inundated": 5,
+      "displaced": 5871,
+      "pump_stations_active": 7,
+      "alert_level": "RED"
+    }
+  ]
+}

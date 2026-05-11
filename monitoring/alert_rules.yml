@@ -1,0 +1,54 @@
+groups:
+  - name: aquaintelli_api_alerts
+    interval: 30s
+    rules:
+      - alert: HighAPILatency
+        expr: histogram_quantile(0.95, rate(aquaintelli_http_request_duration_seconds_bucket[5m])) > 0.1
+        for: 2m
+        labels: { severity: warning }
+        annotations:
+          summary: "API p95 latency > 100ms SLA (current: {{ $value | humanizeDuration }})"
+          runbook: "https://github.com/aquaintelli/runbook#high-latency"
+
+      - alert: HighErrorRate
+        expr: rate(aquaintelli_http_requests_total{status_code=~"5.."}[5m]) / rate(aquaintelli_http_requests_total[5m]) > 0.05
+        for: 1m
+        labels: { severity: critical }
+        annotations:
+          summary: "Error rate > 5% (current: {{ $value | humanizePercentage }})"
+
+      - alert: APIDown
+        expr: up{job="aquaintelli-backend"} == 0
+        for: 1m
+        labels: { severity: critical }
+        annotations:
+          summary: "AquaIntelli backend is DOWN"
+
+  - name: aquaintelli_ml_alerts
+    rules:
+      - alert: MLInferenceSlowdown
+        expr: histogram_quantile(0.95, rate(aquaintelli_ml_inference_duration_seconds_bucket[10m])) > 5
+        for: 5m
+        labels: { severity: warning }
+        annotations:
+          summary: "ML inference p95 > 5s (current: {{ $value | humanizeDuration }})"
+
+  - name: aquaintelli_cache_alerts
+    rules:
+      - alert: LowCacheHitRate
+        expr: |
+          rate(aquaintelli_cache_hits_total[10m]) /
+          (rate(aquaintelli_cache_hits_total[10m]) + rate(aquaintelli_cache_misses_total[10m])) < 0.7
+        for: 10m
+        labels: { severity: warning }
+        annotations:
+          summary: "Redis cache hit rate < 70% — check TTL strategy"
+
+  - name: aquaintelli_groundwater_alerts
+    rules:
+      - alert: CriticalAquiferAlert
+        expr: aquaintelli_aquifer_alerts_total{severity="critical"} > 0
+        for: 0m
+        labels: { severity: critical }
+        annotations:
+          summary: "Critical aquifer alert fired for {{ $labels.aquifer_id }}"

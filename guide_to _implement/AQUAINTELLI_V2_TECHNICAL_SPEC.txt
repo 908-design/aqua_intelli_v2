@@ -1,0 +1,826 @@
+
+╔══════════════════════════════════════════════════════════════════════════════════════╗
+║                    AQUAINTELLI V2 — TECHNICAL ARCHITECTURE                           ║
+║              Complete Water Intelligence Platform for Visakhapatnam                    ║
+║                         MOCK DATA + ALGORITHMS + FEATURES                              ║
+╚══════════════════════════════════════════════════════════════════════════════════════╝
+
+═══════════════════════════════════════════════════════════════════════════════════════
+SECTION 1: SYSTEM OVERVIEW
+═══════════════════════════════════════════════════════════════════════════════════════
+
+PROJECT:        AquaIntelli V2 — "God's Eye View of Water"
+CITY:          Visakhapatnam (Vizag), Andhra Pradesh, India
+COORDINATES:   17.6939°N, 83.2922°E
+AREA:          682 km²
+POPULATION:    2,035,000
+ELEVATION:     -3m to 513m (avg 45m)
+DRAINAGE:      14 blocks, 1140 km storm drains, 316 km sewers
+
+═══════════════════════════════════════════════════════════════════════════════════════
+SECTION 2: MODULE-BY-MODULE TECHNICAL BREAKDOWN
+═══════════════════════════════════════════════════════════════════════════════════════
+
+┌─────────────────────────────────────────────────────────────────────────────────────┐
+│ MODULE 01: GROUNDWATER INTELLIGENCE                                                 │
+├─────────────────────────────────────────────────────────────────────────────────────┤
+│                                                                                     │
+│ PURPOSE:     Real-time groundwater monitoring + AI forecasting                    │
+│                                                                                     │
+│ DATA SOURCES:                                                                       │
+│   • CGWB (Central Ground Water Board) — 30 monitoring wells                         │
+│   • SGWD (State Ground Water Dept) — 28 wells                                       │
+│   • GRACE-FO Satellite — Gravity anomaly (-2.66m EWH)                               │
+│   • Sentinel-1 SAR — Soil moisture (28.6% volumetric)                               │
+│   • NASA POWER — Rainfall history (180-day: 120mm)                                  │
+│                                                                                     │
+│ KEY ALGORITHMS:                                                                     │
+│   1. LSTM (Long Short-Term Memory) Neural Network                                    │
+│      • Input: 180-day historical depth + rainfall + GRACE anomaly                   │
+│      • Output: 30-day and 90-day depth forecast                                     │
+│      • Architecture: 3-layer LSTM (128→64→32 units) + Dense output                  │
+│      • Loss: MSE, Optimizer: Adam, Learning Rate: 0.001                              │
+│      • Accuracy: ±2.1m RMSE on validation set                                       │
+│                                                                                     │
+│   2. Depletion Rate Calculator                                                       │
+│      Formula: dD/dt = (D_today - D_yesterday) / Δt                                  │
+│      Current: -0.059 m/day (declining)                                               │
+│                                                                                     │
+│   3. Risk Classification Engine                                                    │
+│      • CRITICAL: >75% stress (depth >80m)                                           │
+│      • WARNING: 50-75% stress (depth 60-80m)                                        │
+│      • OPERATIONAL: <50% stress (depth <60m)                                       │
+│      • RECOVERING: Trend reversal detected                                          │
+│                                                                                     │
+│ AQUIFER PROFILE (CGWB NAQUIM 2.0 Based):                                            │
+│   Layer 1: Topsoil (0-8m) — Alluvium/Regolith                                       │
+│   Layer 2: Clay (8-20m) — Silty Clay with Sand                                      │
+│   Layer 3: Weathered (20-40m) — Weathered Deccan Basalt                            │
+│   Layer 4: Fractured (40-65m) — Fractured Basalt                                    │
+│   Layer 5: Aquifer Zone (65-100m) — SATURATED                                       │
+│   Layer 6: Hard Rock (100m+) — Fresh Basalt, Impervious                            │
+│                                                                                     │
+│ ZONE HEALTH (Visakhapatnam District):                                               │
+│   Zone A: 52.1m depth — GOOD (stable)                                               │
+│   Zone B: 68.4m depth — STRESS (declining)                                           │
+│   Zone C: 45.7m depth — GOOD (rising)                                                │
+│   Zone D: 89.2m depth — CRITICAL (rapid decline)                                    │
+│                                                                                     │
+│ UNIQUE FEATURES (Not in existing apps):                                             │
+│   ✓ 3D geological cross-section visualization                                       │
+│   ✓ GRACE satellite gravity anomaly integration                                      │
+│   ✓ Aquifer-specific yield prediction (not just depth)                                │
+│   ✓ Zone-wise health scoring with trend arrows                                       │
+│   ✓ Recharge rate tracking (+0.04 m/day recovery)                                    │
+└─────────────────────────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────────────────────────────┐
+│ MODULE 02: RESERVOIR INTELLIGENCE                                                   │
+├─────────────────────────────────────────────────────────────────────────────────────┤
+│                                                                                     │
+│ PURPOSE:     Monitor reservoir levels, inflow/outflow, and impact on crops          │
+│                                                                                     │
+│ RESERVOIRS TRACKED (Vizag Region):                                                  │
+│                                                                                     │
+│   1. RAIWADA RESERVOIR                                                              │
+│      • Coordinates: 17.65°N, 83.15°E                                               │
+│      • Total Capacity: 12.5 TMC                                                      │
+│      • Current Fill: 67.2% (8.4 TMC)                                                 │
+│      • FRL: 885 ft | Current: 810.4 ft                                              │
+│      • Inflow: +12,430 cusecs | Outflow: -8,200 cusecs                              │
+│      • Live Storage: 7.8 TMC | Dead Storage: 0.6 TMC                                │
+│      • Status: OPERATIONAL                                                          │
+│                                                                                     │
+│   2. YELERU RESERVOIR                                                               │
+│      • Coordinates: 17.58°N, 82.95°E                                               │
+│      • Total Capacity: 18.2 TMC                                                      │
+│      • Current Fill: 54.3% (9.9 TMC) — WARNING status                               │
+│      • FRL: 920 ft | Current: 785.6 ft                                              │
+│      • Inflow: +8,900 cusecs | Outflow: -11,200 cusecs (deficit)                    │
+│      • Status: WARNING — Outflow > Inflow                                            │
+│                                                                                     │
+│   3. MUDASARLOVA TANK                                                               │
+│      • Coordinates: 17.72°N, 83.32°E                                               │
+│      • Total Capacity: 2.1 TMC                                                       │
+│      • Current Fill: 82.1% (1.7 TMC) — RECHARGING                                   │
+│      • FRL: 145 ft | Current: 132.8 ft                                              │
+│      • Inflow: +450 cusecs | Outflow: -320 cusecs                                    │
+│      • Status: RECHARGE — Good monsoon recovery                                     │
+│                                                                                     │
+│ KEY ALGORITHMS:                                                                     │
+│   1. Mass Balance Equation                                                         │
+│      ΔS = I - O - E - L                                                             │
+│      Where: S=Storage, I=Inflow, O=Outflow, E=Evaporation, L=Seepage                │
+│                                                                                     │
+│   2. Crop Impact Calculator                                                        │
+│      If Reservoir Fill < 40% → Alert: "Reduce rice, switch to millets"            │
+│      If Reservoir Fill > 70% → Alert: "Sufficient water for 2 crops"                │
+│                                                                                     │
+│   3. Cross-Section Visualization                                                   │
+│      • Live Storage (usable) shown in blue                                          │
+│      • Dead Storage (unusable) shown in dark blue                                   │
+│      • Dead Zone (Min Pool) marked at bottom                                        │
+│                                                                                     │
+│ UNIQUE FEATURES:                                                                    │
+│   ✓ Real-time inflow/outflow differential tracking                                   │
+│   ✓ Live/Dead storage 3D cross-section rendering                                     │
+│   ✓ Automatic crop advisories based on reservoir health                              │
+│   ✓ Integration with canal network (Yeleru, Raiwada canals)                           │
+└─────────────────────────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────────────────────────────┐
+│ MODULE 03: IRRIGATION AI + NDVI FUSION                                              │
+├─────────────────────────────────────────────────────────────────────────────────────┤
+│                                                                                     │
+│ PURPOSE:     Satellite-based crop health + AI-driven irrigation scheduling            │
+│                                                                                     │
+│ SATELLITE:   Sentinel-2B, 10m GSD resolution                                         │
+│ LOCATION:    Visakhapatnam District Farmlands                                         │
+│                                                                                     │
+│ NDVI ANALYSIS:                                                                      │
+│   • District Average: 0.64 (Healthy)                                                 │
+│   • Max: 0.82 | Min: 0.21                                                            │
+│   • Healthy Threshold: >0.6 | Stressed: 0.3-0.6 | Critical: <0.3                   │
+│   • Grid: 8×8 zones = 64 total fields                                               │
+│   • Healthy Zones: 38 | Stressed: 18 | Critical: 8                                  │
+│                                                                                     │
+│ AI WATER SCHEDULE:                                                                  │
+│   Zone A-C: TODAY 06:00 (normal priority)                                           │
+│   Zone D-F: TOMORROW 06:00 (normal priority)                                        │
+│   Zone G:   URGENT NOW (critical — drought stress detected)                         │
+│   Zone H:   IN 3 DAYS (low priority)                                                │
+│                                                                                     │
+│ WATER SAVINGS: 34% vs Manual Irrigation                                             │
+│                                                                                     │
+│ CROP COVERAGE:                                                                      │
+│   Rice:    38% (HIGH water need)                                                    │
+│   Cotton:  28% (MEDIUM water need)                                                  │
+│   Chilli:  22% (MEDIUM water need)                                                  │
+│   Other:   12%                                                                      │
+│                                                                                     │
+│ SOIL STATE ANALYSIS:                                                                │
+│   • Texture: Silty Clay with Sand                                                   │
+│   • pH: 7.2 (Neutral)                                                               │
+│   • Organic Matter: 1.8%                                                             │
+│   • Nitrogen: 185 kg/ha | Phosphorus: 22 kg/ha | Potassium: 245 kg/ha                │
+│   • Water Holding Capacity: 180 mm                                                  │
+│   • Infiltration Rate: 12.5 mm/hr                                                   │
+│                                                                                     │
+│ KEY ALGORITHMS:                                                                     │
+│   1. NDVI Calculation                                                                │
+│      NDVI = (NIR - Red) / (NIR + Red)                                               │
+│      Sentinel-2 Bands: B8 (NIR), B4 (Red)                                            │
+│                                                                                     │
+│   2. Crop Water Need Predictor                                                       │
+│      Input: NDVI + Soil Moisture + Crop Type + Weather Forecast                     │
+│      Output: Liters per hectare required                                            │
+│      Model: Random Forest Regressor (100 estimators)                                │
+│                                                                                     │
+│   3. Smart Irrigation Scheduler                                                      │
+│      Algorithm: Multi-objective optimization (water saved vs yield maintained)    │
+│      Constraints: ET₀ (reference evapotranspiration), Kc (crop coefficient)         │
+│                                                                                     │
+│ CROP RECOMMENDATIONS (AI-Generated):                                                │
+│   ┌─────────────┬────────────┬────────────┬─────────────────────────────────────────┐│
+│   │ Crop        │ Water Need │ Suitability│ Reason                                  ││
+│   ├─────────────┼────────────┼────────────┼─────────────────────────────────────────┤│
+│   │ Rice        │ HIGH       │ 0.45       │ Groundwater >70m, high energy cost      ││
+│   │ Cotton      │ MEDIUM     │ 0.72       │ Drought tolerant, matches soil type      ││
+│   │ Chilli      │ MEDIUM     │ 0.68       │ Good market price, moderate water        ││
+│   │ Millets     │ LOW        │ 0.91       │ BEST for current groundwater stress      ││
+│   │ Pulses      │ LOW        │ 0.88       │ Nitrogen fixing, improves soil           ││
+│   └─────────────┴────────────┴────────────┴─────────────────────────────────────────┘│
+│                                                                                     │
+│ UNIQUE FEATURES:                                                                     │
+│   ✓ AI suggests crop SWITCHING based on water stress (not just irrigation timing)    │
+│   ✓ Soil texture + chemistry integration for precision agriculture                   │
+│   ✓ Zone-by-zone scheduling with urgency flags                                       │
+│   ✓ Water saved percentage vs traditional methods                                    │
+│   ✓ Critical drought alerts with immediate action recommendations                    │
+└─────────────────────────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────────────────────────────┐
+│ MODULE 04: BOREWELL PREDICTION ENGINE                                               │
+├─────────────────────────────────────────────────────────────────────────────────────┤
+│                                                                                     │
+│ PURPOSE:     3D borewell visualization + real-time yield prediction + failure AI    │
+│                                                                                     │
+│ BOREWELL ID: BW-AP-2847                                                             │
+│ LOCATION:    Venkatapathirajupet, Anakapalle Mandal                                 │
+│ COORDS:      17.7102°N, 83.1780°E                                                  │
+│ STATUS:      ACTIVE                                                                 │
+│                                                                                     │
+│ DRILLING PROFILE:                                                                   │
+│   • Total Depth Drilled: 120m                                                      │
+│   • Casing Depth: 18m (MS pipe, OD 150mm, ID 132mm)                                │
+│   • Screen Depth: 65-95m (Slot size 1.5mm, Open area 15%)                          │
+│   • Aquifer Hit 1: 73m — Fractured Basalt, Yield 4.2 LPS, T=12.5                   │
+│   • Aquifer Hit 2: 88m — Weathered Granite, Yield 2.1 LPS, T=8.3                   │
+│                                                                                     │
+│ REAL-TIME TELEMETRY:                                                                │
+│   • Motor Status: RUNNING                                                           │
+│   • RPM: 2,840                                                                       │
+│   • Power Draw: 7.4 kW                                                               │
+│   • Efficiency: 82.3%                                                                │
+│   • Pump Depth: 85m BGL                                                             │
+│   • Dynamic Level: 78.2m BGL                                                        │
+│   • Run Hours Today: 6.5 | This Month: 142                                          │
+│                                                                                     │
+│ YIELD ANALYSIS:                                                                     │
+│   • Current: 4.2 LPS                                                               │
+│   • Design: 6.0 LPS (70% efficiency)                                                 │
+│   • 7-Day Trend: [3.1, 3.3, 3.8, 4.0, 4.1, 4.2, 4.2] — RECOVERING                 │
+│                                                                                     │
+│ STATIC LEVEL (Seasonal):                                                            │
+│   • Current: 73.3m BGL                                                             │
+│   • Summer: 81.2m BGL (worst case)                                                  │
+│   • Monsoon: 68.5m BGL (best case)                                                  │
+│                                                                                     │
+│ AI FAILURE PREDICTION:                                                              │
+│   • Probability: 12% (LOW)                                                          │
+│   • Next Maintenance: 45 days                                                        │
+│   • Recommended: Shaft Inspection                                                    │
+│   • Predicted Failure Mode: Motor bearing wear (thermal signature detected)       │
+│                                                                                     │
+│ 3D GEOLOGICAL MODEL:                                                                │
+│   Surface Elevation: 42m                                                             │
+│   ┌──────────────────────────────────────────────┐                                 │
+│   │ 0-8m   │ Topsoil        │ #8B7355              │                                 │
+│   │ 8-20m  │ Clay           │ #A0522D              │                                 │
+│   │ 20-40m │ Weathered      │ #CD853F              │                                 │
+│   │ 40-65m │ Fractured      │ #696969              │                                 │
+│   │ 65-100m│ Aquifer Zone ★ │ #4682B4 (saturated)  │                                 │
+│   │ 100m+  │ Hard Rock      │ #2F4F4F              │                                 │
+│   └──────────────────────────────────────────────┘                                 │
+│                                                                                     │
+│ WATER QUALITY:                                                                      │
+│   • TDS: 485 ppm (SAFE)                                                             │
+│   • pH: 7.4                                                                         │
+│   • EC: 0.82 mS/m                                                                   │
+│   • Fluoride: 0.8 ppm (within limits)                                               │
+│   • Iron: 0.3 ppm                                                                   │
+│   • Nitrate: 12.5 ppm                                                               │
+│   • Potability: SAFE                                                                │
+│                                                                                     │
+│ KEY ALGORITHMS:                                                                     │
+│   1. Pump Performance Degradation Model                                            │
+│      η(t) = η₀ × e^(-λt) + β × (maintenance_factor)                                 │
+│      Where λ=0.002/day, β=0.15 per service                                           │
+│                                                                                     │
+│   2. Yield Prediction using Theis Equation                                         │
+│      s = (Q / 4πT) × W(u)                                                          │
+│      Where s=drawdown, Q=pumping rate, T=transmissivity, W(u)=well function          │
+│                                                                                     │
+│   3. Failure Prediction (Random Forest Classifier)                                   │
+│      Features: Vibration, Temperature, Power Draw, Run Hours, Age                  │
+│      Classes: Bearing Failure, Motor Burn, Pipe Corrosion, Impeller Wear           │
+│                                                                                     │
+│ UNIQUE FEATURES (No other system has this):                                        │
+│   ✓ 3D subsurface geological model with aquifer highlighting                        │
+│   ✓ Real-time pump telemetry dashboard (RPM, kW, efficiency)                        │
+│   ✓ AI-predicted failure mode with maintenance countdown                              │
+│   ✓ Seasonal static level comparison (Summer vs Monsoon)                             │
+│   ✓ Multi-aquifer yield tracking (Fractured Basalt + Weathered Granite)              │
+│   ✓ Water quality potability badge (SAFE/CAUTION/UNSAFE)                             │
+│   ✓ 7-day yield trend with recovery prediction                                       │
+└─────────────────────────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────────────────────────────┐
+│ MODULE 05: DRAINAGE NETWORK MONITOR                                                 │
+├─────────────────────────────────────────────────────────────────────────────────────┤
+│                                                                                     │
+│ PURPOSE:     Real-time drainage network health monitoring + overload detection      │
+│ CITY:        Visakhapatnam                                                          │
+│                                                                                     │
+│ NETWORK STATS:                                                                      │
+│   • Total Network: 142 km                                                          │
+│   • Overloaded Segments: 23                                                        │
+│   • System Capacity: 68% utilized                                                    │
+│   • Pump Stations: 7 active                                                          │
+│   • STPs Online: 4                                                                 │
+│   • Flood Zones at Risk: 3                                                         │
+│                                                                                     │
+│ PIPE BREAKDOWN:                                                                     │
+│   • Main Trunk: 23 km (900mm+, RCC)                                                  │
+│   • Secondary: 68 km (450-900mm, RCC/HDPE)                                          │
+│   • Tertiary: 51 km (<450mm, Brick/Stone)                                           │
+│                                                                                     │
+│ NETWORK NODES (with simulated coordinates):                                       │
+│   P1: MVPS Ward 12     — Pump     — 98% capacity — CRITICAL                         │
+│   P2: Gajuwaka Main    — Pump     — 45% capacity — NORMAL                          │
+│   P3: Dwaraka Nagar    — Junction — 68% capacity — WARNING                         │
+│   P4: Seethammadhara   — Outlet   — 52% capacity — NORMAL                          │
+│   P5: Purna Market     — Junction — 94% capacity — CRITICAL                         │
+│   S1: Old City Nala    — Sewer    — 72% capacity — WARNING                         │
+│   S2: Airport Drain    — Storm    — 38% capacity — NORMAL                          │
+│   J1: Main Outfall     — Outfall   — 55% capacity — NORMAL                          │
+│   J2: Rushikonda Junc  — Junction — 61% capacity — WARNING                         │
+│                                                                                     │
+│ OVERLOAD ALERTS:                                                                    │
+│   • P1 (MVPS Ward 12): Pump at 98% — overflow risk imminent                         │
+│   • P5 (Purna Market): Drain blockage — 94% capacity                                │
+│   • J1 (Dwaraka Nagar): Backflow detected during peak rainfall                      │
+│                                                                                     │
+│ KEY ALGORITHMS:                                                                     │
+│   1. Capacity Utilization Index                                                    │
+│      CUI = (Actual Flow / Design Capacity) × 100                                    │
+│      CUI > 90% → CRITICAL | 70-90% → WARNING | <70% → NORMAL                      │
+│                                                                                     │
+│   2. Network Flow Simulation (EPA SWMM-based)                                      │
+│      • Manning's Equation: v = (1/n) × R^(2/3) × S^(1/2)                          │
+│      • n = 0.015 (RCC), n = 0.025 (Brick)                                           │
+│      • S = slope, R = hydraulic radius                                              │
+│                                                                                     │
+│   3. Blockage Detection                                                              │
+│      ΔP = P_upstream - P_downstream > threshold → Blockage suspected                │
+│                                                                                     │
+│ UNIQUE FEATURES:                                                                    │
+│   ✓ Network flow diagram with color-coded status (Green/Yellow/Red)                 │
+│   ✓ Real-time pump station telemetry                                                 │
+│   ✓ Blockage detection via pressure differential                                     │
+│   ✓ Flood zone risk overlay on drainage map                                         │
+│   ✓ Pipe material and age tracking                                                 │
+└─────────────────────────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────────────────────────────┐
+│ MODULE 06: FLOOD EMERGENCY — ACTIVE ALERT                                             │
+├─────────────────────────────────────────────────────────────────────────────────────┤
+│                                                                                     │
+│ PURPOSE:     Flood prediction simulation + emergency response + official alerts     │
+│ THREAT LEVEL: HIGH                                                                  │
+│                                                                                     │
+│ CURRENT CONDITIONS (Simulated Active Event):                                       │
+│   • Rainfall (24h): 247 mm                                                          │
+│   • River Level: +4.8m above normal                                                 │
+│   • Flood Zones Active: 12                                                          │
+│   • Water Level Gauge: 6.1m (ABOVE DANGER LEVEL)                                    │
+│                                                                                     │
+│ RIVER GAUGE (Godavari at Rajahmundry — simulated):                                  │
+│   • Current: 6.1m                                                                    │
+│   • Danger Flood Level: 5.5m                                                        │
+│   • Warning Level: 4.2m                                                               │
+│   • Peak Forecast: 5.8m at 18:00 TODAY                                               │
+│   • Recession: +72 hours                                                             │
+│                                                                                     │
+│ ACTIVE FLOOD ZONES:                                                                 │
+│   • Rajahmundry East — INUNDATED (Severity 5)                                       │
+│   • Konaseema Delta — RISING (Severity 4)                                            │
+│   • Eluru Lowlands — WARNING (Severity 3)                                           │
+│   • Gnana Puram (Vizag) — INUNDATED (Severity 5)                                    │
+│   • Purna Market (Vizag) — RISING (Severity 4)                                      │
+│   • Airport Area (Vizag) — WARNING (Severity 3)                                     │
+│                                                                                     │
+│ EVACUATION STATUS:                                                                  │
+│   • Villages Active: 3                                                               │
+│   • Displaced: 12,400                                                                │
+│   • Relief Camps: 8                                                                  │
+│   • NDRF Teams: 4                                                                    │
+│   • SDRF Teams: 6                                                                    │
+│                                                                                     │
+│ NEARBY WATER BODIES (Vizag Context):                                                │
+│   • Bay of Bengal — 2 km — Tide 1.8m — Storm Surge Risk: HIGH                       │
+│   • Mudasarlova Tank — 8 km — 82% full — Overflow Risk: MEDIUM                      │
+│   • Gosthani River — 15 km — 45,000 cusecs — Flood Risk: HIGH                        │
+│   • Yeleru Canal — 22 km — 12,000 cusecs — Flood Risk: LOW                          │
+│                                                                                     │
+│ PREVENTIVE MEASURES (AI-Generated):                                                   │
+│   1. Deploy sandbags at Purna Market junction                                        │
+│   2. Open all flood gates at Mudasarlova tank                                       │
+│   3. Alert Gajuwaka industrial zone for chemical storage safety                     │
+│   4. Evacuate low-lying areas near Airport Road                                     │
+│   5. Activate all 7 pump stations at 100% capacity                                  │
+│   6. Notify GVMC Emergency Control Room                                             │
+│                                                                                     │
+│ SMS ALERTS SENT: 2,847                                                               │
+│ OFFICIALS NOTIFIED: District Collector, GVMC Commissioner, RDO, MRO, Police       │
+│                                                                                     │
+│ KEY ALGORITHMS:                                                                     │
+│   1. Rainfall-Runoff Model (SCS Curve Number)                                       │
+│      Q = (P - 0.2S)² / (P + 0.8S)                                                  │
+│      Where P=rainfall, S=(25400/CN) - 254, CN=Curve Number                          │
+│                                                                                     │
+│   2. Flood Inundation Mapping (HEC-RAS integration)                                  │
+│      • DEM-based water spread simulation                                            │
+│      • Velocity and depth calculation per grid cell                                   │
+│                                                                                     │
+│   3. Early Warning Trigger                                                           │
+│      IF (Rainfall > 150mm/24h AND River Level > DFL) → RED ALERT                    │
+│      IF (Rainfall > 100mm/24h AND River Level > WL) → ORANGE ALERT                  │
+│      IF (Rainfall > 50mm/24h) → YELLOW ALERT                                        │
+│                                                                                     │
+│ UNIQUE FEATURES:                                                                    │
+│   ✓ 3D flood inundation simulation with time-lapse                                   │
+│   ✓ Automatic SMS blast to officials and citizens                                    │
+│   ✓ Preventive measure checklist with priority ordering                              │
+│   ✓ Integration with NDRF/SDRF deployment tracking                                   │
+│   ✓ Nearby water body risk assessment (tide + storm surge)                           │
+│   ✓ 48-hour peak ETA prediction with recession timeline                              │
+└─────────────────────────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────────────────────────────┐
+│ MODULE 07: AQUIFER SCAN + SUBSURFACE TOMOGRAPHY                                     │
+├─────────────────────────────────────────────────────────────────────────────────────┤
+│                                                                                     │
+│ PURPOSE:     3D subsurface water resource mapping + multi-source analytics            │
+│ SCAN MODE:   Satellite-Fused Aquifer Scan                                            │
+│ RESOLUTION:  10m GSD                                                                 │
+│                                                                                     │
+│ SATELLITE PARAMETERS:                                                               │
+│   • Altitude: 408 km                                                                 │
+│   • Inclination: 98.7°                                                               │
+│   • Passes: 1,779                                                                    │
+│   • Tracking: ACTIVE                                                                   │
+│                                                                                     │
+│ GEOLOGICAL CROSS-SECTION (AP Deccan Basalt):                                        │
+│   Borewells: BW-1, BW-2, BW-3                                                        │
+│   ┌──────────────────────────────────────────────┐                                   │
+│   │ 0-20m   │ Alluvium/Regolith                    │                                   │
+│   │ 20-45m  │ Weathered Deccan Basalt              │                                   │
+│   │ 45-65m  │ Fractured Basalt                     │                                   │
+│   │ 65-100m │ Aquifer Zone (SATURATED) ★           │                                   │
+│   │ 100m+   │ Fresh Basalt — Impervious            │                                   │
+│   └──────────────────────────────────────────────┘                                   │
+│                                                                                     │
+│ AQUIFER VOLUME:                                                                     │
+│   • Estimated: 2.4M m³                                                               │
+│   • Remaining: 42%                                                                  │
+│   • Recharge Rate: +0.04 m/day                                                       │
+│   • Safe Yield: 8,500 m³/day                                                        │
+│                                                                                     │
+│ SATURATION MAP (3D Volume Profile):                                                 │
+│   Z01: 45% | Z02: 62% | Z03: 78% | Z04: 34%                                         │
+│   Z05: 89% | Z06: 55% | Z07: 71% | Z08: 28%                                         │
+│                                                                                     │
+│ ZONE HEALTH:                                                                        │
+│   Zone A: GOOD (78% saturation, 52m depth)                                          │
+│   Zone B: STRESS (45% saturation, 68m depth)                                        │
+│   Zone C: GOOD (82% saturation, 48m depth)                                          │
+│   Zone D: CRITICAL (28% saturation, 89m depth)                                        │
+│                                                                                     │
+│ NEARBY WATER RESOURCES:                                                             │
+│   • Mudasarlova Tank — 8 km — Surface — Recharge: HIGH                              │
+│   • Gosthani River — 15 km — River — Recharge: MEDIUM                               │
+│   • Raiwada Reservoir — 35 km — Reservoir — Recharge: HIGH                          │
+│   • Yeleru Canal — 22 km — Canal — Recharge: MEDIUM                                 │
+│   • Coastal Aquifer — 2 km — Aquifer — Recharge: LOW, Salinity Risk: HIGH            │
+│                                                                                     │
+│ KEY ALGORITHMS:                                                                     │
+│   1. Electrical Resistivity Tomography (ERT) Inversion                               │
+│      • 2D/3D resistivity models for subsurface layers                               │
+│      • Low resistivity = saturated zone, High resistivity = dry rock                │
+│                                                                                     │
+│   2. Satellite SAR Interferometry (InSAR)                                           │
+│      • Ground deformation tracking (subsidence due to pumping)                      │
+│      • 1mm precision vertical displacement                                            │
+│                                                                                     │
+│   3. Aquifer Volume Estimation                                                       │
+│      V = A × T × S_y                                                                 │
+│      Where A=area, T=thickness, S_y=specific yield                                  │
+│                                                                                     │
+│ UNIQUE FEATURES:                                                                    │
+│   ✓ 3D subsurface tomography with layer-by-layer visualization                       │
+│   ✓ Multi-borewell cross-section comparison                                          │
+│   ✓ Satellite SAR altitude tracking (408km, 98.7° inclination)                      │
+│   ✓ Zone saturation bar chart (3D volume profile)                                   │
+│   ✓ Nearby resource mapping with recharge potential scoring                          │
+│   ✓ Live sync indicator for real-time satellite data                                  │
+└─────────────────────────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────────────────────────────┐
+│ MODULE 08: CRISIS FORECAST + AI THREAT ENGINE                                       │
+├─────────────────────────────────────────────────────────────────────────────────────┤
+│                                                                                     │
+│ PURPOSE:     Multi-crisis prediction + threat prioritization + government alerts    │
+│ ACTIVE CRISES: 3                                                                      │
+│                                                                                     │
+│ CRISIS INDEX: 7.2/10 (HIGH SEVERITY)                                                │
+│ PEAK ETA: 14H                                                                        │
+│ AI CONFIDENCE: 88%                                                                   │
+│                                                                                     │
+│ THREAT PRIORITY QUEUE:                                                              │
+│                                                                                     │
+│   P1 — CRITICAL (ETA: 14H)                                                           │
+│   Title: Krishna Basin — Aquifer Collapse Risk                                      │
+│   • GRACE Anomaly: -4.8m                                                            │
+│   • Depletion: -0.12 m/day                                                          │
+│   • Villages at Risk: 12                                                            │
+│   • Confidence: 88%                                                                  │
+│   • Details: Rapid depletion. Multiple borewells failing simultaneously.              │
+│                                                                                     │
+│   P2 — HIGH (ETA: 3D)                                                               │
+│   Title: Godavari Delta — Saltwater Intrusion                                       │
+│   • Salinity: +340 ppm above baseline                                               │
+│   • Coastal Aquifer Breach: LIKELY                                                  │
+│   • Confidence: 72%                                                                  │
+│   • Details: Cyclone-induced seawater ingress in monitoring wells.                  │
+│                                                                                     │
+│   P3 — MODERATE (ETA: 7D)                                                           │
+│   Title: Tungabhadra — Reservoir Below Dead Storage                                  │
+│   • Current: 18% capacity                                                           │
+│   • Critical Threshold: 15%                                                           │
+│   • Confidence: 55%                                                                  │
+│   • Details: Extended dry spell. Irrigation supply at risk.                          │
+│                                                                                     │
+│ 90-DAY CRISIS PROBABILITY TIMELINE:                                                 │
+│   Day 0:  15% | Day 15: 35% | Day 30: 55% | Day 45: 72% (PEAK)                    │
+│   Day 60: 68% | Day 75: 45% | Day 90: 38%                                           │
+│                                                                                     │
+│ NATURAL CALAMITIES TRACKING:                                                        │
+│   • Cyclone Asani (simulated): 180 km away, 15 km/h approach, 48H landfall           │
+│     Category 2, moving NW                                                           │
+│   • Heavy Rainfall: Extreme, 72 hrs, 450mm accumulation, Flood Risk: VERY HIGH     │
+│   • Heat Wave: 46°C max, 5 days duration, Agriculture Risk: CRITICAL                │
+│                                                                                     │
+│ RESPONSE STATUS:                                                                    │
+│   • CGWB: ALERTED                                                                    │
+│   • NDRF: STANDBY                                                                    │
+│   • IMD: TRACKING                                                                    │
+│   • GOV: NOTIFIED                                                                    │
+│                                                                                     │
+│ KEY ALGORITHMS:                                                                     │
+│   1. Multi-Threat Risk Scoring                                                      │
+│      Risk = Σ(wᵢ × sᵢ × pᵢ)                                                        │
+│      Where w=weight, s=severity, p=probability for each threat i                    │
+│                                                                                     │
+│   2. LSTM Crisis Timeline Predictor                                                  │
+│      • Input: GRACE, rainfall, reservoir, NDVI, cyclone track                       │
+│      • Output: 90-day crisis probability curve                                       │
+│      • Peak detection algorithm for intervention timing                             │
+│                                                                                     │
+│   3. Government Notification Cascade                                                │
+│      Priority 1 → District Collector + NDRF (immediate)                             │
+│      Priority 2 → GVMC + RDO (within 2 hours)                                       │
+│      Priority 3 → MRO + Police (within 6 hours)                                     │
+│                                                                                     │
+│ UNIQUE FEATURES:                                                                    │
+│   ✓ Multi-crisis dashboard with priority queue                                       │
+│   ✓ 90-day crisis probability curve with peak detection                              │
+│   ✓ Cyclone tracking with landfall ETA and category                                  │
+│   ✓ Government agency status board (CGWB/NDRF/IMD/Gov)                               │
+│   ✓ Confidence percentage for each prediction                                        │
+│   ✓ Automatic escalation based on threat severity                                  │
+└─────────────────────────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────────────────────────────┐
+│ MODULE 09: CITY DRAINAGE SYSTEM — VISAKHAPATNAM (HERO MODULE)                       │
+├─────────────────────────────────────────────────────────────────────────────────────┤
+│                                                                                     │
+│ PURPOSE:     Pre-drainage simulation + 3D water flow + treatment integration        │
+│              + groundwater contamination prevention                                   │
+│                                                                                     │
+│ THIS IS THE MAIN HERO MODULE. NO EXISTING PLATFORM DOES THIS.                       │
+│                                                                                     │
+├─────────────────────────────────────────────────────────────────────────────────────┤
+│ CITY PROFILE:                                                                       │
+│   • Drainage Blocks: 14                                                              │
+│   • Primary Drains: 110 km                                                           │
+│   • Secondary Drains: 280 km                                                         │
+│   • Tertiary Drains: 750 km                                                          │
+│   • Total Storm Drainage: 1,140 km                                                   │
+│   • Sewer Lines: 316 km (42% coverage, 1,935 km gap)                                │
+│   • Culverts: 142                                                                    │
+│   • Manholes: 2,840                                                                  │
+│   • Pumping Stations: 7                                                              │
+│                                                                                     │
+│ STPs IN VIZAG:                                                                      │
+│   1. Mudsarlova — 13 MLD — Lat: 17.72, Lon: 83.32                                  │
+│   2. Old City — 38 MLD — Lat: 17.69, Lon: 83.28                                    │
+│   3. Appughar — 25 MLD — Lat: 17.74, Lon: 83.30                                    │
+│   4. Narava — 54 MLD — Lat: 17.75, Lon: 83.25 (Under Construction)                  │
+│                                                                                     │
+│ WATER TREATMENT PLANTS:                                                             │
+│   • WTP-1: 45 MLD — Lat: 17.70, Lon: 83.29                                         │
+│   • WTP-2: 60 MLD — Lat: 17.73, Lon: 83.31                                         │
+│   • WTP-3: 35 MLD — Lat: 17.68, Lon: 83.20                                         │
+│                                                                                     │
+├─────────────────────────────────────────────────────────────────────────────────────┤
+│ ROAD NETWORK CULVERTS:                                                              │
+├─────────────────────────────────────────────────────────────────────────────────────┤
+│   Road                        │ Culverts │ Avg Diam │ Condition                     │
+├─────────────────────────────────────────────────────────────────────────────────────┤
+│   NH-16 (Chennai-Kolkata)     │ 24       │ 1200mm   │ GOOD                          │
+│   Beach Road                  │ 18       │ 800mm    │ FAIR                          │
+│   Dwaraka Nagar Main          │ 12       │ 600mm    │ POOR                          │
+│   Gajuwaka Industrial Road    │ 15       │ 900mm    │ FAIR                          │
+│   Airport Road                │ 8        │ 1000mm   │ CRITICAL                      │
+│   Rushikonda Beach Road       │ 10       │ 700mm    │ GOOD                          │
+│   Seethammadhara Road         │ 14       │ 650mm    │ FAIR                          │
+│   MVP Colony Road             │ 11       │ 750mm    │ GOOD                          │
+└─────────────────────────────────────────────────────────────────────────────────────┘
+│                                                                                     │
+│ PIPELINE NETWORK:                                                                   │
+│   Water Supply:                                                                      │
+│     • Total: 1,000 km | Diameter: 150-1200mm | Materials: DI, HDPE, RCC           │
+│     • Avg Age: 18 years | Leakage: 23%                                              │
+│   Sewer:                                                                             │
+│     • Total: 316 km | Diameter: 225-900mm | Materials: RCC, Brick                  │
+│     • Coverage: 42% | Gap: 1,935 km                                                  │
+│   Storm Water:                                                                       │
+│     • Total: 1,140 km | Types: Open Nala, Box Culvert, Pipe                         │
+│     • Pucca: 60% | Kutcha: 40%                                                      │
+│                                                                                     │
+├─────────────────────────────────────────────────────────────────────────────────────┤
+│ RUNOFF SIMULATION:                                                                  │
+├─────────────────────────────────────────────────────────────────────────────────────┤
+│   Catchment Area: 682 km²                                                            │
+│   Avg Rainfall: 1,200 mm/year                                                        │
+│   Runoff Coefficient: 0.65                                                           │
+│   Peak Runoff: 450 m³/s                                                              │
+│   Time of Concentration: 45 minutes                                                  │
+│   Design Storm: 180 mm (25-year return period)                                       │
+│                                                                                     │
+│   SUB-CATCHMENTS:                                                                   │
+│   ┌──────────────────┬─────────┬───────────┬─────────────┐                       │
+│   │ Name             │ Area    │ Runoff    │ Elevation   │                       │
+│   ├──────────────────┼─────────┼───────────┼─────────────┤                       │
+│   │ Old City         │ 45 km²  │ 85 m³/s   │ 15 m        │                       │
+│   │ Dwaraka Nagar    │ 38 km²  │ 72 m³/s   │ 22 m        │                       │
+│   │ Gajuwaka         │ 52 km²  │ 68 m³/s   │ 35 m        │                       │
+│   │ MVP Colony       │ 28 km²  │ 45 m³/s   │ 48 m        │                       │
+│   │ Rushikonda       │ 35 km²  │ 55 m³/s   │ 65 m        │                       │
+│   │ Bheemili         │ 42 km²  │ 48 m³/s   │ 12 m        │                       │
+│   │ Airport Zone     │ 58 km²  │ 77 m³/s   │ 8 m         │                       │
+│   └──────────────────┴─────────┴───────────┴─────────────┘                       │
+│                                                                                     │
+├─────────────────────────────────────────────────────────────────────────────────────┤
+│ TREATMENT ROUTING (Drainage → STP → Reuse):                                         │
+├─────────────────────────────────────────────────────────────────────────────────────┤
+│   From                → To                  │ Flow    │ Treatment │                   │
+│   Old City Drains     → Old City STP       │ 32 MLD  │ Secondary │                   │
+│   MVP Colony Drains   → Mudsarlova STP     │ 11 MLD  │ Secondary │                   │
+│   Appughar Zone       → Appughar STP       │ 22 MLD  │ Secondary │                   │
+│   Narava Area         → Narava STP         │ 28 MLD  │ Tertiary  │ (Planned)         │
+│                                                                                     │
+│   STP TO REUSE:                                                                     │
+│   Old City: 34 MLD output → 45% reuse → 10 MLD gardening + 5 MLD industrial        │
+│   Mudsarlova: 11 MLD output → 60% reuse → 4 MLD gardening + 2 MLD industrial       │
+│   Appughar: 22 MLD output → 50% reuse → 7 MLD gardening + 4 MLD industrial          │
+│                                                                                     │
+├─────────────────────────────────────────────────────────────────────────────────────┤
+│ GROUNDWATER PROTECTION:                                                             │
+├─────────────────────────────────────────────────────────────────────────────────────┤
+│   Septic Tank Density: 45 per km²                                                    │
+│   Contamination Risk Zones: Old City, Purna Market, Gnanapuram                       │
+│   Monitoring Wells: 12                                                               │
+│   Nitrate Baseline: 8.5 ppm | Current: 18.2 ppm (ALARM)                            │
+│   Intervention: Sewer line extension + STP upgrade REQUIRED                            │
+│                                                                                     │
+├─────────────────────────────────────────────────────────────────────────────────────┤
+│ 3D SIMULATION PARAMETERS:                                                           │
+├─────────────────────────────────────────────────────────────────────────────────────┤
+│   Terrain Resolution: 5m                                                             │
+│   Drain Depth Below Road: 2.5m                                                       │
+│   Pipe Burial Depth: 3.5m                                                            │
+│   Manhole Depth: 4.2m                                                                │
+│   Invert Level Variation: 0.8m                                                       │
+│                                                                                     │
+│   SLOPE SIMULATION:                                                                 │
+│     Natural Terrain: 1.2%                                                           │
+│     Designed Drain: 0.8%                                                             │
+│     Minimum Self-Cleansing: 0.5%                                                     │
+│                                                                                     │
+│   FLOOD INUNDATION DEPTH:                                                           │
+│     10-year return: 0.6m                                                            │
+│     25-year return: 1.2m                                                            │
+│     50-year return: 2.1m                                                            │
+│     100-year return: 3.5m                                                           │
+│                                                                                     │
+├─────────────────────────────────────────────────────────────────────────────────────┤
+│ EFFICIENCY METRICS (Post-Upgrade Targets):                                          │
+├─────────────────────────────────────────────────────────────────────────────────────┤
+│   Current Drainage Efficiency: 58%                                                   │
+│   Post-Upgrade Target: 85%                                                           │
+│   Flood Reduction: 65%                                                               │
+│   Water Reuse Potential: 85 MLD                                                      │
+│   Groundwater Contamination Reduction: 70%                                           │
+│   Energy Savings: 2,400 kWh/day                                                      │
+│                                                                                     │
+│ KEY ALGORITHMS:                                                                     │
+│   1. Pre-Drainage Simulation (SWMM + 3D Terrain)                                    │
+│      • DEM integration for accurate flow routing                                    │
+│      • Sub-catchment delineation using D8 algorithm                                  │
+│      • Time-area method for hydrograph generation                                    │
+│                                                                                     │
+│   2. Culvert Capacity Calculator                                                      │
+│      Q = C × A × √(2gH)                                                            │
+│      Where C=discharge coefficient, A=area, H=head                                 │
+│                                                                                     │
+│   3. Contamination Risk Mapper                                                        │
+│      Risk = f(septic_density, soil_permeability, groundwater_depth, slope)           │
+│      Uses Analytic Hierarchy Process (AHP) for weighting                             │
+│                                                                                     │
+│   4. Treatment Plant Siting Optimizer                                               │
+│      Minimize: Σ(distance × flow × elevation_diff)                                 │
+│      Subject to: capacity constraints, land availability, environmental buffer        │
+│                                                                                     │
+│ UNIQUE FEATURES (NO OTHER PLATFORM HAS THIS):                                       │
+│   ✓ 3D pre-drainage simulation showing water flow BEFORE construction                │
+│   ✓ Road-by-road culvert inventory with condition ratings                            │
+│   ✓ Underground pipeline network visualization (water + sewer + storm)               │
+│   ✓ Runoff simulation per sub-catchment with elevation data                          │
+│   ✓ Automatic routing of drainage water to nearest STP                             │
+│   ✓ Treated water reuse allocation (gardening + industrial)                        │
+│   ✓ Groundwater contamination risk mapping with nitrate tracking                   │
+│   ✓ Septic tank density analysis for pollution hotspots                            │
+│   ✓ Flood inundation depth for 10/25/50/100-year return periods                    │
+│   ✓ Energy savings calculation from efficient pumping                                │
+│   ✓ Post-upgrade efficiency target dashboard                                       │
+│   ✓ Integration with GVMC's 14 drainage blocks                                     │
+│   ✓ 3D terrain visualization with drain depth below road surface                     │
+└─────────────────────────────────────────────────────────────────────────────────────┘
+
+═══════════════════════════════════════════════════════════════════════════════════════
+SECTION 3: TECHNOLOGY STACK
+═══════════════════════════════════════════════════════════════════════════════════════
+
+FRONTEND:
+  • React.js / Next.js with Three.js for 3D visualizations
+  • D3.js for charts and timelines
+  • Mapbox GL JS for geospatial mapping
+  • WebGL shaders for terrain rendering
+
+BACKEND:
+  • Python FastAPI for REST endpoints
+  • PostgreSQL + PostGIS for geospatial data
+  • TimescaleDB for time-series (groundwater, rainfall)
+  • Redis for real-time telemetry caching
+  • Celery for background AI model execution
+
+AI/ML:
+  • TensorFlow / PyTorch for LSTM forecasting
+  • scikit-learn for Random Forest classifiers
+  • XGBoost for gradient boosting models
+  • OpenCV for satellite image processing
+
+DATA SOURCES:
+  • NASA GRACE-FO — Gravity anomaly
+  • ESA Sentinel-1/2 — SAR + Multispectral
+  • NASA POWER — Weather data
+  • CGWB India — Groundwater monitoring
+  • ISRO Bhuvan — Indian satellite data
+  • IMD — Rainfall and cyclone tracking
+  • GVMC — City infrastructure data
+
+3D SIMULATION:
+  • Three.js + WebGL for browser-based 3D
+  • Blender Python API for pre-rendered animations
+  • Unity WebGL for complex drainage simulations
+  • CesiumJS for satellite orbit visualization
+
+═══════════════════════════════════════════════════════════════════════════════════════
+SECTION 4: MOCK DATA SUMMARY
+═══════════════════════════════════════════════════════════════════════════════════════
+
+All data in this document is MOCKED for Visakhapatnam based on:
+  ✓ Real CGWB NAQUIM 2.0 reports
+  ✓ GVMC City Development Plan
+  ✓ World Bank Greater Visakhapatnam Study
+  ✓ APWRIMS groundwater levels
+  ✓ Real topography and drainage infrastructure
+
+The mock data includes:
+  • 9 fully populated modules
+  • 3 reservoirs with realistic capacities
+  • 64 irrigation zones with NDVI values
+  • 1 detailed borewell with 3D geological model
+  • 9 drainage network nodes with flow data
+  • 6 active flood zones with evacuation data
+  • 4 geological layers with aquifer data
+  • 3 crisis threats with confidence scores
+  • 8 road culvert inventories
+  • 7 sub-catchments with runoff data
+  • 4 STPs + 3 WTPs with capacity data
+
+═══════════════════════════════════════════════════════════════════════════════════════
+SECTION 5: PITCH FOR MINISTERS (SIMPLE LANGUAGE)
+═══════════════════════════════════════════════════════════════════════════════════════
+
+WHAT IS THIS?
+  → "It's like a doctor's MRI scan, but for the city's water. We can see
+     underground water, predict floods before they come, and tell farmers
+     which crops to grow to save water."
+
+WHY VIZAG NEEDS THIS?
+  → "Vizag has 14 drainage blocks but only 316 km of sewers for 682 km².
+     Every monsoon, Gnanapuram and Purna Market flood. Our platform shows
+     WHERE water will flow BEFORE it floods, so we can fix drains first."
+
+HOW IT SAVES MONEY?
+  → "Instead of digging borewells blindly (₹5 lakh each), our AI tells
+     exactly where to dig and how deep. 34% less water wasted in farming.
+     65% flood reduction after drain upgrades."
+
+WHAT MAKES IT UNIQUE?
+  → "No other app in India shows 3D underground water + drainage simulation
+     + flood prediction + crop advice ALL IN ONE. This is the first."
+
+WHAT WE NEED FROM GOVERNMENT?
+  → "1. CGWB well data access
+     2. GVMC drainage maps
+     3. IMD weather API
+     4. 
+     5. Permission to send SMS alerts to officials"
+
+═══════════════════════════════════════════════════════════════════════════════════════
+END OF DOCUMENT
+═══════════════════════════════════════════════════════════════════════════════════════
